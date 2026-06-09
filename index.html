@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Энтузиаст | Портфолио</title>
     
-    <script src="avatar.jpg"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Настраиваем Tailwind (кислотные цвета, брутальный стиль) -->
     <script>
@@ -104,7 +104,6 @@
 
     <div class="fixed inset-0 bg-noise z-0"></div>
 
-    
     <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -113,13 +112,6 @@
                         [ AI_INTEGRATOR ]
                     </a>
                 </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-300 hover:text-white focus:outline-none">
-                        <i class="ph-bold ph-list text-3xl"></i>
-                    </button>
-                </div>
-                <!-- Desktop menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-8 font-mono text-sm uppercase font-bold tracking-widest">
                         <a href="#mindset" class="text-white hover:text-acid transition-colors">Подход</a>
@@ -129,16 +121,7 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black border-b border-white/10">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-mono text-sm uppercase font-bold tracking-widest">
-                <a href="#mindset" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 text-white hover:text-acid transition-colors">Подход</a>
-                <a href="#ai-cases" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 text-white hover:text-hotpink transition-colors">AI Кейсы</a>
-                <a href="#experience" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-2 text-white hover:text-acid transition-colors">Опыт</a>
-            </div>
-        </div>
     </nav>
-
 
     <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-[90vh] flex flex-col justify-center z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -148,20 +131,20 @@
                 <div class="inline-block bg-acid text-black font-mono font-bold px-3 py-1 mb-6 text-sm uppercase tracking-wider transform -rotate-2 border-2 border-black neo-white">
                     # Нестандартный подход
                 </div>
-                <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-6">
+                <h1 class="text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-6">
                     Я <span class="text-outline">НЕ</span><br>
                     Разработчик.
                 </h1>
-                <p class="text-lg sm:text-xl md:text-2xl font-medium text-gray-300 max-w-2xl mb-8 leading-tight">
-                    Я <span class="text-acid font-bold">практик-интегратор</span>. Я не строю из себя Senior-разработчика. Моя суперсила — системная архитектура. Я беру готовые языковые модели (LLM), локальные нейросети и инструменты автоматизации, чтобы связать хаос процессов в единый работающий механизм. <br>
-                    <span class="text-hotpink block mt-2">Моя цель — бизнес-результат, а не бесконечный процесс разработки.</span>
+                <p class="text-xl md:text-2xl font-medium text-gray-300 max-w-2xl mb-8 leading-tight">
+                    Я <span class="text-acid font-bold">энтузиаст</span>. Я не пишу скучный энтерпрайз-код годами. Я беру нейросети, No-Code, скрипты на Python и автоматизирую всё, что движется. <br>
+                    <span class="text-hotpink block mt-2">Моя цель — результат, а не процесс.</span>
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-4 font-mono w-full">
-                    <a href="#ai-cases" class="bg-acid text-black border-2 border-acid w-full text-center sm:w-auto px-8 py-4 font-bold text-lg uppercase tracking-wider brutal-card shadow-neo hover:shadow-neo-hover">
+                <div class="flex flex-wrap gap-4 font-mono">
+                    <a href="#ai-cases" class="bg-acid text-black border-2 border-acid px-8 py-4 font-bold text-lg uppercase tracking-wider brutal-card shadow-neo hover:shadow-neo-hover">
                         Смотреть AI Кейсы
                     </a>
-                    <a href="#contact" class="bg-transparent text-white border-2 border-white w-full text-center sm:w-auto px-8 py-4 font-bold text-lg uppercase tracking-wider brutal-card shadow-neo-white hover:shadow-neo-hover hover:border-white">
+                    <a href="#contact" class="bg-transparent text-white border-2 border-white px-8 py-4 font-bold text-lg uppercase tracking-wider brutal-card shadow-neo-white hover:shadow-neo-hover hover:border-white">
                         Пригласить на собеседование
                     </a>
                 </div>
@@ -208,7 +191,7 @@
         </div>
     </div>
 
-    <section id="mindset" class="py-16 md:py-24 px-4 sm:px-6 relative z-10">
+    <section id="mindset" class="py-24 px-4 relative z-10">
         <div class="max-w-5xl mx-auto reveal">
             <h2 class="text-5xl md:text-7xl font-black uppercase mb-12 text-center text-outline-white">Как я мыслю</h2>
             
@@ -232,11 +215,11 @@
         </div>
     </section>
 
-    <section id="ai-cases" class="py-16 md:py-24 px-4 sm:px-6 bg-acid text-black relative z-10 border-y-4 border-black">
+    <section id="ai-cases" class="py-24 px-4 bg-acid text-black relative z-10 border-y-4 border-black">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
                 <div>
-                    <h2 class="text-5xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-2">AI <br>Кейсы</h2>
+                    <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-2">AI <br>Кейсы</h2>
                     <p class="font-mono font-bold text-xl uppercase tracking-widest mt-4 border-l-4 border-black pl-4">Где нейросети принесли реальную пользу</p>
                 </div>
                 <div class="mt-6 md:mt-0 text-6xl text-black">
@@ -246,7 +229,7 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
                 <!-- AI Case 1 -->
-                <div class="bg-white border-4 border-black p-8 brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
+                <div class="bg-white border-4 border-black p-8 brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
                     <div class="flex justify-between items-start mb-6">
                         <span class="bg-black text-acid font-mono font-bold px-3 py-1 text-sm uppercase border-2 border-black">АВТОНОМНЫЙ SMM-КОНВЕЙЕР</span>
                         <i class="ph ph-share-network text-4xl"></i>
@@ -256,7 +239,7 @@
                         Написал систему на Python + Cron, интегрированную с LLM API. Она сама парсит контекст, генерирует посты с сохранением сложного Tone of Voice (ирония, польза) и ставит их в очередь.
                     </p>
                     <div class="border-t-2 border-black pt-4 mt-auto">
-                        <h4 class="font-black uppercase mb-2">Результат:</h4>
+                        <h4 class="font-black uppercase mb-2">Импакт:</h4>
                         <ul class="font-mono text-sm space-y-2 font-bold">
                             <li>[+] Участие человека: 0%</li>
                             <li>[+] Экономия 20 часов рутины в неделю</li>
@@ -266,7 +249,7 @@
                 </div>
 
                 <!-- AI Case 2 -->
-                <div class="bg-black text-white border-4 border-black p-8 brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal relative flex flex-col">
+                <div class="bg-black text-white border-4 border-black p-8 brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal relative flex flex-col">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-electric mix-blend-screen rounded-full blur-xl opacity-40"></div>
                     <div class="flex justify-between items-start mb-6 relative z-10">
                         <span class="bg-electric text-black font-mono font-bold px-3 py-1 text-sm uppercase border-2 border-black">WEB3 / FINTECH</span>
@@ -277,7 +260,7 @@
                         Создал кастомный веб-калькулятор юнит-экономики для реселлеров. Развернул локальных AI-снайперов для анализа аномалий (Volume Spikes) на Polymarket/Crypto через WebSockets.
                     </p>
                     <div class="border-t-2 border-gray-800 pt-4 mt-auto relative z-10">
-                        <h4 class="font-black uppercase mb-2 text-electric">Результат:</h4>
+                        <h4 class="font-black uppercase mb-2 text-electric">Импакт:</h4>
                         <ul class="font-mono text-sm space-y-2 text-gray-300">
                             <li>[+] Реакция на изменение рынка < 1 сек</li>
                             <li>[+] Исключен человеческий фактор</li>
@@ -287,7 +270,7 @@
                 </div>
 
                 <!-- AI Case 3 -->
-                <div class="bg-white border-4 border-black p-8 brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
+                <div class="bg-white border-4 border-black p-8 brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
                     <div class="flex justify-between items-start mb-6">
                         <span class="bg-hotpink text-white font-mono font-bold px-3 py-1 text-sm uppercase border-2 border-black">EDTECH ГЕЙМИФИКАЦИЯ</span>
                         <i class="ph ph-game-controller text-4xl text-hotpink"></i>
@@ -297,7 +280,7 @@
                         Взломал ограничения платформ для онлайн-уроков. Написал кастомные веб-интеграции (RPG-лабиринты, инвентарные системы, системы боев).
                     </p>
                     <div class="border-t-2 border-black pt-4 mt-auto">
-                        <h4 class="font-black uppercase mb-2">Результат:</h4>
+                        <h4 class="font-black uppercase mb-2">Импакт:</h4>
                         <ul class="font-mono text-sm space-y-2 font-bold">
                             <li>[+] Резкое повышение вовлеченности учеников</li>
                             <li>[+] Код открыт на GitHub для быстрой интеграции</li>
@@ -307,7 +290,7 @@
                 </div>
 
                 <!-- AI Case 4 -->
-                <div class="bg-dark text-white border-4 border-black p-8 brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
+                <div class="bg-dark text-white border-4 border-black p-8 brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-acid mix-blend-screen rounded-full blur-xl opacity-20"></div>
                     <div class="flex justify-between items-start mb-6 relative z-10">
                         <span class="bg-black text-acid font-mono font-bold px-3 py-1 text-sm uppercase border-2 border-acid">SECOND BRAIN / RAG</span>
@@ -318,7 +301,7 @@
                         Внедрил локальную архитектуру Cortex. AI-агенты автоматически структурируют рабочие файлы (Markdown), регламенты и бэклог, обеспечивая семантический поиск.
                     </p>
                     <div class="border-t-2 border-gray-800 pt-4 mt-auto relative z-10">
-                        <h4 class="font-black uppercase mb-2 text-acid">Результат:</h4>
+                        <h4 class="font-black uppercase mb-2 text-acid">Импакт:</h4>
                         <ul class="font-mono text-sm space-y-2 text-gray-300">
                             <li>[+] Мгновенный онбординг через естественный язык</li>
                             <li>[+] Хаос превращен в базу знаний</li>
@@ -329,7 +312,7 @@
             </div>
 
             <div class="reveal mt-8">
-                <button onclick="document.getElementById('archive-content').classList.toggle('hidden'); document.getElementById('archive-icon').classList.toggle('rotate-180');" class="w-full bg-black text-white border-4 border-black hover:bg-hotpink hover:text-black transition-colors duration-300 p-6 flex justify-between items-center group brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                <button onclick="document.getElementById('archive-content').classList.toggle('hidden'); document.getElementById('archive-icon').classList.toggle('rotate-180');" class="w-full bg-black text-white border-4 border-black hover:bg-hotpink hover:text-black transition-colors duration-300 p-6 flex justify-between items-center group brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                     <span class="text-2xl md:text-4xl font-black uppercase tracking-widest flex items-center gap-4">
                         <i class="ph-fill ph-folder-lock text-hotpink group-hover:text-black transition-colors"></i> 
                         Рассекретить архив
@@ -373,7 +356,7 @@
         </div>
     </section>
 
-    <section id="experience" class="py-16 md:py-24 px-4 sm:px-6 bg-white text-black relative z-10 border-y-4 border-black">
+    <section id="experience" class="py-24 px-4 bg-white text-black relative z-10 border-y-4 border-black">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-5xl md:text-7xl font-black uppercase mb-16 text-center shadow-neo-white inline-block bg-acid px-6 py-2 border-4 border-black transform -rotate-1 reveal">
                 Боевой Опыт
@@ -405,7 +388,7 @@
                     <div class="bg-darker text-white border-4 border-black p-6 relative">
                         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-acid via-hotpink to-electric"></div>
                         <h4 class="font-black uppercase mb-3 text-acid text-2xl flex items-center gap-2">
-                            <i class="ph-fill ph-lightning"></i> Результат:
+                            <i class="ph-fill ph-lightning"></i> Импакт:
                         </h4>
                         <p class="font-mono text-base md:text-lg text-gray-300 leading-relaxed">
                             Лично вернул крупных VIP-клиентов и привел новых. На стагнирующем рынке обеспечил стабильный рост продаж: 
@@ -419,7 +402,7 @@
 
                 <!-- Кнопка раскрытия архива -->
                 <div class="reveal mt-12">
-                    <button onclick="document.getElementById('early-experience').classList.toggle('hidden'); document.getElementById('experience-icon').classList.toggle('rotate-180');" class="w-full bg-darker text-white border-4 border-black hover:bg-electric hover:text-black transition-all duration-300 p-6 flex flex-col md:flex-row justify-between items-center group brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
+                    <button onclick="document.getElementById('early-experience').classList.toggle('hidden'); document.getElementById('experience-icon').classList.toggle('rotate-180');" class="w-full bg-darker text-white border-4 border-black hover:bg-electric hover:text-black transition-all duration-300 p-6 flex flex-col md:flex-row justify-between items-center group brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
                         <span class="text-xl md:text-2xl font-black uppercase tracking-widest flex items-center gap-4 text-center md:text-left mb-4 md:mb-0">
                             <i class="ph-fill ph-clock-counter-clockwise text-electric group-hover:text-black transition-colors text-4xl"></i> 
                             Развернуть полный боевой путь
@@ -473,7 +456,7 @@
                         <div class="absolute inset-0 bg-hotpink opacity-30 animate-ping z-0 pointer-events-none"></div>
                         
                         <!-- Сама кнопка -->
-                        <a href="resume.pdf" class="relative z-10 block w-full bg-acid text-black border-4 border-black p-8 md:p-12 shadow-[16px_16px_0px_0px_rgba(255,0,170,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[12px] hover:translate-y-[12px] hover:bg-hotpink hover:text-white transition-all duration-300 text-center overflow-hidden">
+                        <a href="#" class="relative z-10 block w-full bg-acid text-black border-4 border-black p-8 md:p-12 shadow-[16px_16px_0px_0px_rgba(255,0,170,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[12px] hover:translate-y-[12px] hover:bg-hotpink hover:text-white transition-all duration-300 text-center overflow-hidden">
                             <!-- Декоративный паттерн -->
                             <div class="absolute inset-0 opacity-10 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,#000_10px,#000_20px)] pointer-events-none group-hover:opacity-20 transition-opacity"></div>
                             
