@@ -24,8 +24,9 @@
                         darker: '#000000',
                     },
                     boxShadow: {
-                        'neo': '6px 6px 0px 0px rgba(204, 255, 0, 1)', // Зеленая тень
-                        'neo-pink': '6px 6px 0px 0px rgba(255, 0, 170, 1)', // Розовая тень
+                        'neo': '4px 4px 0px 0px rgba(204, 255, 0, 1)', // Уменьшенная для мобилок
+                        'neo-md': '6px 6px 0px 0px rgba(204, 255, 0, 1)', // Для ПК
+                        'neo-pink': '6px 6px 0px 0px rgba(255, 0, 170, 1)', 
                         'neo-white': '6px 6px 0px 0px rgba(255, 255, 255, 1)',
                         'neo-hover': '2px 2px 0px 0px rgba(204, 255, 0, 1)',
                     }
@@ -112,6 +113,15 @@
                         [ AI_INTEGRATOR ]
                     </a>
                 </div>
+                
+                <!-- Гамбургер для мобильных -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-white hover:text-acid transition-colors cursor-pointer focus:outline-none">
+                        <i class="ph-bold ph-list text-4xl"></i>
+                    </button>
+                </div>
+
+                <!-- Меню ПК -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-8 font-mono text-sm uppercase font-bold tracking-widest">
                         <a href="#mindset" class="text-white hover:text-acid transition-colors">Подход</a>
@@ -119,6 +129,15 @@
                         <a href="#experience" class="text-white hover:text-acid transition-colors">Опыт</a>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Выпадающее мобильное меню -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darker border-b-2 border-acid/30">
+            <div class="px-4 pt-2 pb-6 flex flex-col space-y-6 font-mono text-center text-lg uppercase font-bold tracking-widest shadow-neo">
+                <a href="#mindset" onclick="toggleMobileMenu()" class="block text-white hover:text-acid mt-4">Подход</a>
+                <a href="#ai-cases" onclick="toggleMobileMenu()" class="block text-white hover:text-hotpink">AI Кейсы</a>
+                <a href="#experience" onclick="toggleMobileMenu()" class="block text-white hover:text-acid">Опыт</a>
             </div>
         </div>
     </nav>
@@ -131,20 +150,23 @@
                 <div class="inline-block bg-acid text-black font-mono font-bold px-3 py-1 mb-6 text-sm uppercase tracking-wider transform -rotate-2 border-2 border-black neo-white">
                     # Нестандартный подход
                 </div>
+                <!-- Главный заголовок адаптирован -->
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-none tracking-tighter mb-6">
                     Я <span class="text-outline">НЕ</span><br>
                     Разработчик.
                 </h1>
-                <p class="text-xl md:text-2xl font-medium text-gray-300 max-w-2xl mb-8 leading-tight">
+                <!-- Подзаголовок адаптирован -->
+                <p class="text-lg md:text-2xl font-medium text-gray-300 max-w-2xl mb-8 leading-tight">
                     Я <span class="text-acid font-bold">практик-интегратор</span>. Я не строю из себя Senior-разработчика. Моя суперсила — системная архитектура. Я беру готовые языковые модели (LLM), локальные нейросети и инструменты автоматизации, чтобы связать хаос процессов в единый работающий механизм. <br>
                     <span class="text-hotpink block mt-2">Моя цель — бизнес-результат, а не бесконечный процесс разработки.</span>
                 </p>
                 
-                <div class="flex flex-wrap gap-4 font-mono">
-                    <a href="#ai-cases" class="bg-acid text-black border-2 border-acid px-8 py-4 font-bold text-lg uppercase tracking-wider brutal-card shadow-neo hover:shadow-neo-hover">
+                <!-- Кнопки адаптированы (w-full и text-center на мобилках) -->
+                <div class="flex flex-col sm:flex-row gap-4 font-mono w-full">
+                    <a href="#ai-cases" class="w-full sm:w-auto text-center justify-center bg-acid text-black border-2 border-acid px-8 py-4 font-bold text-lg uppercase tracking-wider brutal-card shadow-neo md:shadow-neo-md hover:shadow-neo-hover">
                         Смотреть AI Кейсы
                     </a>
-                    <a href="#contact" class="bg-transparent text-white border-2 border-white px-8 py-4 font-bold text-lg uppercase tracking-wider brutal-card shadow-neo-white hover:shadow-neo-hover hover:border-white">
+                    <a href="#contact" class="w-full sm:w-auto text-center justify-center bg-transparent text-white border-2 border-white px-8 py-4 font-bold text-lg uppercase tracking-wider brutal-card shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-neo-white hover:shadow-neo-hover hover:border-white">
                         Пригласить на собеседование
                     </a>
                 </div>
@@ -153,8 +175,6 @@
             <!-- Иллюстрация / Место под Фото -->
             <div class="lg:col-span-4 hidden lg:block reveal relative">
                 <div class="w-full aspect-square bg-darker border-4 border-white shadow-neo-pink relative p-0 flex flex-col justify-between overflow-hidden group">
-                    <!-- ТУТ БУДЕТ ССЫЛКА НА МОЕ ФОТО -->
-                    <!-- Заглушка для фото. Замените URL в src на путь к вашей фотографии -->
                     <img src="avatar.jpg" alt="Нарыков Станислав" class="w-full h-full object-cover grayscale mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500 z-0">
                     
                     <div class="absolute bottom-4 left-4 right-4 z-10 font-mono text-sm text-white bg-black border-2 border-acid p-3 shadow-neo opacity-90 group-hover:opacity-100 transition-opacity">
@@ -193,20 +213,22 @@
 
     <section id="mindset" class="py-24 px-4 relative z-10">
         <div class="max-w-5xl mx-auto reveal">
-            <h2 class="text-5xl md:text-7xl font-black uppercase mb-12 text-center text-acid drop-shadow-[0_0_15px_rgba(204,255,0,0.5)]">Как я мыслю</h2>
+            <!-- Заголовок адаптирован -->
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase mb-12 text-center text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">Как я мыслю</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-darker border-2 border-gray-800 p-8 hover:border-acid transition-colors group">
+                <!-- Карточки: padding изменен с p-8 на p-6 md:p-8 lg:p-10 -->
+                <div class="bg-darker border-2 border-gray-800 p-6 md:p-8 lg:p-10 hover:border-acid transition-colors group">
                     <i class="ph ph-lightning text-5xl text-gray-600 group-hover:text-acid mb-6 transition-colors"></i>
                     <h3 class="text-2xl font-bold uppercase mb-3">Скорость > Идеал</h3>
                     <p class="text-gray-400 font-mono text-sm leading-relaxed">Пока другие месяц проектируют архитектуру, я проверяю гипотезу и собираю MVP за выходные. Сначала бизнес-метрики и деньги, потом красивый код.</p>
                 </div>
-                <div class="bg-darker border-2 border-gray-800 p-8 hover:border-hotpink transition-colors group">
+                <div class="bg-darker border-2 border-gray-800 p-6 md:p-8 lg:p-10 hover:border-hotpink transition-colors group">
                     <i class="ph ph-brain text-5xl text-gray-600 group-hover:text-hotpink mb-6 transition-colors"></i>
                     <h3 class="text-2xl font-bold uppercase mb-3">Делегируй ИИ</h3>
                     <p class="text-gray-400 font-mono text-sm leading-relaxed">Я не нанимаю людей на рутину. Я использую LLM, RAG и Python-скрипты как цифровых сотрудников, которые пашут 24/7 без выгорания.</p>
                 </div>
-                <div class="bg-darker border-2 border-gray-800 p-8 hover:border-electric transition-colors group">
+                <div class="bg-darker border-2 border-gray-800 p-6 md:p-8 lg:p-10 hover:border-electric transition-colors group">
                     <i class="ph ph-wrench text-5xl text-gray-600 group-hover:text-electric mb-6 transition-colors"></i>
                     <h3 class="text-2xl font-bold uppercase mb-3">Архитектор, а не кодер</h3>
                     <p class="text-gray-400 font-mono text-sm leading-relaxed">Мой язык — это здравый смысл. OpenClaw, Python, Make, LangChain — я беру тот инструмент, который быстрее всего свяжет маркетинг и технологии.</p>
@@ -217,24 +239,25 @@
 
     <section id="ai-cases" class="py-24 px-4 bg-acid text-black relative z-10 border-y-4 border-black">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 reveal">
                 <div>
-                    <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-2">AI <br>Кейсы</h2>
-                    <p class="font-mono font-bold text-xl uppercase tracking-widest mt-4 border-l-4 border-black pl-4">Где нейросети принесли реальную пользу</p>
+                    <!-- Заголовок адаптирован -->
+                    <h2 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-none mb-2">AI <br class="hidden md:block">Кейсы</h2>
+                    <p class="font-mono font-bold text-lg md:text-xl uppercase tracking-widest mt-4 border-l-4 border-black pl-4">Где нейросети принесли реальную пользу</p>
                 </div>
-                <div class="mt-6 md:mt-0 text-6xl text-black">
+                <div class="mt-6 md:mt-0 text-5xl md:text-6xl text-black">
                     <i class="ph-fill ph-robot"></i>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
                 <!-- AI Case 1 -->
-                <div class="bg-white border-4 border-black p-8 brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
+                <div class="bg-white border-4 border-black p-6 md:p-8 lg:p-10 brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
                     <div class="flex justify-between items-start mb-6">
-                        <span class="bg-black text-acid font-mono font-bold px-3 py-1 text-sm uppercase border-2 border-black">АВТОНОМНЫЙ SMM-КОНВЕЙЕР</span>
-                        <i class="ph ph-share-network text-4xl"></i>
+                        <span class="bg-black text-acid font-mono font-bold px-3 py-1 text-xs md:text-sm uppercase border-2 border-black">АВТОНОМНЫЙ SMM-КОНВЕЙЕР</span>
+                        <i class="ph ph-share-network text-3xl md:text-4xl"></i>
                     </div>
-                    <h3 class="text-3xl font-black uppercase mb-4 leading-tight">Фабрика контента без участия человека</h3>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase mb-4 leading-tight">Фабрика контента без участия человека</h3>
                     <p class="font-mono text-sm text-gray-700 mb-6 leading-relaxed flex-grow">
                         Написал систему на Python + Cron, интегрированную с LLM API. Она сама парсит контекст, генерирует посты с сохранением сложного Tone of Voice (ирония, польза) и ставит их в очередь.
                     </p>
@@ -249,13 +272,13 @@
                 </div>
 
                 <!-- AI Case 2 -->
-                <div class="bg-black text-white border-4 border-black p-8 brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal relative flex flex-col">
+                <div class="bg-black text-white border-4 border-black p-6 md:p-8 lg:p-10 brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal relative flex flex-col">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-electric mix-blend-screen rounded-full blur-xl opacity-40"></div>
                     <div class="flex justify-between items-start mb-6 relative z-10">
-                        <span class="bg-electric text-black font-mono font-bold px-3 py-1 text-sm uppercase border-2 border-black">WEB3 / FINTECH</span>
-                        <i class="ph ph-trend-up text-4xl text-electric"></i>
+                        <span class="bg-electric text-black font-mono font-bold px-3 py-1 text-xs md:text-sm uppercase border-2 border-black">WEB3 / FINTECH</span>
+                        <i class="ph ph-trend-up text-3xl md:text-4xl text-electric"></i>
                     </div>
-                    <h3 class="text-3xl font-black uppercase mb-4 leading-tight">MrExp0 Reseller & AI-трекеры</h3>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase mb-4 leading-tight">MrExp0 Reseller & AI-трекеры</h3>
                     <p class="font-mono text-sm text-gray-300 mb-6 leading-relaxed flex-grow relative z-10">
                         Создал кастомный веб-калькулятор юнит-экономики для реселлеров. Развернул локальных AI-снайперов для анализа аномалий (Volume Spikes) на Polymarket/Crypto через WebSockets.
                     </p>
@@ -270,12 +293,12 @@
                 </div>
 
                 <!-- AI Case 3 -->
-                <div class="bg-white border-4 border-black p-8 brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
+                <div class="bg-white border-4 border-black p-6 md:p-8 lg:p-10 brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
                     <div class="flex justify-between items-start mb-6">
-                        <span class="bg-hotpink text-white font-mono font-bold px-3 py-1 text-sm uppercase border-2 border-black">EDTECH ГЕЙМИФИКАЦИЯ</span>
-                        <i class="ph ph-game-controller text-4xl text-hotpink"></i>
+                        <span class="bg-hotpink text-white font-mono font-bold px-3 py-1 text-xs md:text-sm uppercase border-2 border-black">EDTECH ГЕЙМИФИКАЦИЯ</span>
+                        <i class="ph ph-game-controller text-3xl md:text-4xl text-hotpink"></i>
                     </div>
-                    <h3 class="text-3xl font-black uppercase mb-4 leading-tight">Интерактивные движки для Genially</h3>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase mb-4 leading-tight">Интерактивные движки для Genially</h3>
                     <p class="font-mono text-sm text-gray-700 mb-6 leading-relaxed flex-grow">
                         Взломал ограничения платформ для онлайн-уроков. Написал кастомные веб-интеграции (RPG-лабиринты, инвентарные системы, системы боев).
                     </p>
@@ -290,13 +313,13 @@
                 </div>
 
                 <!-- AI Case 4 -->
-                <div class="bg-dark text-white border-4 border-black p-8 brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
+                <div class="bg-dark text-white border-4 border-black p-6 md:p-8 lg:p-10 brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] reveal flex flex-col">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-acid mix-blend-screen rounded-full blur-xl opacity-20"></div>
                     <div class="flex justify-between items-start mb-6 relative z-10">
-                        <span class="bg-black text-acid font-mono font-bold px-3 py-1 text-sm uppercase border-2 border-acid">SECOND BRAIN / RAG</span>
-                        <i class="ph ph-brain text-4xl text-acid"></i>
+                        <span class="bg-black text-acid font-mono font-bold px-3 py-1 text-xs md:text-sm uppercase border-2 border-acid">SECOND BRAIN / RAG</span>
+                        <i class="ph ph-brain text-3xl md:text-4xl text-acid"></i>
                     </div>
-                    <h3 class="text-3xl font-black uppercase mb-4 leading-tight">Корпоративная AI-Память</h3>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase mb-4 leading-tight">Корпоративная AI-Память</h3>
                     <p class="font-mono text-sm text-gray-300 mb-6 leading-relaxed flex-grow relative z-10">
                         Внедрил локальную архитектуру Cortex. AI-агенты автоматически структурируют рабочие файлы (Markdown), регламенты и бэклог, обеспечивая семантический поиск.
                     </p>
@@ -311,43 +334,45 @@
                 </div>
             </div>
 
+            <!-- Кнопка архива: адаптированы паддинги, выравнивание, тени -->
             <div class="reveal mt-8">
-                <button onclick="document.getElementById('archive-content').classList.toggle('hidden'); document.getElementById('archive-icon').classList.toggle('rotate-180');" class="w-full bg-black text-white border-4 border-black hover:bg-hotpink hover:text-black transition-colors duration-300 p-6 flex justify-between items-center group brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                    <span class="text-2xl md:text-4xl font-black uppercase tracking-widest flex items-center gap-4">
-                        <i class="ph-fill ph-folder-lock text-hotpink group-hover:text-black transition-colors"></i> 
+                <button onclick="document.getElementById('archive-content').classList.toggle('hidden'); document.getElementById('archive-icon').classList.toggle('rotate-180');" class="w-full text-center bg-black text-white border-4 border-black hover:bg-hotpink hover:text-black transition-colors duration-300 p-6 md:p-8 lg:p-10 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 group brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                    <span class="text-xl md:text-4xl font-black uppercase tracking-widest flex items-center justify-center w-full md:w-auto gap-4">
+                        <i class="ph-fill ph-folder-lock text-3xl md:text-4xl text-hotpink group-hover:text-black transition-colors"></i> 
                         Рассекретить архив
                     </span>
-                    <i id="archive-icon" class="ph-bold ph-caret-down text-4xl transition-transform duration-500"></i>
+                    <i id="archive-icon" class="ph-bold ph-caret-down text-3xl md:text-4xl transition-transform duration-500"></i>
                 </button>
                 
-                <div id="archive-content" class="hidden mt-6 bg-white border-4 border-black p-6 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                    <ul class="space-y-4 font-mono text-lg font-bold">
+                <!-- Контент архива адаптирован -->
+                <div id="archive-content" class="hidden mt-6 bg-white border-4 border-black p-6 md:p-8 lg:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                    <ul class="space-y-4 font-mono text-base md:text-lg font-bold">
                         <li class="flex items-start gap-4 border-b-2 border-dashed border-gray-300 pb-4 hover:pl-2 transition-all duration-300">
                             <span class="text-hotpink mt-1"><i class="ph-bold ph-check-square text-2xl"></i></span>
                             <div>
-                                <span class="uppercase text-xl">AI vs ЖКХ</span>
-                                <p class="text-sm text-gray-600 font-normal mt-1">OCR-парсинг квитанций и автоматизация учета</p>
+                                <span class="uppercase text-lg md:text-xl">AI vs ЖКХ</span>
+                                <p class="text-xs md:text-sm text-gray-600 font-normal mt-1">OCR-парсинг квитанций и автоматизация учета</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4 border-b-2 border-dashed border-gray-300 pb-4 hover:pl-2 transition-all duration-300">
                             <span class="text-electric mt-1"><i class="ph-bold ph-check-square text-2xl"></i></span>
                             <div>
-                                <span class="uppercase text-xl">DevOps</span>
-                                <p class="text-sm text-gray-600 font-normal mt-1">Собственный Proxy/VPN для обхода блокировок</p>
+                                <span class="uppercase text-lg md:text-xl">DevOps</span>
+                                <p class="text-xs md:text-sm text-gray-600 font-normal mt-1">Собственный Proxy/VPN для обхода блокировок</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4 border-b-2 border-dashed border-gray-300 pb-4 hover:pl-2 transition-all duration-300">
                             <span class="text-acid bg-black rounded-sm mt-1"><i class="ph-bold ph-check-square text-2xl"></i></span>
                             <div>
-                                <span class="uppercase text-xl">Family AI</span>
-                                <p class="text-sm text-gray-600 font-normal mt-1">AI-помощник в семейный чат + персональный ИИ-компаньон</p>
+                                <span class="uppercase text-lg md:text-xl">Family AI</span>
+                                <p class="text-xs md:text-sm text-gray-600 font-normal mt-1">AI-помощник в семейный чат + персональный ИИ-компаньон</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4 pb-2 hover:pl-2 transition-all duration-300">
                             <span class="text-black mt-1"><i class="ph-bold ph-check-square text-2xl"></i></span>
                             <div>
-                                <span class="uppercase text-xl">Life-Ops</span>
-                                <p class="text-sm text-gray-600 font-normal mt-1">Набор bash/python скриптов для тотальной автоматизации личной рутины</p>
+                                <span class="uppercase text-lg md:text-xl">Life-Ops</span>
+                                <p class="text-xs md:text-sm text-gray-600 font-normal mt-1">Набор bash/python скриптов для тотальной автоматизации личной рутины</p>
                             </div>
                         </li>
                     </ul>
@@ -358,110 +383,111 @@
 
     <section id="experience" class="py-24 px-4 bg-white text-black relative z-10 border-y-4 border-black">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-5xl md:text-7xl font-black uppercase mb-16 text-center shadow-neo-white inline-block bg-acid px-6 py-2 border-4 border-black transform -rotate-1 reveal">
+            <!-- Заголовок адаптирован -->
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase mb-12 md:mb-16 text-center shadow-neo-white inline-block bg-acid px-6 py-2 border-4 border-black transform -rotate-1 reveal">
                 Боевой Опыт
             </h2>
 
             <div class="space-y-8">
                 <!-- Главный Опыт -->
-                <div class="bg-white border-4 border-black p-8 md:p-10 brutal-card shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative reveal">
+                <div class="bg-white border-4 border-black p-6 md:p-8 lg:p-10 brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] relative reveal">
                     <!-- Декоративный элемент -->
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-acid border-4 border-black rounded-full flex items-center justify-center animate-bounce">
-                        <i class="ph-bold ph-star text-2xl"></i>
+                    <div class="absolute -top-4 -right-4 w-10 h-10 md:w-12 md:h-12 bg-acid border-4 border-black rounded-full flex items-center justify-center animate-bounce">
+                        <i class="ph-bold ph-star text-xl md:text-2xl"></i>
                     </div>
 
                     <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
                         <div>
-                            <p class="font-mono font-bold text-hotpink mb-2 text-lg uppercase tracking-wider">> 2020 — Сейчас</p>
-                            <h3 class="text-4xl md:text-5xl font-black uppercase mb-2">AVOSDENT <span class="text-2xl text-gray-400 tracking-normal inline-block transform -translate-y-2">(B2B MedTech)</span></h3>
+                            <p class="font-mono font-bold text-hotpink mb-2 text-base md:text-lg uppercase tracking-wider">> 2020 — Сейчас</p>
+                            <h3 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase mb-2">AVOSDENT <span class="text-lg md:text-2xl text-gray-400 tracking-normal inline-block transform md:-translate-y-2 block md:inline mt-1 md:mt-0">(B2B MedTech)</span></h3>
                         </div>
-                        <div class="bg-black text-white font-mono font-bold px-4 py-2 border-2 border-black inline-block text-center uppercase">
+                        <div class="bg-black text-white font-mono font-bold px-4 py-2 border-2 border-black inline-block text-center uppercase text-sm md:text-base">
                             Бренд-менеджер
                             <span class="block text-xs text-acid mt-1 font-normal capitalize-none">вырос из ассистента маркетолога</span>
                         </div>
                     </div>
                     
-                    <p class="text-xl md:text-2xl leading-relaxed font-bold mb-8 text-gray-800">
+                    <p class="text-lg md:text-2xl leading-relaxed font-bold mb-8 text-gray-800">
                         Управлял полным циклом B2B маркетинга. Разработал стратегию продвижения и ценообразования. Внедрил email-рассылки, запустил работу с лидерами мнений (KOLs) и программы обучения для отдела продаж.
                     </p>
 
-                    <div class="bg-darker text-white border-4 border-black p-6 relative">
+                    <div class="bg-darker text-white border-4 border-black p-4 md:p-6 relative">
                         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-acid via-hotpink to-electric"></div>
-                        <h4 class="font-black uppercase mb-3 text-acid text-2xl flex items-center gap-2">
+                        <h4 class="font-black uppercase mb-3 text-acid text-xl md:text-2xl flex items-center gap-2">
                             <i class="ph-fill ph-lightning"></i> Результат:
                         </h4>
-                        <p class="font-mono text-base md:text-lg text-gray-300 leading-relaxed">
+                        <p class="font-mono text-sm md:text-lg text-gray-300 leading-relaxed leading-loose">
                             Лично вернул крупных VIP-клиентов и привел новых. На стагнирующем рынке обеспечил стабильный рост продаж: 
-                            <span class="text-white bg-black px-2 py-1 mx-1 border border-gray-700 font-bold">+10% (2021)</span>
-                            <span class="text-white bg-black px-2 py-1 mx-1 border border-gray-700 font-bold">+17% (2022)</span>
-                            <span class="text-white bg-black px-2 py-1 mx-1 border border-gray-700 font-bold">+30% (2023)</span>
-                            <span class="text-hotpink font-black text-xl ml-1">+38% (2024)</span>.
+                            <span class="text-white bg-black px-2 py-1 border border-gray-700 font-bold inline-block mt-2 sm:mt-0">+10% (2021)</span>
+                            <span class="text-white bg-black px-2 py-1 border border-gray-700 font-bold inline-block mt-2 sm:mt-0">+17% (2022)</span>
+                            <span class="text-white bg-black px-2 py-1 border border-gray-700 font-bold inline-block mt-2 sm:mt-0">+30% (2023)</span>
+                            <span class="text-hotpink font-black text-lg md:text-xl ml-1 inline-block mt-2 sm:mt-0">+38% (2024)</span>.
                         </p>
                     </div>
                 </div>
 
-                <!-- Кнопка раскрытия архива -->
+                <!-- Кнопка раскрытия архива опыта -->
                 <div class="reveal mt-12">
-                    <button onclick="document.getElementById('early-experience').classList.toggle('hidden'); document.getElementById('experience-icon').classList.toggle('rotate-180');" class="w-full bg-darker text-white border-4 border-black hover:bg-electric hover:text-black transition-all duration-300 p-6 flex flex-col md:flex-row justify-between items-center group brutal-card shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
-                        <span class="text-xl md:text-2xl font-black uppercase tracking-widest flex items-center gap-4 text-center md:text-left mb-4 md:mb-0">
-                            <i class="ph-fill ph-clock-counter-clockwise text-electric group-hover:text-black transition-colors text-4xl"></i> 
+                    <button onclick="document.getElementById('early-experience').classList.toggle('hidden'); document.getElementById('experience-icon').classList.toggle('rotate-180');" class="w-full text-center bg-darker text-white border-4 border-black hover:bg-electric hover:text-black transition-all duration-300 p-6 md:p-8 lg:p-10 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 group brutal-card shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
+                        <span class="text-lg md:text-2xl font-black uppercase tracking-widest flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 w-full md:w-auto text-center md:text-left">
+                            <i class="ph-fill ph-clock-counter-clockwise text-electric group-hover:text-black transition-colors text-3xl md:text-4xl"></i> 
                             Развернуть полный боевой путь
-                            <span class="font-mono text-sm md:text-base font-normal text-gray-400 group-hover:text-gray-800 ml-2 hidden lg:inline-block"> (+ Показать ранний опыт)</span>
+                            <span class="font-mono text-xs md:text-base font-normal text-gray-400 group-hover:text-gray-800 ml-0 md:ml-2 block md:inline-block"> (+ Показать ранний опыт)</span>
                         </span>
-                        <i id="experience-icon" class="ph-bold ph-caret-down text-4xl transition-transform duration-500"></i>
+                        <i id="experience-icon" class="ph-bold ph-caret-down text-3xl md:text-4xl transition-transform duration-500"></i>
                     </button>
                     
                     <!-- Скрытый таймлайн раннего опыта -->
-                    <div id="early-experience" class="hidden mt-6 bg-white border-4 border-black p-6 md:p-10 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+                    <div id="early-experience" class="hidden mt-6 bg-white border-4 border-black p-6 md:p-8 lg:p-10 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
                         <div class="space-y-12 border-l-4 border-dashed border-gray-300 ml-2 md:ml-4">
                             
                             <!-- Ранний Опыт 1 -->
-                            <div class="relative pl-8 md:pl-12 group">
-                                <div class="absolute w-6 h-6 bg-black border-4 border-white top-1 -left-[15px] group-hover:bg-hotpink transition-colors"></div>
-                                <p class="font-mono font-bold text-gray-500 mb-1">2018 — 2020</p>
-                                <h3 class="text-2xl font-black uppercase mb-1">ЗАО «Юнидент»</h3>
-                                <p class="font-mono font-bold text-hotpink mb-4 text-sm uppercase bg-black text-white inline-block px-2 py-1">Менеджер по работе с ключевыми клиентами (VIP)</p>
-                                <p class="text-gray-700 font-medium mb-3">Ведение переговоров, контрактинг, участие в международных выставках. Переговоры с иностранными поставщиками на английском.</p>
-                                <p class="font-mono text-sm border-l-2 border-hotpink pl-3 text-gray-600 group-hover:text-black transition-colors"><span class="font-bold uppercase text-black">Результат:</span> Увеличил объем продаж на 10%+, привлек 5 крупных B2B-клиентов на отраслевых выставках.</p>
+                            <div class="relative pl-6 md:pl-12 group">
+                                <div class="absolute w-5 h-5 md:w-6 md:h-6 bg-black border-4 border-white top-1 -left-[14px] md:-left-[15px] group-hover:bg-hotpink transition-colors"></div>
+                                <p class="font-mono font-bold text-gray-500 mb-1 text-sm md:text-base">2018 — 2020</p>
+                                <h3 class="text-xl md:text-2xl font-black uppercase mb-1">ЗАО «Юнидент»</h3>
+                                <p class="font-mono font-bold text-hotpink mb-4 text-xs md:text-sm uppercase bg-black text-white inline-block px-2 py-1">Менеджер по работе с ключевыми клиентами (VIP)</p>
+                                <p class="text-gray-700 font-medium mb-3 text-sm md:text-base">Ведение переговоров, контрактинг, участие в международных выставках. Переговоры с иностранными поставщиками на английском.</p>
+                                <p class="font-mono text-xs md:text-sm border-l-2 border-hotpink pl-3 text-gray-600 group-hover:text-black transition-colors"><span class="font-bold uppercase text-black">Результат:</span> Увеличил объем продаж на 10%+, привлек 5 крупных B2B-клиентов на отраслевых выставках.</p>
                             </div>
 
                             <!-- Ранний Опыт 2 -->
-                            <div class="relative pl-8 md:pl-12 group">
-                                <div class="absolute w-6 h-6 bg-black border-4 border-white top-1 -left-[15px] group-hover:bg-acid transition-colors"></div>
-                                <p class="font-mono font-bold text-gray-500 mb-1">2017 — 2018</p>
-                                <h3 class="text-2xl font-black uppercase mb-1">ГБУ «Жилищник»</h3>
-                                <p class="font-mono font-bold text-acid mb-4 text-sm uppercase bg-black text-white inline-block px-2 py-1">Специалист информационного отдела</p>
-                                <p class="text-gray-700 font-medium mb-3">Ведение электронного документооборота и городских порталов Москвы.</p>
-                                <p class="font-mono text-sm border-l-2 border-acid pl-3 text-gray-600 group-hover:text-black transition-colors"><span class="font-bold uppercase text-black">Результат:</span> Через 6 месяцев был повышен, взял в управление команду из 3 человек. Оцифровал хаос в документах.</p>
+                            <div class="relative pl-6 md:pl-12 group">
+                                <div class="absolute w-5 h-5 md:w-6 md:h-6 bg-black border-4 border-white top-1 -left-[14px] md:-left-[15px] group-hover:bg-acid transition-colors"></div>
+                                <p class="font-mono font-bold text-gray-500 mb-1 text-sm md:text-base">2017 — 2018</p>
+                                <h3 class="text-xl md:text-2xl font-black uppercase mb-1">ГБУ «Жилищник»</h3>
+                                <p class="font-mono font-bold text-acid mb-4 text-xs md:text-sm uppercase bg-black text-white inline-block px-2 py-1">Специалист информационного отдела</p>
+                                <p class="text-gray-700 font-medium mb-3 text-sm md:text-base">Ведение электронного документооборота и городских порталов Москвы.</p>
+                                <p class="font-mono text-xs md:text-sm border-l-2 border-acid pl-3 text-gray-600 group-hover:text-black transition-colors"><span class="font-bold uppercase text-black">Результат:</span> Через 6 месяцев был повышен, взял в управление команду из 3 человек. Оцифровал хаос в документах.</p>
                             </div>
 
                             <!-- Ранний Опыт 3 -->
-                            <div class="relative pl-8 md:pl-12 group">
-                                <div class="absolute w-6 h-6 bg-black border-4 border-white top-1 -left-[15px] group-hover:bg-electric transition-colors"></div>
-                                <p class="font-mono font-bold text-gray-500 mb-1">2016</p>
-                                <h3 class="text-2xl font-black uppercase mb-1">ООО «Регион центр»</h3>
-                                <p class="font-mono font-bold text-electric mb-4 text-sm uppercase bg-black text-white inline-block px-2 py-1">Менеджер-стажер</p>
-                                <p class="text-gray-700 font-medium mb-3">Анализ и перестройка бизнес-процессов взаимоотношений с клиентами.</p>
-                                <p class="font-mono text-sm border-l-2 border-electric pl-3 text-gray-600 group-hover:text-black transition-colors"><span class="font-bold uppercase text-black">Результат:</span> Моя схема настройки CRM была одобрена руководством и внедрена в компанию.</p>
+                            <div class="relative pl-6 md:pl-12 group">
+                                <div class="absolute w-5 h-5 md:w-6 md:h-6 bg-black border-4 border-white top-1 -left-[14px] md:-left-[15px] group-hover:bg-electric transition-colors"></div>
+                                <p class="font-mono font-bold text-gray-500 mb-1 text-sm md:text-base">2016</p>
+                                <h3 class="text-xl md:text-2xl font-black uppercase mb-1">ООО «Регион центр»</h3>
+                                <p class="font-mono font-bold text-electric mb-4 text-xs md:text-sm uppercase bg-black text-white inline-block px-2 py-1">Менеджер-стажер</p>
+                                <p class="text-gray-700 font-medium mb-3 text-sm md:text-base">Анализ и перестройка бизнес-процессов взаимоотношений с клиентами.</p>
+                                <p class="font-mono text-xs md:text-sm border-l-2 border-electric pl-3 text-gray-600 group-hover:text-black transition-colors"><span class="font-bold uppercase text-black">Результат:</span> Моя схема настройки CRM была одобрена руководством и внедрена в компанию.</p>
                             </div>
 
                         </div>
                     </div>
                 </div>
 
-                <!-- Огромная кнопка скачивания PDF -->
+                <!-- Огромная кнопка скачивания PDF адаптирована (text-xl для моб. устройств) -->
                 <div class="reveal mt-20 pt-10 border-t-4 border-dashed border-gray-300">
                     <div class="relative w-full group">
                         <!-- Пульсирующий фон -->
                         <div class="absolute inset-0 bg-hotpink opacity-30 animate-ping z-0 pointer-events-none"></div>
                         
                         <!-- Сама кнопка -->
-                        <a href="resume.pdf" target="_blank" class="relative z-10 block w-full bg-acid text-black border-4 border-black p-8 md:p-12 shadow-[16px_16px_0px_0px_rgba(255,0,170,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[12px] hover:translate-y-[12px] hover:bg-hotpink hover:text-white transition-all duration-300 text-center overflow-hidden">
+                        <a href="resume.pdf" target="_blank" class="relative z-10 block w-full bg-acid text-black border-4 border-black p-6 md:p-8 lg:p-12 shadow-[8px_8px_0px_0px_rgba(255,0,170,1)] md:shadow-[16px_16px_0px_0px_rgba(255,0,170,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] md:hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] md:hover:translate-x-[12px] md:hover:translate-y-[12px] hover:bg-hotpink hover:text-white transition-all duration-300 text-center overflow-hidden">
                             <!-- Декоративный паттерн -->
                             <div class="absolute inset-0 opacity-10 bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,#000_10px,#000_20px)] pointer-events-none group-hover:opacity-20 transition-opacity"></div>
                             
-                            <span class="relative z-20 text-3xl md:text-5xl lg:text-[3.25rem] font-black uppercase tracking-tighter flex flex-col xl:flex-row items-center justify-center gap-6 md:gap-8">
-                                <i class="ph-bold ph-download text-6xl md:text-7xl group-hover:-translate-y-3 group-hover:scale-110 transition-transform duration-300"></i> 
+                            <span class="relative z-20 text-xl md:text-5xl lg:text-[3.25rem] font-black uppercase tracking-tighter flex flex-col xl:flex-row items-center justify-center gap-4 md:gap-8">
+                                <i class="ph-bold ph-download text-4xl md:text-7xl group-hover:-translate-y-2 md:group-hover:-translate-y-3 group-hover:scale-110 transition-transform duration-300 mb-2 md:mb-0"></i> 
                                 <span class="leading-none text-center xl:text-left drop-shadow-md">
                                     [ ДОСТУП К АРХИВУ:<br class="hidden xl:block"> СКАЧАТЬ ПОЛНОЕ РЕЗЮМЕ В PDF ]
                                 </span>
@@ -472,7 +498,7 @@
                     <!-- Системный текст-пояснение -->
                     <div class="mt-8 max-w-4xl mx-auto">
                         <div class="border-l-4 border-gray-400 pl-4 py-2 opacity-80 hover:opacity-100 transition-opacity bg-gray-50 bg-opacity-50">
-                            <p class="font-mono text-sm md:text-base text-gray-600 font-bold leading-relaxed">
+                            <p class="font-mono text-xs md:text-base text-gray-600 font-bold leading-relaxed">
                                 > В файле: полная выгрузка компетенций, технический стек (Prompt Engineering, Data-мониторинг), образование (Магистратура РЭУ им. Плеханова), сертификаты и контакты рекомендателей.
                             </p>
                         </div>
@@ -483,46 +509,47 @@
         </div>
     </section>
 
-    <section id="contact" class="py-32 px-4 relative z-10 overflow-hidden text-center">
+    <section id="contact" class="py-24 md:py-32 px-4 relative z-10 overflow-hidden text-center">
         <!-- Декоративные круги на фоне -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-gray-800 rounded-full z-[-1]"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-gray-800 rounded-full z-[-1]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[800px] md:h-[800px] border border-gray-800 rounded-full z-[-1]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] border border-gray-800 rounded-full z-[-1]"></div>
         
         <div class="max-w-3xl mx-auto reveal">
-            <h2 class="text-5xl md:text-8xl font-black uppercase mb-6 leading-none tracking-tighter">
+            <!-- Заголовок адаптирован -->
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase mb-6 leading-none tracking-tighter">
                 ГОТОВ КО ВСЕМУ
             </h2>
-            <p class="font-mono text-xl text-gray-400 mb-12">
+            <p class="font-mono text-lg md:text-xl text-gray-400 mb-12">
                 Если у вас есть скучные процессы, которые нужно сжечь дотла и заменить нейросетями — нам по пути.
             </p>
             
-            <button onclick="openModal(event)" class="inline-block bg-hotpink text-black border-4 border-black px-12 py-6 text-2xl font-black uppercase tracking-widest brutal-card shadow-neo hover:shadow-neo-hover transform hover:-rotate-2 transition-all cursor-pointer">
+            <button onclick="openModal(event)" class="w-full sm:w-auto text-center inline-block bg-hotpink text-black border-4 border-black p-6 md:px-12 md:py-6 text-xl md:text-2xl font-black uppercase tracking-widest brutal-card shadow-neo md:shadow-neo-md hover:shadow-neo-hover transform md:hover:-rotate-2 transition-all cursor-pointer">
                 ПРИГЛАСИТЬ НА СОБЕСЕДОВАНИЕ
             </button>
         </div>
     </section>
 
-    <!-- Модальное окно -->
+    <!-- Модальное окно (адаптировано) -->
     <div id="contact-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center px-4">
         <!-- Темный фон (overlay) -->
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
         
-        <!-- Карточка модального окна -->
-        <div class="bg-darker border-4 border-acid p-8 md:p-12 w-full max-w-lg relative z-10 brutal-card shadow-[12px_12px_0px_0px_rgba(204,255,0,1)]">
+        <!-- Карточка модального окна: padding и тени уменьшены на мобильных -->
+        <div class="bg-darker border-4 border-acid p-6 md:p-8 lg:p-12 w-full max-w-lg relative z-10 brutal-card shadow-[6px_6px_0px_0px_rgba(204,255,0,1)] md:shadow-[12px_12px_0px_0px_rgba(204,255,0,1)]">
             <!-- Крестик закрытия -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors cursor-pointer">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors cursor-pointer focus:outline-none">
                 <i class="ph-bold ph-x text-3xl"></i>
             </button>
 
-            <h3 class="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-8 text-center text-white">Связаться со мной</h3>
+            <h3 class="text-2xl md:text-4xl font-black uppercase tracking-tighter mb-8 text-center text-white pr-6">Связаться со мной</h3>
             
-            <div class="space-y-6 font-mono">
-                <a href="tel:+79773149678" class="flex items-center gap-4 text-xl md:text-2xl text-white hover:text-electric transition-colors p-4 border-2 border-gray-800 hover:border-electric bg-black group">
+            <div class="space-y-4 md:space-y-6 font-mono">
+                <a href="tel:+79773149678" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-4 text-lg md:text-2xl text-white hover:text-electric transition-colors p-4 border-2 border-gray-800 hover:border-electric bg-black group text-center sm:text-left">
                     <i class="ph-fill ph-phone text-3xl text-gray-600 group-hover:text-electric transition-colors"></i>
                     <span>+7 (977) 314-96-78</span>
                 </a>
                 
-                <a href="mailto:stas.job@bk.ru" class="flex items-center gap-4 text-xl md:text-2xl text-white hover:text-hotpink transition-colors p-4 border-2 border-gray-800 hover:border-hotpink bg-black group">
+                <a href="mailto:stas.job@bk.ru" class="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-4 text-lg md:text-2xl text-white hover:text-hotpink transition-colors p-4 border-2 border-gray-800 hover:border-hotpink bg-black group text-center sm:text-left">
                     <i class="ph-fill ph-envelope-simple text-3xl text-gray-600 group-hover:text-hotpink transition-colors"></i>
                     <span>stas.job@bk.ru</span>
                 </a>
@@ -536,6 +563,18 @@
     </div>
 
     <script>
+        // Скрипт для выпадающего мобильного меню
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('block');
+            } else {
+                menu.classList.remove('block');
+                menu.classList.add('hidden');
+            }
+        }
+
         // Скрипт для модального окна
         function openModal(e) {
             if(e) e.preventDefault();
