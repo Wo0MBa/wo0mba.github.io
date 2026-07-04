@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MrExp0 Reseller v18.0</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --accent: #4caf50;
+            --warn: #ff9800;
+            --accent-stars: #FFD700;
+            --nft-color: #bb86fc;
+            --po-color: #00bcd4;
+            --input-bg: #2c2c2c;
+            --border: #333;
+            --link-color: #4da3ff;
+            --loss: #ff5252;
+            --calc-btn-bg: #333;
+            --calc-btn-hover: #444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        .tabs-nav {
+            display: flex;
+            background: var(--card-bg);
+            padding: 4px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 500px;
+            justify-content: space-between;
+        }
+
+        .tab-btn {
+            flex: 1;
+            background: none;
+            border: none;
+            color: #777;
+            padding: 12px 0;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border-radius: 40px;
+            transition: all 0.3s;
+            font-weight: bold;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .tab-btn.active {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+            width: 100%;
+            max-width: 900px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .tab-content.active {
+            display: grid; 
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #tab-reseller {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        /* Учет Вкладка */
+        #tab-accounting {
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+        #tab-accounting.active {
+            display: flex;
+        }
+        
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .accounting-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .accounting-table th {
+            text-align: left;
+            padding: 12px 8px;
+            border-bottom: 2px solid var(--border);
+            color: #aaa;
+        }
+
+        .accounting-table td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #2a2a2a;
+            vertical-align: middle;
+        }
+
+        .accounting-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-action {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        .btn-export { background: var(--accent); color: white; }
+        .btn-clear { background: var(--input-bg); color: var(--loss); border: 1px solid var(--loss); }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card.stars-card {
+            grid-column: span 2; 
+            border: 1px solid #7a6a00;
+            background: linear-gradient(180deg, #1e1e1e 0%, #292606 100%);
+        }
+
+        .card-header {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .input-group { margin-bottom: 12px; }
+        label { display: block; font-size: 0.85rem; margin-bottom: 6px; color: #aaa; }
+
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            outline: none;
+            transition: border-color 0.2s;
+            -moz-appearance: textfield;
+        }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type="number"]:focus, input[type="text"]:focus { border-color: var(--accent); }
+
+        .stars-inputs-row { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 15px; }
+        .stars-input-block { flex: 1; min-width: 120px; }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+        }
+        .price-table th { padding: 8px 3px; font-size: 0.75rem; color: #aaa; border-bottom: 1px solid #444; font-weight: normal; }
+        .price-table td { padding: 8px 3px; border-bottom: 1px solid #444; font-size: 0.9rem; vertical-align: middle; }
+        .price-table tr:last-child td { border-bottom: none; }
+        .col-stars { color: var(--accent-stars); font-weight: bold; }
+        .col-rub { text-align: right; color: #fff; font-weight: bold; }
+        
+        .sell-input {
+            width: 100%;
+            max-width: 70px;
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            color: white;
+            padding: 6px 4px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 0.95rem;
+            outline: none;
+        }
+        .sell-input:focus { border-color: var(--accent); }
+        .profit-pos { color: var(--accent); font-weight: bold; }
+        .profit-warn { color: var(--warn); font-weight: bold; }
+        .profit-neg { color: var(--loss); font-weight: bold; }
+
+        .tax-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .tax-item { display: flex; flex-direction: column; align-items: center; }
+        .tax-label { font-size: 0.8rem; color: #aaa; margin-bottom: 4px; font-weight: bold; }
+        .tax-val { font-size: 1.1rem; color: var(--accent); font-weight: bold; }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            font-weight: bold;
+        }
+        .result-value { color: var(--accent); text-align: right; }
+        .sub-result { font-size: 0.8rem; color: #777; font-weight: normal; margin-right: auto; margin-left: 10px; }
+        
+        .badge-2 { color: #bb86fc; font-size: 0.9rem; }
+        .badge-5 { color: #4da3ff; font-size: 0.9rem; }
+        .badge-13 { color: #ff9800; font-size: 0.9rem; }
+
+        #tab-calc { flex-direction: column; align-items: center; }
+        #tab-calc.active { display: flex; }
+
+        .calc-body {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid var(--border);
+        }
+        .calc-screen {
+            background: var(--input-bg);
+            color: white;
+            font-size: 2.5rem;
+            text-align: right;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .calc-btn {
+            background: var(--calc-btn-bg);
+            color: white;
+            border: none;
+            padding: 15px 0;
+            font-size: 1.4rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.1s;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .calc-btn:active { transform: scale(0.95); }
+        .calc-btn.op { color: var(--accent); font-weight: bold; }
+        .calc-btn.eq { background: var(--accent); color: white; grid-column: span 2; }
+        .calc-btn.ac { color: #ff5252; }
+
+        .footer-actions { grid-column: span 2; text-align: center; margin-top: 20px; width: 100%; }
+        .refresh-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: #777;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .header-title-group { display: flex; align-items: center; gap: 10px; }
+        .swap-btn {
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            border-radius: 50%;
+            width: 30px; height: 30px;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 1rem;
+        }
+        .fragment-link {
+            font-size: 0.8rem;
+            color: var(--link-color);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 5px 10px;
+            border-radius: 6px;
+            background: var(--input-bg);
+        }
+
+        @media (max-width: 768px) {
+            .grid-container { grid-template-columns: 1fr !important; }
+            .card.stars-card { grid-column: span 1; }
+            .footer-actions { grid-column: span 1; }
+            
+            .tax-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .tax-item:nth-child(1) { align-items: flex-start; }
+            .tax-item:nth-child(2) { align-items: flex-end; }
+            .tax-item:nth-child(3) { align-items: flex-start; }
+            .tax-item:nth-child(4) { align-items: flex-end; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MrExp0 Reseller <span style="font-size: 0.9rem; color: #555;">v18.0</span></h1>
+
+    <nav class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('reseller')">Инструменты</button>
+        <button class="tab-btn" onclick="switchTab('accounting')">Учет</button>
+        <button class="tab-btn" onclick="switchTab('calc')">Калькулятор</button>
+    </nav>
+
+    <div id="tab-reseller" class="tab-content active grid-container">
+
+        <div class="card stars-card"> 
+            <div class="card-header">
+                <div>★ Калькулятор Звезд</div>
+                <a href="https://fragment.com/stars/buy" target="_blank" class="fragment-link">Fragment ↗</a>
+            </div>
+            
+            <div class="stars-inputs-row">
+                <div class="stars-input-block">
+                     <label>1. Фикс. цена 50 звезд ($)</label>
+                     <input type="number" id="cost-for-50-usd" placeholder="Например: 0.75" oninput="saveAndRecalc()">
+                     <div id="auto-ton-cost" style="font-size: 0.8rem; color: var(--accent); margin-top: 4px; font-weight: bold;">≈ 0 TON</div>
+                </div>
+                <div class="stars-input-block">
+                     <label>2. Курс TON (USDT)</label>
+                     <input type="number" id="ton-usdt-rate" placeholder="..." oninput="saveAndRecalc()">
+                </div>
+                <div class="stars-input-block" style="min-width: 100%; margin-top: 5px;">
+                     <label>3. Курс вывода Playerok (₽ за 1 USDT)</label>
+                     <input type="number" id="playerok-rub-usdt" placeholder="Например: 81.3" value="81.3" oninput="saveAndRecalc()">
+                </div>
+            </div>
+
+            <div style="max-height: 450px; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+                <table class="price-table">
+                    <tbody id="stars-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card" style="border-color: #4da3ff;">
+            <div class="card-header" style="color: #4da3ff;">
+                ✨ Любое кол-во звезд
+            </div>
+            <div class="input-group">
+                <label>Сколько звезд нужно продать?</label>
+                <input type="number" id="custom-stars-amount" placeholder="Например: 45" oninput="calcCustomStars()">
+            </div>
+            
+            <div class="result-row" style="align-items: flex-end;">
+                <div style="display: flex; flex-direction: column;">
+                    <span style="font-size: 0.8rem; color: #777; margin-bottom: 4px;">Себестоимость:</span>
+                    <span id="custom-cost-ton" style="font-size: 0.95rem; color: #ccc;">0 TON</span>
+                </div>
+                
+                <div style="text-align: right;">
+                    <div style="font-size: 0.8rem; color: var(--accent); margin-bottom: 4px; font-weight: bold;">Ставить цену (+2%):</div>
+                    <span id="custom-stars-rec" class="result-value" style="font-size: 1.4rem;">0 ₽</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="border-color: #ff9800;">
+            <div class="card-header" style="color: #ff9800;">
+                📦 Пакеты подарков
+            </div>
+            
+            <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+                <div class="input-group" style="flex: 1; margin-bottom: 0;">
+                    <label>Цена 1 шт (звезд)</label>
+                    <input type="number" id="gift-star-price" placeholder="Напр: 15" oninput="calcGiftPack()">
+                </div>
+                <div class="input-group" style="flex: 1; margin-bottom: 0;">
+                    <label>Кол-во (шт)</label>
+                    <input type="number" id="gift-quantity" placeholder="Напр: 3" oninput="calcGiftPack()">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>За сколько продаем пак (₽)</label>
+                <input type="number" id="gift-sell-price" placeholder="Твоя цена..." oninput="calcGiftPack()">
+            </div>
+            
+            <div class="result-row" style="margin-top: 15px; flex-direction: column; align-items: flex-start; gap: 8px;">
+                <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.9rem;">
+                    <span style="color: #aaa;">Себестоимость:</span>
+                    <span id="gift-cost" style="color: #fff;">0 TON</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.9rem;">
+                    <span style="color: #aaa;">Мин. цена (Б/У):</span>
+                    <span id="gift-breakeven" style="color: var(--loss);">0 ₽</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.9rem;">
+                    <span style="color: #aaa;">Рек. цена (+2%):</span>
+                    <span id="gift-rec" style="color: var(--accent);">0 ₽</span>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; width: 100%; margin-top: 5px; padding-top: 10px; border-top: 1px dashed #444;">
+                    <span>Твой профит:</span>
+                    <div style="text-align: right;" id="gift-result">
+                        <span style="color: #777; font-size: 0.9rem;">Введите цену</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="border-color: var(--nft-color);">
+            <div class="card-header" style="color: var(--nft-color);">
+                🎁 NFT Подарки (Playerok)
+            </div>
+            
+            <div class="input-group">
+                <label>Название подарка</label>
+                <input type="text" id="nft-name" placeholder="Например: ICE CREAM" oninput="calcNFT()">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <div class="input-group" style="flex:1;">
+                    <label>Покупка (TON) <span style="font-size:0.7rem; color:#888;">+0.3 TON</span></label>
+                    <input type="number" id="nft-buy" placeholder="Цена..." oninput="calcNFT()">
+                </div>
+                <div class="input-group" style="flex:1;">
+                    <label>Продажа (₽)</label>
+                    <input type="number" id="nft-sell" placeholder="Грязными..." oninput="calcNFT()">
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label>Продвижение (₽) — если было</label>
+                <input type="number" id="nft-promo" placeholder="Траты на буст..." oninput="calcNFT()">
+            </div>
+            
+            <div class="result-row" style="margin-top: 10px;">
+                <span>Чистый профит:</span>
+                <div style="text-align: right;" id="nft-result">
+                    <span style="color: #777; font-size: 0.9rem;">Введите данные</span>
+                </div>
+            </div>
+
+            <button id="save-deal-btn" onclick="saveDeal()" style="margin-top:15px; padding:12px; background:var(--nft-color); color:#000; font-weight:bold; border-radius:8px; border:none; cursor:pointer; font-size:1rem; transition: 0.2s;">
+                💾 Сохранить сделку
+            </button>
+        </div>
+
+        <div class="card" style="border-color: var(--po-color);">
+            <div class="card-header" style="color: var(--po-color);">
+                🛒 Playerok (Просто TON ➔ ₽)
+            </div>
+            <div class="input-group">
+                <label>Покупка (TON)</label>
+                <input type="number" id="po-buy-ton" placeholder="Сколько потратил TON..." oninput="calcPlayerok()">
+            </div>
+            <div class="input-group">
+                <label>Продажа (₽)</label>
+                <input type="number" id="po-sell-rub" placeholder="За сколько продаем (грязными)..." oninput="calcPlayerok()">
+            </div>
+            
+            <div class="result-row" style="margin-top: 15px; flex-direction: column; align-items: flex-start; gap: 8px;">
+                <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.9rem;">
+                    <span style="color: #aaa;">Себестоимость:</span>
+                    <span id="po-cost-rub" style="color: #fff;">0 ₽</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.9rem;">
+                    <span style="color: #aaa;">На руки (-24%):</span>
+                    <span id="po-clean-rub" style="color: var(--accent);">0 ₽</span>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; margin-top: 5px; padding-top: 10px; border-top: 1px dashed #444;">
+                    <span>Прибыль чистыми:</span>
+                    <div style="text-align: right;" id="po-result">
+                        <span style="color: #777; font-size: 0.9rem;">Введите данные</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="border-color: #e91e63;">
+            <div class="card-header" style="color: #e91e63;">
+                🔄 Арбитраж: Playerok ➔ Fragment
+            </div>
+            
+            <div class="input-group">
+                <label>Покупка подарка на Playerok (₽)</label>
+                <input type="number" id="arb-buy-rub" placeholder="За сколько взял..." oninput="calcArbitrage()">
+            </div>
+            <div class="input-group">
+                <label>Продажа на Fragment (TON)</label>
+                <input type="number" id="arb-sell-ton" placeholder="За сколько продаешь..." oninput="calcArbitrage()">
+            </div>
+            
+            <div class="result-row" style="margin-top: 15px; flex-direction: column; align-items: flex-start; gap: 8px;">
+                <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.9rem;">
+                    <span style="color: #aaa;">Себестоимость (+25★):</span>
+                    <span id="arb-total-cost" style="color: #fff;">0 ₽</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.9rem;">
+                    <span style="color: #aaa;">На руки в USDT (-0.5%):</span>
+                    <span id="arb-net-usdt" style="color: var(--accent);">0 USDT</span>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; margin-top: 5px; padding-top: 10px; border-top: 1px dashed #444;">
+                    <span>Чистый выхлоп (₽):</span>
+                    <div style="text-align: right;" id="arb-result">
+                        <span style="color: #777; font-size: 0.9rem;">Введите данные</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="header-title-group">
+                    <span id="usd-title">USD ➔ RUB</span>
+                    <button class="swap-btn" onclick="toggleUsdMode()">⇄</button>
+                </div>
+                <span id="usd-rate-badge" style="font-size:0.8rem; color:#777;">...</span>
+            </div>
+            <div class="input-group">
+                <input type="number" id="usd-input" placeholder="$" oninput="calcUsd()">
+            </div>
+            <div class="result-row">
+                <span>Итог:</span>
+                <span id="usd-result" class="result-value">0 ₽</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Вычет комиссии</div>
+            <div class="input-group">
+                <input type="number" id="tax-input" placeholder="Грязная сумма" oninput="calcTax()">
+            </div>
+            
+            <div class="tax-grid">
+                <div class="tax-item">
+                    <span class="tax-label">-14%</span>
+                    <span id="tax-14" class="tax-val">0.00</span>
+                </div>
+                <div class="tax-item">
+                    <span class="tax-label">-13%</span>
+                    <span id="tax-13" class="tax-val">0.00</span>
+                </div>
+                <div class="tax-item">
+                    <span class="tax-label">-10%</span>
+                    <span id="tax-10" class="tax-val">0.00</span>
+                </div>
+                <div class="tax-item">
+                    <span class="tax-label">-5%</span>
+                    <span id="tax-5" class="tax-val">0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">Разница %</div>
+            <div style="display: flex; gap: 10px;">
+                <input type="number" id="diff-a" placeholder="Было" oninput="calcDiff()">
+                <input type="number" id="diff-b" placeholder="Стало" oninput="calcDiff()">
+            </div>
+            <div class="result-row">
+                <span>Разница:</span>
+                <span id="diff-result" class="result-value">0%</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" style="color: #fff;">Trade Calc</div>
+            <div class="input-group">
+                <label>Покупка</label>
+                <input type="number" id="trade-buy" placeholder="Купил за..." oninput="calcTrade()">
+            </div>
+            <div class="input-group">
+                <label>Продажа (грязными)</label>
+                <input type="number" id="trade-sell" placeholder="Продал за..." oninput="calcTrade()">
+            </div>
+            
+            <div class="result-row">
+                <span class="badge-2">-2%</span>
+                <span class="sub-result">Чист: <span id="trade-clean-2">0</span></span>
+                <span id="trade-result-2" class="result-value">0%</span>
+            </div>
+
+            <div class="result-row" style="margin-top: 10px; border-top: 1px dashed #333; padding-top: 10px;">
+                <span class="badge-5">-5%</span>
+                <span class="sub-result">Чист: <span id="trade-clean-5">0</span></span>
+                <span id="trade-result-5" class="result-value">0%</span>
+            </div>
+
+            <div class="result-row" style="margin-top: 10px; border-top: 1px dashed #333; padding-top: 10px;">
+                <span class="badge-13">-13%</span>
+                <span class="sub-result">Чист: <span id="trade-clean-13">0</span></span>
+                <span id="trade-result-13" class="result-value">0%</span>
+            </div>
+        </div>
+
+        <div class="footer-actions">
+            <button onclick="fetchRates()" class="refresh-btn">⟳ Обновить курсы API</button>
+        </div>
+
+    </div>
+
+    <div id="tab-accounting" class="tab-content">
+        <div class="card" style="border-color: #4caf50;">
+            <div class="card-header" style="color: #4caf50; margin-bottom: 5px;">
+                📋 История сделок (Playerok NFT)
+            </div>
+            <p style="font-size:0.8rem; color:#aaa; margin-top:0; margin-bottom: 15px;">
+                Данные хранятся в браузере. Не забывайте периодически выгружать их в Excel!
+            </p>
+
+            <div class="table-responsive">
+                <table class="accounting-table">
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Название</th>
+                            <th>Покупка<br>(TON)</th>
+                            <th>Продажа<br>(₽)</th>
+                            <th>Буст<br>(₽)</th>
+                            <th style="text-align:right;">Чистыми<br>(₽ / %)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="deals-tbody">
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="accounting-actions">
+                <button class="btn-action btn-export" onclick="exportCSV()">📥 Скачать Excel (.csv)</button>
+                <button class="btn-action btn-clear" onclick="clearDeals()">🗑 Очистить</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-calc" class="tab-content">
+        <div class="calc-body">
+            <div class="calc-screen" id="calc-screen">0</div>
+            <div class="calc-grid">
+                <button class="calc-btn ac" onclick="calcClear()">AC</button>
+                <button class="calc-btn op" onclick="calcAppend('/')">÷</button>
+                <button class="calc-btn op" onclick="calcAppend('*')">×</button>
+                <button class="calc-btn op" onclick="calcDel()">⌫</button>
+
+                <button class="calc-btn" onclick="calcAppend('7')">7</button>
+                <button class="calc-btn" onclick="calcAppend('8')">8</button>
+                <button class="calc-btn" onclick="calcAppend('9')">9</button>
+                <button class="calc-btn op" onclick="calcAppend('-')">-</button>
+
+                <button class="calc-btn" onclick="calcAppend('4')">4</button>
+                <button class="calc-btn" onclick="calcAppend('5')">5</button>
+                <button class="calc-btn" onclick="calcAppend('6')">6</button>
+                <button class="calc-btn op" onclick="calcAppend('+')">+</button>
+
+                <button class="calc-btn" onclick="calcAppend('1')">1</button>
+                <button class="calc-btn" onclick="calcAppend('2')">2</button>
+                <button class="calc-btn" onclick="calcAppend('3')">3</button>
+                
+                <button class="calc-btn eq" onclick="calcSolve()">=</button>
+                <button class="calc-btn" onclick="calcAppend('0')">0</button>
+                <button class="calc-btn" onclick="calcAppend('.')">.</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+            if (tabName === 'reseller') {
+                document.querySelectorAll('.tab-btn')[0].classList.add('active');
+                const content = document.getElementById('tab-reseller');
+                content.classList.add('active');
+            } else if (tabName === 'accounting') {
+                document.querySelectorAll('.tab-btn')[1].classList.add('active');
+                const content = document.getElementById('tab-accounting');
+                content.classList.add('active');
+                renderDeals();
+            } else {
+                document.querySelectorAll('.tab-btn')[2].classList.add('active');
+                const content = document.getElementById('tab-calc');
+                content.classList.add('active');
+            }
+        }
+
+        let fetchedUsdRate = 0;
+        let modeUsdReversed = false;
+        
+        // Полный массив звезд
+        const starAmounts = [50, 60, 65, 70, 75, 80, 85, 90, 100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1200, 1300, 1400, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000];
+        
+        let sellPrices = {};
+        let bonusPrices = {};
+
+        function loadSavedData() {
+            let savedUsdCost = localStorage.getItem('costFor50Usd') || '0.75';
+            document.getElementById('cost-for-50-usd').value = savedUsdCost;
+            
+            const savedPlayerok = localStorage.getItem('playerokRate');
+            if (savedPlayerok) document.getElementById('playerok-rub-usdt').value = savedPlayerok;
+
+            const savedPrices = localStorage.getItem('sellPrices');
+            if (savedPrices) {
+                try { sellPrices = JSON.parse(savedPrices); } catch(e) { console.error(e); }
+            }
+            
+            const savedBonuses = localStorage.getItem('bonusPrices');
+            if (savedBonuses) {
+                try { bonusPrices = JSON.parse(savedBonuses); } catch(e) { console.error(e); }
+            }
+
+            // NFT Восстановление
+            document.getElementById('nft-name').value = localStorage.getItem('nftName') || '';
+            document.getElementById('nft-buy').value = localStorage.getItem('nftBuy') || '';
+            document.getElementById('nft-sell').value = localStorage.getItem('nftSell') || '';
+            document.getElementById('nft-promo').value = localStorage.getItem('nftPromo') || '';
+
+            // Playerok Восстановление
+            document.getElementById('po-buy-ton').value = localStorage.getItem('poBuyTon') || '';
+            document.getElementById('po-sell-rub').value = localStorage.getItem('poSellRub') || '';
+
+            // Восстановление арбитража
+            document.getElementById('arb-buy-rub').value = localStorage.getItem('arbBuyRub') || '';
+            document.getElementById('arb-sell-ton').value = localStorage.getItem('arbSellTon') || '';
+
+            renderDeals();
+        }
+
+        function saveAndRecalc() {
+            localStorage.setItem('costFor50Usd', document.getElementById('cost-for-50-usd').value);
+            localStorage.setItem('playerokRate', document.getElementById('playerok-rub-usdt').value);
+            localStorage.setItem('sellPrices', JSON.stringify(sellPrices));
+            
+            recalcTable();
+            calcCustomStars();
+            calcGiftPack();
+            calcNFT(); 
+            calcPlayerok();
+            calcArbitrage(); // Вызов пересчета арбитража
+        }
+
+        async function fetchRates() {
+            try {
+                const usdRes = await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json');
+                const usdData = await usdRes.json();
+                fetchedUsdRate = usdData.usd.rub;
+                document.getElementById('usd-rate-badge').innerText = `1$ = ${fetchedUsdRate.toFixed(2)}₽`;
+                calcUsd();
+                calcArbitrage(); // Обновляем арбитраж при получении курса доллара
+            } catch (e) { console.error(e); }
+
+            try {
+                const tonRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=the-open-network&vs_currencies=usd');
+                const tonData = await tonRes.json();
+                const fetchedTonUsdt = tonData['the-open-network'].usd;
+                
+                document.getElementById('ton-usdt-rate').value = fetchedTonUsdt; 
+                saveAndRecalc();
+            } catch (e) { console.error(e); }
+        }
+
+        // --- ЛОГИКА АРБИТРАЖА (Playerok -> Fragment) ---
+        function calcArbitrage() {
+            const buyRub = parseFloat(document.getElementById('arb-buy-rub').value);
+            const sellTon = parseFloat(document.getElementById('arb-sell-ton').value);
+            const costFor50InUsd = parseFloat(document.getElementById('cost-for-50-usd').value) || 0;
+            const tonUsdtRate = parseFloat(document.getElementById('ton-usdt-rate').value) || 0;
+            const usdToRub = fetchedUsdRate || 0;
+
+            if (document.getElementById('arb-buy-rub')) {
+                localStorage.setItem('arbBuyRub', document.getElementById('arb-buy-rub').value);
+            }
+            if (document.getElementById('arb-sell-ton')) {
+                localStorage.setItem('arbSellTon', document.getElementById('arb-sell-ton').value);
+            }
+
+            const resEl = document.getElementById('arb-result');
+            const costEl = document.getElementById('arb-total-cost');
+            const netUsdtEl = document.getElementById('arb-net-usdt');
+
+            if (!buyRub || !sellTon || !tonUsdtRate || !usdToRub || !costFor50InUsd) {
+                costEl.innerText = '0 ₽';
+                netUsdtEl.innerText = '0 USDT';
+                resEl.innerHTML = '<span style="color: #777; font-size: 0.9rem;">Введите данные</span>';
+                return;
+            }
+
+            const cost25StarsUsd = costFor50InUsd / 2;
+            const cost25StarsRub = cost25StarsUsd * usdToRub;
+            const totalCostRub = buyRub + cost25StarsRub;
+            costEl.innerText = `≈ ${totalCostRub.toFixed(2)} ₽`;
+
+            const netTon = sellTon * 0.995; 
+            const netUsdt = netTon * tonUsdtRate;
+            netUsdtEl.innerText = `≈ ${netUsdt.toFixed(2)} USDT`;
+
+            const netRub = netUsdt * usdToRub; 
+            const profitRub = netRub - totalCostRub;
+            const profitPercent = (profitRub / totalCostRub) * 100;
+
+            const colorClass = profitPercent > 0 ? 'profit-pos' : 'profit-neg';
+            const sign = profitPercent > 0 ? '+' : '';
+
+            resEl.innerHTML = `
+                <div style="font-size: 1.1rem; font-weight: bold; margin-bottom: 2px;" class="${colorClass}">
+                    ${sign}${profitRub.toFixed(2)} ₽
+                </div>
+                <div class="${colorClass}" style="font-size: 0.95rem;">
+                    (${sign}${profitPercent.toFixed(1)}%)
+                </div>
+            `;
+        }
+
+        // --- ЛОГИКА КАСТОМНЫХ ЗВЕЗД ---
+        function calcCustomStars() {
+            const amount = parseFloat(document.getElementById('custom-stars-amount').value);
+            const costFor50InUsd = parseFloat(document.getElementById('cost-for-50-usd').value) || 0;
+            const tonUsdtRate = parseFloat(document.getElementById('ton-usdt-rate').value) || 0;
+            const playerokRate = parseFloat(document.getElementById('playerok-rub-usdt').value) || 0;
+
+            const recEl = document.getElementById('custom-stars-rec');
+            const costEl = document.getElementById('custom-cost-ton');
+
+            if (!amount || !costFor50InUsd || !tonUsdtRate || !playerokRate) {
+                recEl.innerText = '0 ₽';
+                costEl.innerText = '0 TON';
+                return;
+            }
+
+            const costInUsd = (costFor50InUsd / 50) * amount;
+            const costInTon = costInUsd / tonUsdtRate;
+            costEl.innerText = `≈ ${costInTon.toFixed(3)} TON`;
+
+            const recDirtyRub = (costInUsd * 1.02 * playerokRate) / 0.86;
+            recEl.innerText = `${Math.ceil(recDirtyRub)} ₽`;
+        }
+
+        // --- ЛОГИКА ПАКЕТОВ ПОДАРКОВ ---
+        function calcGiftPack() {
+            const starPrice = parseFloat(document.getElementById('gift-star-price').value);
+            const quantity = parseFloat(document.getElementById('gift-quantity').value);
+            const sellPrice = parseFloat(document.getElementById('gift-sell-price').value);
+
+            const costFor50InUsd = parseFloat(document.getElementById('cost-for-50-usd').value) || 0;
+            const tonUsdtRate = parseFloat(document.getElementById('ton-usdt-rate').value) || 0;
+            const playerokRate = parseFloat(document.getElementById('playerok-rub-usdt').value) || 0;
+
+            const resEl = document.getElementById('gift-result');
+            const costEl = document.getElementById('gift-cost');
+            const beEl = document.getElementById('gift-breakeven');
+            const recEl = document.getElementById('gift-rec');
+
+            if (!starPrice || !quantity || !costFor50InUsd || !tonUsdtRate || !playerokRate) {
+                costEl.innerText = '0 TON';
+                beEl.innerText = '0 ₽';
+                recEl.innerText = '0 ₽';
+                resEl.innerHTML = '<span style="color: #777; font-size: 0.9rem;">Введите данные</span>';
+                return;
+            }
+
+            const totalStars = starPrice * quantity;
+            const costInUsd = (costFor50InUsd / 50) * totalStars;
+            const costInTon = costInUsd / tonUsdtRate;
+            costEl.innerText = `≈ ${costInTon.toFixed(3)} TON`;
+
+            const breakEvenDirtyRub = (costInUsd * playerokRate) / 0.86;
+            beEl.innerText = `${Math.ceil(breakEvenDirtyRub)} ₽`;
+
+            const recDirtyRub = (costInUsd * 1.02 * playerokRate) / 0.86;
+            recEl.innerText = `${Math.ceil(recDirtyRub)} ₽`;
+
+            if (!sellPrice) {
+                resEl.innerHTML = '<span style="color: #777; font-size: 0.9rem;">Введите цену продажи</span>';
+                return;
+            }
+
+            const cleanRub = sellPrice * 0.86;
+            const receivedUsdt = cleanRub / playerokRate;
+            const receivedTon = receivedUsdt / tonUsdtRate;
+            
+            const profitTon = receivedTon - costInTon;
+            const profitPercent = (profitTon / costInTon) * 100;
+
+            let colorClass = profitPercent > 0 ? 'profit-pos' : 'profit-neg';
+            const sign = profitPercent > 0 ? '+' : '';
+
+            if (profitPercent > 0 && (sellPrice - breakEvenDirtyRub) < 2) {
+                colorClass = 'profit-warn';
+            }
+
+            resEl.innerHTML = `
+                <div class="${colorClass}" style="font-size: 1.2rem; font-weight: bold;">
+                    ${sign}${profitPercent.toFixed(1)}%
+                </div>
+            `;
+        }
+
+        // --- ЛОГИКА NFT С УЧЕТОМ КОМИССИИ И БУСТА ---
+        function calcNFT() {
+            const nameInput = document.getElementById('nft-name').value;
+            const buyInput = parseFloat(document.getElementById('nft-buy').value);
+            const sellInput = parseFloat(document.getElementById('nft-sell').value);
+            const promoInput = parseFloat(document.getElementById('nft-promo').value) || 0;
+
+            localStorage.setItem('nftName', nameInput);
+            localStorage.setItem('nftBuy', document.getElementById('nft-buy').value);
+            localStorage.setItem('nftSell', document.getElementById('nft-sell').value);
+            localStorage.setItem('nftPromo', document.getElementById('nft-promo').value);
+
+            const resEl = document.getElementById('nft-result');
+
+            if (!buyInput || !sellInput) {
+                resEl.innerHTML = '<span style="color: #777; font-size: 0.9rem;">Введите данные</span>';
+                return;
+            }
+
+            const tonUsdtRate = parseFloat(document.getElementById('ton-usdt-rate').value) || 0;
+            if (!tonUsdtRate || !fetchedUsdRate) return;
+
+            const extraTonFromUsd = 0.375 / tonUsdtRate;
+            const totalCostTon = buyInput + 0.3 + extraTonFromUsd;
+            const costRub = totalCostTon * tonUsdtRate * fetchedUsdRate;
+
+            const cleanSellRub = sellInput * 0.76; 
+            const netRubAfterPromo = cleanSellRub - promoInput;
+
+            const profitRub = netRubAfterPromo - costRub;
+            const profitPercent = (profitRub / costRub) * 100;
+
+            const colorClass = profitPercent > 0 ? 'profit-pos' : 'profit-neg'; 
+            const sign = profitPercent > 0 ? '+' : '';
+
+            resEl.innerHTML = `
+                <div class="${colorClass}" style="font-size: 1.25rem; font-weight: bold;">
+                    ${sign}${profitRub.toFixed(2)} ₽ 
+                </div>
+                <div class="${colorClass}" style="font-size: 0.9rem;">
+                    (${sign}${profitPercent.toFixed(1)}%)
+                </div>
+            `;
+        }
+
+        // --- СОХРАНЕНИЕ СДЕЛКИ (CRM) ---
+        function saveDeal() {
+            const name = document.getElementById('nft-name').value || 'Без названия';
+            const buyInput = parseFloat(document.getElementById('nft-buy').value);
+            const sellInput = parseFloat(document.getElementById('nft-sell').value);
+            const promoInput = parseFloat(document.getElementById('nft-promo').value) || 0;
+
+            if (!buyInput || !sellInput) {
+                alert("Введите цены покупки и продажи!");
+                return;
+            }
+
+            const tonUsdtRate = parseFloat(document.getElementById('ton-usdt-rate').value) || 0;
+            if (!tonUsdtRate || !fetchedUsdRate) {
+                alert("Дождитесь загрузки курсов валют...");
+                return;
+            }
+
+            const extraTonFromUsd = 0.375 / tonUsdtRate;
+            const totalCostTon = buyInput + 0.3 + extraTonFromUsd;
+            const costRub = totalCostTon * tonUsdtRate * fetchedUsdRate;
+
+            const cleanSellRub = sellInput * 0.76; 
+            const netRubAfterPromo = cleanSellRub - promoInput;
+
+            const profitRub = netRubAfterPromo - costRub;
+            const profitPercent = (profitRub / costRub) * 100;
+
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('ru-RU', {day: '2-digit', month: '2-digit'}) + ' ' + now.toLocaleTimeString('ru-RU', {hour: '2-digit', minute:'2-digit'});
+
+            const deal = {
+                date: dateStr,
+                name: name,
+                buyTon: buyInput,
+                sellRub: sellInput,
+                promoRub: promoInput,
+                profitRub: profitRub.toFixed(2),
+                profitPercent: profitPercent.toFixed(1)
+            };
+
+            let deals = JSON.parse(localStorage.getItem('deals') || '[]');
+            deals.unshift(deal); 
+            localStorage.setItem('deals', JSON.stringify(deals));
+
+            renderDeals();
+
+            const btn = document.getElementById('save-deal-btn');
+            const oldText = btn.innerText;
+            btn.innerText = "✅ Успешно сохранено!";
+            btn.style.background = "var(--accent)";
+            btn.style.color = "#fff";
+            
+            setTimeout(() => {
+                btn.innerText = oldText;
+                btn.style.background = "var(--nft-color)";
+                btn.style.color = "#000";
+            }, 2000);
+        }
+
+        function renderDeals() {
+            const tbody = document.getElementById('deals-tbody');
+            let deals = JSON.parse(localStorage.getItem('deals') || '[]');
+            
+            if (deals.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 30px; color:#aaa;">Сделок пока нет</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = deals.map((d, index) => {
+                const color = parseFloat(d.profitPercent) > 0 ? 'var(--accent)' : 'var(--loss)';
+                const sign = parseFloat(d.profitPercent) > 0 ? '+' : '';
+                return `
+                    <tr>
+                        <td style="font-size:0.8rem; color:#888;">${d.date}</td>
+                        <td><b>${d.name}</b></td>
+                        <td>${d.buyTon}</td>
+                        <td>${d.sellRub}</td>
+                        <td>${d.promoRub > 0 ? `<span style="color:#aaa;">-${d.promoRub}</span>` : '—'}</td>
+                        <td style="color:${color}; text-align:right;">
+                            <b>${sign}${d.profitRub} ₽</b><br>
+                            <span style="font-size:0.8rem;">${sign}${d.profitPercent}%</span>
+                        </td>
+                        <td style="text-align:center;">
+                            <button onclick="deleteDeal(${index})" style="background:none; border:none; color:var(--loss); font-size:1.5rem; cursor:pointer; padding: 0 10px;">×</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function deleteDeal(index) {
+            if(confirm("Удалить эту сделку?")) {
+                let deals = JSON.parse(localStorage.getItem('deals') || '[]');
+                deals.splice(index, 1);
+                localStorage.setItem('deals', JSON.stringify(deals));
+                renderDeals();
+            }
+        }
+
+        function clearDeals() {
+            if(confirm("ВНИМАНИЕ! Вы точно хотите удалить ВСЮ историю сделок? Отменить действие будет невозможно.")) {
+                localStorage.removeItem('deals');
+                renderDeals();
+            }
+        }
+
+        function exportCSV() {
+            let deals = JSON.parse(localStorage.getItem('deals') || '[]');
+            if (deals.length === 0) {
+                alert("Нет данных для экспорта");
+                return;
+            }
+            
+            let csvContent = "\uFEFFДата;Название;Покупка (TON);Продажа (₽);Буст (₽);Чистая прибыль (₽);Профит (%)\n";
+            
+            deals.forEach(d => {
+                csvContent += `${d.date};${d.name};${d.buyTon};${d.sellRub};${d.promoRub};${d.profitRub};${d.profitPercent}\n`;
+            });
+            
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", "deals_export.csv");
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // --- ЛОГИКА РАСЧЕТА ДЛЯ PLAYEROK (TON -> RUB) ---
+        function calcPlayerok() {
+            const buyTon = parseFloat(document.getElementById('po-buy-ton').value);
+            const sellRub = parseFloat(document.getElementById('po-sell-rub').value);
+
+            localStorage.setItem('poBuyTon', document.getElementById('po-buy-ton').value);
+            localStorage.setItem('poSellRub', document.getElementById('po-sell-rub').value);
+
+            const resEl = document.getElementById('po-result');
+            const costEl = document.getElementById('po-cost-rub');
+            const cleanEl = document.getElementById('po-clean-rub');
+
+            const tonUsdtRate = parseFloat(document.getElementById('ton-usdt-rate').value) || 0;
+
+            if (!buyTon || !sellRub || !tonUsdtRate || !fetchedUsdRate) {
+                costEl.innerText = '0 ₽';
+                cleanEl.innerText = '0 ₽';
+                resEl.innerHTML = '<span style="color: #777; font-size: 0.9rem;">Введите данные</span>';
+                return;
+            }
+
+            const costRub = buyTon * tonUsdtRate * fetchedUsdRate;
+            costEl.innerText = costRub.toFixed(2) + ' ₽';
+
+            const cleanRub = sellRub * 0.76;
+            cleanEl.innerText = cleanRub.toFixed(2) + ' ₽';
+
+            const netProfitRub = cleanRub - costRub;
+            const profitPercent = (netProfitRub / costRub) * 100;
+
+            const colorClass = profitPercent > 0 ? 'profit-pos' : 'profit-neg';
+            const sign = profitPercent > 0 ? '+' : '';
+
+            resEl.innerHTML = `
+                <div style="font-size: 1.1rem; font-weight: bold; margin-bottom: 2px;" class="${colorClass}">
+                    ${sign}${netProfitRub.toFixed(2)} ₽
+                </div>
+                <div class="${colorClass}" style="font-size: 0.95rem;">
+                    (${sign}${profitPercent.toFixed(1)}%)
+                </div>
+            `;
+        }
+
+        // --- ЛОГИКА ТАБЛИЦЫ ЗВЕЗД ---
+        function recalcTable() {
+            const costFor50InUsd = parseFloat(document.getElementById('cost-for-50-usd').value) || 0;
+            const tonUsdtRate = parseFloat(document.getElementById('ton-usdt-rate').value) || 0;
+            const playerokRate = parseFloat(document.getElementById('playerok-rub-usdt').value) || 0;
+            
+            let costFor50InTon = 0;
+            if (costFor50InUsd > 0 && tonUsdtRate > 0) {
+                costFor50InTon = costFor50InUsd / tonUsdtRate;
+            }
+            
+            document.getElementById('auto-ton-cost').innerText = `≈ ${costFor50InTon.toFixed(4)} TON`;
+
+            const tbody = document.getElementById('stars-table-body');
+
+            if (!costFor50InUsd || !tonUsdtRate || !playerokRate) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 20px; color: #aaa;">Введите цены и курсы для расчета</td></tr>';
+                return;
+            }
+
+            if (tbody.children.length === 0 || tbody.children[0].cells.length !== 5) {
+                tbody.innerHTML = `
+                    <tr>
+                        <th style="text-align:center;">Зв.+🎁</th>
+                        <th style="text-align:right;">Закуп (TON)</th>
+                        <th style="text-align:center; color: var(--accent);">Рек. 2%</th>
+                        <th style="text-align:center;">Своя (₽)</th>
+                        <th style="text-align:right;">Профит / БУ</th>
+                    </tr>
+                `;
+                starAmounts.forEach(amount => {
+                    const tr = document.createElement('tr');
+                    tr.id = `row-${amount}`;
+                    tr.innerHTML = `
+                        <td style="text-align:center; padding-top: 5px;">
+                            <div class="col-stars" style="line-height: 1;">${amount}</div>
+                            <input type="number" class="sell-input" id="bonus-${amount}" value="${bonusPrices[amount] || ''}" oninput="calcRowProfit(${amount})" placeholder="+0" style="width: 35px; padding: 2px; font-size: 0.75rem; margin-top: 4px; background: #222; border-color: #555; color: #ff9800;">
+                        </td>
+                        <td class="col-rub" id="buy-${amount}">0 TON</td>
+                        <td style="text-align:center; color: var(--accent); font-weight: bold;" id="rec-${amount}">-</td>
+                        <td style="text-align:center;">
+                            <input type="number" class="sell-input" id="sell-${amount}" value="${sellPrices[amount] || ''}" oninput="calcRowProfit(${amount})" placeholder="...">
+                        </td>
+                        <td style="text-align:right;" id="profit-${amount}">-</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+
+            starAmounts.forEach(amount => {
+                calcRowProfit(amount);
+            });
+        }
+
+        function calcRowProfit(amount) {
+            const costFor50InUsd = parseFloat(document.getElementById('cost-for-50-usd').value) || 0;
+            const tonUsdtRate = parseFloat(document.getElementById('ton-usdt-rate').value) || 0;
+            const playerokRate = parseFloat(document.getElementById('playerok-rub-usdt').value) || 0;
+
+            const bonusInput = document.getElementById(`bonus-${amount}`);
+            const bonusVal = bonusInput ? (parseFloat(bonusInput.value) || 0) : 0;
+            
+            if (bonusInput) {
+                bonusPrices[amount] = bonusInput.value;
+                localStorage.setItem('bonusPrices', JSON.stringify(bonusPrices));
+            }
+
+            const totalStars = amount + bonusVal;
+            let costInTon = 0;
+            
+            if (costFor50InUsd > 0 && tonUsdtRate > 0) {
+                costInTon = (costFor50InUsd / tonUsdtRate) * (totalStars / 50);
+            }
+
+            const buyEl = document.getElementById(`buy-${amount}`);
+            if (buyEl) buyEl.innerHTML = `${costInTon.toFixed(3)} <span style="font-size:0.8rem;font-weight:normal;">TON</span>`;
+
+            const recEl = document.getElementById(`rec-${amount}`);
+            if (recEl && costInTon > 0 && tonUsdtRate > 0 && playerokRate > 0) {
+                const targetDirtyRub = (costInTon * 1.02 * tonUsdtRate * playerokRate) / 0.86;
+                recEl.innerText = Math.ceil(targetDirtyRub) + ' ₽';
+            } else if (recEl) {
+                recEl.innerText = '-';
+            }
+
+            const sellInput = document.getElementById(`sell-${amount}`);
+            if(!sellInput) return;
+            
+            const sellVal = sellInput.value;
+            sellPrices[amount] = sellVal;
+            localStorage.setItem('sellPrices', JSON.stringify(sellPrices)); 
+
+            const profitEl = document.getElementById(`profit-${amount}`);
+            if (!sellVal || costInTon === 0) {
+                profitEl.innerHTML = '-';
+                return;
+            }
+
+            const sellRub = parseFloat(sellVal) || 0;
+            const cleanRub = sellRub * 0.86; 
+            const receivedUsdt = cleanRub / playerokRate; 
+            const receivedTon = receivedUsdt / tonUsdtRate; 
+            
+            const profitTon = receivedTon - costInTon;
+            const profitPercent = (profitTon / costInTon) * 100;
+
+            const breakEvenRate = cleanRub / (costInTon * tonUsdtRate);
+            
+            let margin = breakEvenRate - playerokRate;
+            let colorClass = 'profit-neg'; 
+            let beColor = 'var(--loss)'; 
+            const sign = profitPercent > 0 ? '+' : '';
+
+            if (profitPercent > 0) {
+                if (margin > 2.0) {
+                    colorClass = 'profit-pos';
+                    beColor = 'var(--accent)';
+                } else {
+                    colorClass = 'profit-warn';
+                    beColor = 'var(--warn)';
+                }
+            }
+
+            let breakEvenHtml = '';
+            if (breakEvenRate > 0 && isFinite(breakEvenRate)) {
+                breakEvenHtml = `<div style="font-size: 0.8rem; color: ${beColor}; margin-top: 4px; line-height: 1;">Б/У: ${breakEvenRate.toFixed(2)}₽</div>`;
+            }
+
+            profitEl.innerHTML = `
+                <div class="${colorClass}">${sign}${profitPercent.toFixed(1)}%</div>
+                ${breakEvenHtml}
+            `;
+        }
+
+        // --- УТИЛИТЫ КОНВЕРТАЦИИ И КАЛЬКУЛЯТОРА ---
+        function toggleUsdMode() {
+            modeUsdReversed = !modeUsdReversed;
+            const title = document.getElementById('usd-title');
+            const input = document.getElementById('usd-input');
+            if (modeUsdReversed) {
+                title.innerText = "RUB ➔ USD";
+                input.placeholder = "₽";
+            } else {
+                title.innerText = "USD ➔ RUB";
+                input.placeholder = "$";
+            }
+            calcUsd();
+        }
+
+        function calcUsd() {
+            const val = parseFloat(document.getElementById('usd-input').value) || 0;
+            const resEl = document.getElementById('usd-result');
+            if (!modeUsdReversed) {
+                resEl.innerText = (val * fetchedUsdRate).toFixed(2) + ' ₽';
+            } else {
+                if (fetchedUsdRate > 0) resEl.innerText = '$ ' + (val / fetchedUsdRate).toFixed(2);
+                else resEl.innerText = "0";
+            }
+        }
+
+        function calcTax() {
+            const val = parseFloat(document.getElementById('tax-input').value) || 0;
+            document.getElementById('tax-14').innerText = (val * 0.86).toFixed(2);
+            document.getElementById('tax-13').innerText = (val * 0.87).toFixed(2);
+            document.getElementById('tax-10').innerText = (val * 0.90).toFixed(2);
+            document.getElementById('tax-5').innerText = (val * 0.95).toFixed(2);
+        }
+
+        function calcDiff() {
+            const a = parseFloat(document.getElementById('diff-a').value);
+            const b = parseFloat(document.getElementById('diff-b').value);
+            if (a && b) {
+                const diff = ((b - a) / a) * 100;
+                const sign = diff > 0 ? "+" : "";
+                const el = document.getElementById('diff-result');
+                el.innerText = sign + diff.toFixed(2) + '%';
+                el.style.color = diff >= 0 ? 'var(--accent)' : 'var(--loss)';
+            } else {
+                document.getElementById('diff-result').innerText = '0%';
+            }
+        }
+
+        function calcTrade() {
+            const buy = parseFloat(document.getElementById('trade-buy').value);
+            const sell = parseFloat(document.getElementById('trade-sell').value);
+
+            const doCalc = (commission, idSuffix) => {
+                if (!buy || !sell) {
+                    document.getElementById(`trade-clean-${idSuffix}`).innerText = '0';
+                    document.getElementById(`trade-result-${idSuffix}`).innerText = '0%';
+                    return;
+                }
+                const factor = 1 - (commission / 100);
+                const clean = sell * factor;
+                const profit = clean - buy;
+                const percent = (profit / buy) * 100;
+
+                document.getElementById(`trade-clean-${idSuffix}`).innerText = clean.toFixed(2);
+                const el = document.getElementById(`trade-result-${idSuffix}`);
+                el.innerText = (percent > 0 ? "+" : "") + percent.toFixed(2) + '%';
+                el.style.color = percent >= 0 ? 'var(--accent)' : 'var(--loss)';
+            };
+
+            doCalc(2, '2');
+            doCalc(5, '5');
+            doCalc(13, '13');
+        }
+
+        let calcExpression = '';
+        const screen = document.getElementById('calc-screen');
+        function calcAppend(val) {
+            if (calcExpression === '' && ['+', '*', '/', '.'].includes(val)) return;
+            calcExpression += val;
+            screen.innerText = calcExpression;
+        }
+        function calcClear() { calcExpression = ''; screen.innerText = '0'; }
+        function calcDel() { calcExpression = calcExpression.slice(0, -1); screen.innerText = calcExpression || '0'; }
+        function calcSolve() {
+            try {
+                if (!calcExpression) return;
+                const res = eval(calcExpression); 
+                const formatted = parseFloat(res.toFixed(5));
+                screen.innerText = formatted;
+                calcExpression = formatted.toString();
+            } catch (e) {
+                screen.innerText = 'Error';
+                calcExpression = '';
+            }
+        }
+
+        // Инициализация при старте
+        loadSavedData();
+        fetchRates();
+        setInterval(fetchRates, 60000);
+
+    </script>
+</body>
+</html>

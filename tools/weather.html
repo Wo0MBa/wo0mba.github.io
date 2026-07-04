@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погодный Трекер Polymarket</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f3f4f6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .glass-panel { background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); padding: 20px; margin-bottom: 20px; }
+    </style>
+</head>
+<body class="p-4 md:p-8 max-w-5xl mx-auto">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">🌤 Погодный Трекер Polymarket</h1>
+
+    <!-- Форма ввода -->
+    <div class="glass-panel">
+        <h2 class="text-xl font-semibold mb-4">Добавить сделку</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="lg:col-span-2">
+                <label class="block text-sm font-medium text-gray-700">Город</label>
+                <input type="text" id="cityInput" placeholder="Например: Paris" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Дата (ДД.ММ)</label>
+                <input type="text" id="dateInput" placeholder="Например: 01.07" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Shares</label>
+                <input type="number" id="sharesInput" placeholder="Кол-во" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Инвест ($)</label>
+                <input type="number" id="investInput" step="0.01" value="2.00" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Результат ($)</label>
+                <input type="number" id="resultInput" step="0.01" placeholder="+Плюс / -Минус" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border">
+            </div>
+        </div>
+        <div class="mt-4 flex gap-4">
+            <button onclick="addTrade(true)" class="w-1/2 bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 transition">В ПЛЮС</button>
+            <button onclick="addTrade(false)" class="w-1/2 bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-600 transition">В МИНУС</button>
+        </div>
+    </div>
+
+    <!-- Общая статистика -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="glass-panel text-center">
+            <div class="text-sm text-gray-500">Всего сделок</div>
+            <div id="totalTrades" class="text-3xl font-bold text-gray-800">0</div>
+        </div>
+        <div class="glass-panel text-center">
+            <div class="text-sm text-gray-500">Net Profit ($)</div>
+            <div id="totalProfit" class="text-3xl font-bold text-indigo-600">0.00</div>
+        </div>
+        <div class="glass-panel text-center">
+            <div class="text-sm text-gray-500">Общий ROI</div>
+            <div id="totalROI" class="text-3xl font-bold text-green-600">0%</div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Таблица по городам -->
+        <div class="glass-panel overflow-x-auto">
+            <h2 class="text-xl font-semibold mb-4">Статистика по городам</h2>
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Город</th>
+                        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Сделок</th>
+                        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Винрейт</th>
+                        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">ROI</th>
+                        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Profit ($)</th>
+                    </tr>
+                </thead>
+                <tbody id="cityTableBody" class="bg-white divide-y divide-gray-200"></tbody>
+            </table>
+        </div>
+
+        <!-- Таблица по дням -->
+        <div class="glass-panel overflow-x-auto">
+            <h2 class="text-xl font-semibold mb-4">Профит по дням</h2>
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Дата</th>
+                        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Сделок</th>
+                        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Винрейт</th>
+                        <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Net Profit ($)</th>
+                    </tr>
+                </thead>
+                <tbody id="daysTableBody" class="bg-white divide-y divide-gray-200"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- История последних сделок -->
+    <div class="glass-panel overflow-x-auto mt-6">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold">История сделок (последние 50)</h2>
+            <button onclick="exportData()" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium">Экспорт JSON</button>
+        </div>
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Дата</th>
+                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Город</th>
+                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Shares</th>
+                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Инвест</th>
+                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Результат</th>
+                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Действие</th>
+                </tr>
+            </thead>
+            <tbody id="historyTableBody" class="bg-white divide-y divide-gray-200"></tbody>
+        </table>
+    </div>
+
+    <div class="text-center text-sm text-gray-400 mt-8 mb-4">
+        Данные сохраняются локально в вашем браузере.
+        <br>
+        <button onclick="clearData()" class="text-red-500 underline mt-2">Очистить всю историю</button>
+    </div>
+
+    <!-- Загрузка первоначальных данных, если нужно будет -->
+    <script id="initialData"></script>
+
+    <script>
+        
+        
+        const INITIAL_TRADES = [{"id": 1700000000000, "city": "Hong Kong", "date": "03.06", "shares": 25.0, "invest": 1.25, "profit": 3.7, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000001, "city": "Hong Kong", "date": "04.06", "shares": 74.0, "invest": 1.0, "profit": 0.34, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000002, "city": "Hong Kong", "date": "05.06", "shares": 20.0, "invest": 1.0, "profit": 0, "loss": 1.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000003, "city": "Singapore", "date": "05.06", "shares": 13.0, "invest": 1.04, "profit": 0, "loss": 1.04, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000004, "city": "Paris", "date": "05.06", "shares": 19.0, "invest": 0.95, "profit": 4.0, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000005, "city": "Singapore", "date": "06.06", "shares": 22.0, "invest": 1.1, "profit": 3.87, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000006, "city": "Beijing", "date": "06.06", "shares": 20.0, "invest": 1.0, "profit": 3.95, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000007, "city": "Paris", "date": "06.06", "shares": 70.0, "invest": 0, "profit": 0.42, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000008, "city": "Beijing", "date": "07.06", "shares": 16.0, "invest": 0.96, "profit": 0, "loss": 0.79, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000009, "city": "Beijing", "date": "07.06", "shares": 11.0, "invest": 0.99, "profit": 1.08, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000010, "city": "Hong Kong", "date": "07.06", "shares": 87.0, "invest": 2.0, "profit": 0.29, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000011, "city": "Hong Kong", "date": "07.06", "shares": 20.0, "invest": 1.0, "profit": 3.95, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000012, "city": "Paris", "date": "07.06", "shares": 20.0, "invest": 1.0, "profit": 0, "loss": 1.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000013, "city": "Hong Kong", "date": "08.06", "shares": 11.0, "invest": 0.99, "profit": 0, "loss": 0.99, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000014, "city": "Singapore", "date": "08.06", "shares": 15.0, "invest": 1.05, "profit": 0, "loss": 1.05, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000015, "city": "Beijing", "date": "08.06", "shares": 0, "invest": 1.0, "profit": 0, "loss": 1.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000016, "city": "Paris", "date": "08.06", "shares": 19.0, "invest": 1.14, "profit": 4.68, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000017, "city": "Beijing", "date": "09.06", "shares": 20.0, "invest": 1.0, "profit": 3.9, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000018, "city": "Singapore", "date": "09.06", "shares": 20.0, "invest": 1.0, "profit": 0, "loss": 1.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000019, "city": "Hong Kong", "date": "09.06", "shares": 9.0, "invest": 0.99, "profit": 0, "loss": 0.99, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000020, "city": "Paris", "date": "09.06", "shares": 11.0, "invest": 0.99, "profit": 0, "loss": 0.94, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000021, "city": "Beijing", "date": "10.06", "shares": 17.0, "invest": 1.02, "profit": 1.2, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000022, "city": "Singapore", "date": "10.06", "shares": 8.0, "invest": 1.04, "profit": 0, "loss": 1.04, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000023, "city": "Hong Kong", "date": "10.06", "shares": 17.0, "invest": 1.02, "profit": 0, "loss": 1.02, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000024, "city": "Beijing", "date": "10.06", "shares": 15.0, "invest": 1.0, "profit": 0, "loss": 0.67, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000025, "city": "Chengdu", "date": "10.06", "shares": 20.0, "invest": 1.0, "profit": 0, "loss": 1.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000026, "city": "Paris", "date": "10.06", "shares": 16.0, "invest": 0.96, "profit": 0, "loss": 0.96, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000027, "city": "Hong Kong", "date": "15.06", "shares": 20.0, "invest": 1.0, "profit": 0, "loss": 1.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000028, "city": "Singapore", "date": "15.06", "shares": 18.0, "invest": 1.08, "profit": 0, "loss": 1.08, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000029, "city": "Paris", "date": "15.06", "shares": 15.0, "invest": 1.06, "profit": 0, "loss": 1.06, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000030, "city": "Guangzhou", "date": "16.06", "shares": 14.0, "invest": 0.98, "profit": 5.95, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000031, "city": "Hong Kong", "date": "16.06", "shares": 15.0, "invest": 1.05, "profit": 0, "loss": 0.88, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000032, "city": "Singapore", "date": "16.06", "shares": 15.0, "invest": 1.05, "profit": 5.88, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000033, "city": "Beijing", "date": "16.06", "shares": 20.0, "invest": 1.0, "profit": 3.95, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000034, "city": "Beijing", "date": "17.06", "shares": 15.0, "invest": 1.05, "profit": 0, "loss": 1.05, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000035, "city": "Chengdu", "date": "17.06", "shares": 7.0, "invest": 0.98, "profit": 0, "loss": 0.98, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000036, "city": "Singapore", "date": "17.06", "shares": 1.1, "invest": 0.99, "profit": 0, "loss": 0.99, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000037, "city": "Guangzhou", "date": "17.06", "shares": 7.0, "invest": 0.98, "profit": 0, "loss": 0.98, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000038, "city": "Paris", "date": "17.06", "shares": 93.0, "invest": 4.65, "profit": 0.35, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000039, "city": "Hong Kong", "date": "18.06", "shares": 14.0, "invest": 0.98, "profit": 5.95, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000040, "city": "Guangzhou", "date": "18.06", "shares": 10.0, "invest": 1.0, "profit": 0, "loss": 1.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000041, "city": "Beijing", "date": "18.06", "shares": 20.0, "invest": 1.0, "profit": 0, "loss": 1.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000042, "city": "Chengdu", "date": "18.06", "shares": 22.0, "invest": 1.1, "profit": 0.15, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000043, "city": "Paris", "date": "18.06", "shares": 21.0, "invest": 1.05, "profit": 0, "loss": 1.05, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000044, "city": "Chengdu", "date": "19.06", "shares": 21.0, "invest": 1.05, "profit": 3.9, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000045, "city": "Singapore", "date": "21.06", "shares": 20.0, "invest": 1.0, "profit": 0.1, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000046, "city": "Hong Kong", "date": "21.06", "shares": 19.0, "invest": 0.95, "profit": 4.0, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000047, "city": "Paris", "date": "21.06", "shares": 20.0, "invest": 1.0, "profit": 3.95, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000048, "city": "Beijing", "date": "22.06", "shares": 20.0, "invest": 1.0, "profit": 0, "loss": 1.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000049, "city": "Guangzhou", "date": "22.06", "shares": 31.0, "invest": 1.55, "profit": 3.4, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000050, "city": "Chengdu", "date": "22.06", "shares": 0, "invest": 1.42, "profit": 3.53, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000051, "city": "Moscow", "date": "22.06", "shares": 13.0, "invest": 0.65, "profit": 0.1, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000052, "city": "Guangzhou", "date": "23.06", "shares": 25.0, "invest": 1.25, "profit": 0, "loss": 0.6, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000053, "city": "Tokyo", "date": "23.06", "shares": 50.0, "invest": 1.06, "profit": 0, "loss": 1.06, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000054, "city": "Beijing", "date": "23.06", "shares": 19.0, "invest": 1.9, "profit": 0, "loss": 1.9, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000055, "city": "Hong Kong", "date": "23.06", "shares": 0, "invest": 1.95, "profit": 0, "loss": 1.95, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000056, "city": "Moscow", "date": "23.06", "shares": 20.0, "invest": 2.0, "profit": 0.3, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000057, "city": "Paris", "date": "23.06", "shares": 0, "invest": 1.75, "profit": 2.37, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000058, "city": "Moscow", "date": "24.06", "shares": 45.0, "invest": 1.06, "profit": 1.29, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000059, "city": "Paris", "date": "24.06", "shares": 25.0, "invest": 1.25, "profit": 3.7, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000060, "city": "Tokyo", "date": "25.06", "shares": 62.0, "invest": 1.07, "profit": 0.65, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000061, "city": "Manila", "date": "25.06", "shares": 35.0, "invest": 1.06, "profit": 0, "loss": 1.06, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000062, "city": "Cape Town", "date": "25.06", "shares": 30.0, "invest": 1.95, "profit": 0, "loss": 1.95, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000063, "city": "Kuala Lumpur", "date": "25.06", "shares": 51.0, "invest": 1.06, "profit": 0, "loss": 1.06, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000064, "city": "Hong Kong", "date": "25.06", "shares": 20.0, "invest": 2.0, "profit": 0, "loss": 0.1, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000065, "city": "Singapore", "date": "25.06", "shares": 26.0, "invest": 1.91, "profit": 0, "loss": 1.91, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000066, "city": "Guangzhou", "date": "25.06", "shares": 20.0, "invest": 2.0, "profit": 7.9, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000067, "city": "Cape Town", "date": "25.06", "shares": 26.0, "invest": 2.01, "profit": 0, "loss": 2.01, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000068, "city": "Moscow", "date": "25.06", "shares": 24.0, "invest": 1.75, "profit": 0, "loss": 1.75, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000069, "city": "Hong Kong", "date": "26.06", "shares": 16.0, "invest": 0.96, "profit": 0, "loss": 0.96, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000070, "city": "Manila", "date": "26.06", "shares": 22.0, "invest": 1.98, "profit": 6.65, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000071, "city": "Kuala Lumpur", "date": "26.06", "shares": 25.0, "invest": 1.25, "profit": 3.5, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000072, "city": "Guangzhou", "date": "26.06", "shares": 24.0, "invest": 1.2, "profit": 2.83, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000073, "city": "Beijing", "date": "26.06", "shares": 0, "invest": 2.05, "profit": 4.5, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000074, "city": "Cape Town", "date": "26.06", "shares": 21.0, "invest": 2.1, "profit": 0, "loss": 2.1, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000075, "city": "Paris", "date": "26.06", "shares": 25.0, "invest": 1.25, "profit": 0, "loss": 0.5, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000076, "city": "Beijing", "date": "27.06", "shares": 27.0, "invest": 1.35, "profit": 3.4, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000077, "city": "Singapore", "date": "27.06", "shares": 28.0, "invest": 1.4, "profit": 3.57, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000078, "city": "Guangzhou", "date": "27.06", "shares": 29.0, "invest": 1.45, "profit": 3.54, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000079, "city": "Tokyo", "date": "28.06", "shares": 59.0, "invest": 1.95, "profit": 0, "loss": 1.95, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000080, "city": "Manila", "date": "28.06", "shares": 35.0, "invest": 1.75, "profit": 0, "loss": 1.75, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000081, "city": "Hong Kong", "date": "28.06", "shares": 40.0, "invest": 2.0, "profit": 0, "loss": 2.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000082, "city": "Kuala Lumpur", "date": "28.06", "shares": 35.0, "invest": 1.75, "profit": 0, "loss": 1.75, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000083, "city": "Chengdu", "date": "28.06", "shares": 27.0, "invest": 4.0, "profit": 0, "loss": 4.0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000084, "city": "Guangzhou", "date": "28.06", "shares": 18.0, "invest": 1.91, "profit": 7.64, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000085, "city": "Beijing", "date": "28.06", "shares": 22.0, "invest": 1.96, "profit": 0, "loss": 1.96, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000086, "city": "Beijing", "date": "28.06", "shares": 21.0, "invest": 4.34, "profit": 0, "loss": 1.4, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000087, "city": "Moscow", "date": "28.06", "shares": 23.0, "invest": 3.9, "profit": 0, "loss": 1.49, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000088, "city": "Paris", "date": "28.06", "shares": 28.0, "invest": 3.98, "profit": 0.32, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000089, "city": "Guangzhou", "date": "29.06", "shares": 26.0, "invest": 1.61, "profit": 4.27, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000090, "city": "Hong Kong", "date": "29.06", "shares": 25.0, "invest": 2.0, "profit": 5.6, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000091, "city": "Tokyo", "date": "29.06", "shares": 59.0, "invest": 1.95, "profit": 1.3, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000092, "city": "Manila", "date": "29.06", "shares": 35.0, "invest": 0.97, "profit": 1.61, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000093, "city": "Singapore", "date": "29.06", "shares": 37.0, "invest": 1.85, "profit": 0, "loss": 1.85, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000094, "city": "Moscow", "date": "29.06", "shares": 24.0, "invest": 3.95, "profit": 0, "loss": 3.95, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000095, "city": "Cape Town", "date": "29.06", "shares": 45.0, "invest": 1.93, "profit": 0, "loss": 1.93, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000096, "city": "Moscow", "date": "29.06", "shares": 75.0, "invest": 3.75, "profit": 1.2, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000097, "city": "Beijing", "date": "30.06", "shares": 76.0, "invest": 3.8, "profit": 1.19, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000098, "city": "Beijing", "date": "30.06", "shares": 27.0, "invest": 4.0, "profit": 4.05, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000099, "city": "Guangzhou", "date": "30.06", "shares": 21.0, "invest": 4.25, "profit": 0.87, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000100, "city": "Guangzhou", "date": "30.06", "shares": 80.0, "invest": 3.96, "profit": 0.99, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000101, "city": "Tokyo", "date": "30.06", "shares": 47.0, "invest": 1.93, "profit": 1.96, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000102, "city": "Chengdu", "date": "30.06", "shares": 40.0, "invest": 2.0, "profit": 0.4, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000103, "city": "Chengdu", "date": "30.06", "shares": 80.0, "invest": 4.0, "profit": 0.97, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000104, "city": "Chengdu", "date": "30.06", "shares": 25.0, "invest": 2.5, "profit": 7.0, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000105, "city": "Moscow", "date": "30.06", "shares": 41.0, "invest": 2.05, "profit": 2.55, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000106, "city": "Cape Town", "date": "30.06", "shares": 41.0, "invest": 2.05, "profit": 2.25, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}, {"id": 1700000000107, "city": "Paris", "date": "30.06", "shares": 35.0, "invest": 2.1, "profit": 0.9, "loss": 0, "timestamp": "2026-06-30T10:00:00.000Z"}];
+        
+        let trades = JSON.parse(localStorage.getItem('weatherTradesV2'));
+        
+        // Если базы нет или она пуста - заливаем начальную
+        if (!trades || trades.length === 0) {
+            trades = INITIAL_TRADES;
+            localStorage.setItem('weatherTradesV2', JSON.stringify(trades));
+        }
+
+
+        // Force save injected data
+        if(!localStorage.getItem('weatherTradesV2')) localStorage.setItem('weatherTradesV2', JSON.stringify(trades));
+        
+        // Автоматически подставляем сегодняшнюю дату при загрузке
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        document.getElementById('dateInput').value = `${dd}.${mm}`;
+
+        function addTrade(isWin) {
+            const city = document.getElementById('cityInput').value.trim();
+            const date = document.getElementById('dateInput').value.trim();
+            const shares = parseFloat(document.getElementById('sharesInput').value) || 0;
+            const invest = parseFloat(document.getElementById('investInput').value) || 0;
+            const resultVal = parseFloat(document.getElementById('resultInput').value) || 0;
+
+            if (!city || invest <= 0 || resultVal === 0 || !date) {
+                alert("Заполните Город, Дату, Инвестиции и Результат!");
+                return;
+            }
+
+            const profit = isWin ? resultVal : 0;
+            const loss = !isWin ? resultVal : 0;
+
+            trades.push({ 
+                id: Date.now(),
+                city, 
+                date,
+                shares,
+                invest, 
+                profit, 
+                loss,
+                timestamp: new Date().toISOString() 
+            });
+            
+            saveAndRender();
+            
+            document.getElementById('sharesInput').value = '';
+            document.getElementById('resultInput').value = '';
+            document.getElementById('cityInput').focus();
+        }
+
+        function deleteTrade(id) {
+            if(confirm("Удалить эту сделку?")) {
+                trades = trades.filter(t => t.id !== id);
+                saveAndRender();
+            }
+        }
+
+        function clearData() {
+            if(confirm("Точно удалить все данные? Это действие необратимо!")) {
+                trades = [];
+                saveAndRender();
+            }
+        }
+
+        function exportData() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(trades));
+            const dlAnchorElem = document.createElement('a');
+            dlAnchorElem.setAttribute("href", dataStr);
+            dlAnchorElem.setAttribute("download", "weather_trades_export.json");
+            dlAnchorElem.click();
+        }
+
+        function saveAndRender() {
+            localStorage.setItem('weatherTradesV2', JSON.stringify(trades));
+            renderStats();
+        }
+
+        function renderStats() {
+            if (trades.length === 0) {
+                document.getElementById('totalTrades').innerText = "0";
+                document.getElementById('totalProfit').innerText = "0.00";
+                document.getElementById('totalROI').innerText = "0%";
+                document.getElementById('cityTableBody').innerHTML = "";
+                document.getElementById('daysTableBody').innerHTML = "";
+                document.getElementById('historyTableBody').innerHTML = "";
+                return;
+            }
+
+            let totalInvest = 0;
+            let totalProfit = 0;
+            let totalLoss = 0;
+            let cityStats = {};
+            let dayStats = {};
+
+            trades.forEach(t => {
+                totalInvest += t.invest;
+                totalProfit += t.profit;
+                totalLoss += t.loss;
+
+                // Stats by City
+                if (!cityStats[t.city]) {
+                    cityStats[t.city] = { trades: 0, wins: 0, invest: 0, profit: 0, loss: 0 };
+                }
+                cityStats[t.city].trades += 1;
+                cityStats[t.city].invest += t.invest;
+                cityStats[t.city].profit += t.profit;
+                cityStats[t.city].loss += t.loss;
+                if (t.profit > 0) cityStats[t.city].wins += 1;
+
+                // Stats by Day
+                if (!dayStats[t.date]) {
+                    dayStats[t.date] = { trades: 0, wins: 0, profit: 0, loss: 0 };
+                }
+                dayStats[t.date].trades += 1;
+                dayStats[t.date].profit += t.profit;
+                dayStats[t.date].loss += t.loss;
+                if (t.profit > 0) dayStats[t.date].wins += 1;
+            });
+
+            let netProfit = totalProfit - totalLoss;
+            let roi = totalInvest > 0 ? (netProfit / totalInvest) * 100 : 0;
+
+            document.getElementById('totalTrades').innerText = trades.length;
+            document.getElementById('totalProfit').innerText = (netProfit > 0 ? "+" : "") + netProfit.toFixed(2);
+            document.getElementById('totalProfit').className = netProfit >= 0 ? "text-3xl font-bold text-green-600" : "text-3xl font-bold text-red-600";
+            document.getElementById('totalROI').innerText = (roi > 0 ? "+" : "") + roi.toFixed(1) + "%";
+            document.getElementById('totalROI').className = roi >= 0 ? "text-3xl font-bold text-green-600" : "text-3xl font-bold text-red-600";
+
+            // Render City Table
+            let cityTbody = "";
+            let sortedCities = Object.keys(cityStats).sort((a,b) => (cityStats[b].profit - cityStats[b].loss) - (cityStats[a].profit - cityStats[a].loss));
+            
+            sortedCities.forEach(city => {
+                let st = cityStats[city];
+                let cNet = st.profit - st.loss;
+                let cRoi = st.invest > 0 ? (cNet / st.invest) * 100 : 0;
+                let cWinrate = (st.wins / st.trades) * 100;
+                let roiColor = cRoi >= 0 ? "text-green-600" : "text-red-600";
+                
+                cityTbody += `<tr>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">${city}</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500">${st.trades}</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500">${cWinrate.toFixed(0)}%</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm font-bold ${roiColor}">${(cRoi>0?"+":"") + cRoi.toFixed(1)}%</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm font-bold ${roiColor}">${(cNet>0?"+":"") + cNet.toFixed(2)}</td>
+                </tr>`;
+            });
+            document.getElementById('cityTableBody').innerHTML = cityTbody;
+
+            // Render Days Table
+            let daysTbody = "";
+            // Улучшенная сортировка: переводим DD.MM в формат, который можно сравнивать
+            let sortedDays = Object.keys(dayStats).sort((a, b) => {
+                let [dayA, monthA] = a.split('.').map(Number);
+                let [dayB, monthB] = b.split('.').map(Number);
+                if (monthA !== monthB) return monthB - monthA; // Сначала по месяцу
+                return dayB - dayA; // Потом по дню
+            });
+            
+            sortedDays.forEach(day => {
+                let st = dayStats[day];
+                let dNet = st.profit - st.loss;
+                let dWinrate = (st.wins / st.trades) * 100;
+                let color = dNet >= 0 ? "text-green-600" : "text-red-600";
+                
+                daysTbody += `<tr>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">${day}</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500">${st.trades}</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500">${dWinrate.toFixed(0)}%</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-sm font-bold ${color}">${(dNet>0?"+":"") + dNet.toFixed(2)}</td>
+                </tr>`;
+            });
+            document.getElementById('daysTableBody').innerHTML = daysTbody;
+
+            // Render History Table
+            let histTbody = "";
+            let historyTrades = [...trades].reverse().slice(0, 50); // Last 50
+            historyTrades.forEach(t => {
+                let resStr = t.profit > 0 ? `<span class="text-green-600 font-bold">+${t.profit.toFixed(2)}$</span>` : `<span class="text-red-600 font-bold">-${t.loss.toFixed(2)}$</span>`;
+                let shStr = t.shares ? `${t.shares}c` : '-';
+                
+                histTbody += `<tr>
+                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">${t.date}</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900">${t.city}</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">${shStr}</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-sm text-gray-500">$${t.invest.toFixed(2)}</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-sm">${resStr}</td>
+                    <td class="px-4 py-2 whitespace-nowrap text-sm"><button onclick="deleteTrade(${t.id})" class="text-red-500 hover:text-red-700">Удалить</button></td>
+                </tr>`;
+            });
+            document.getElementById('historyTableBody').innerHTML = histTbody;
+        }
+
+        renderStats();
+    </script>
+</body>
+</html>
