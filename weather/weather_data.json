@@ -19,11 +19,11 @@
       }
     ],
     "weather": {
-      "clouds": 99,
+      "clouds": 100,
       "humidity": 87,
-      "condition": "Thunderstorm"
+      "condition": "Cloudy"
     },
-    "updated_at": "11:19:19"
+    "updated_at": "11:34:51"
   },
   "Chengdu": {
     "city": "Chengdu",
@@ -45,11 +45,11 @@
       }
     ],
     "weather": {
-      "clouds": 46,
-      "humidity": 53,
+      "clouds": 43,
+      "humidity": 68,
       "condition": "Cloudy"
     },
-    "updated_at": "11:19:20"
+    "updated_at": "11:34:52"
   },
   "Hong Kong": {
     "city": "Hong Kong",
@@ -73,9 +73,9 @@
     "weather": {
       "clouds": 100,
       "humidity": 88,
-      "condition": "Thunderstorm"
+      "condition": "Overcast"
     },
-    "updated_at": "11:19:24"
+    "updated_at": "11:34:56"
   },
   "Shenzhen": {
     "city": "Shenzhen",
@@ -98,10 +98,10 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 90,
+      "humidity": 85,
       "condition": "Cloudy"
     },
-    "updated_at": "11:19:26"
+    "updated_at": "11:34:57"
   },
   "Beijing": {
     "city": "Beijing",
@@ -123,11 +123,11 @@
       }
     ],
     "weather": {
-      "clouds": 93,
-      "humidity": 70,
+      "clouds": 89,
+      "humidity": 77,
       "condition": "Cloudy"
     },
-    "updated_at": "11:19:27"
+    "updated_at": "11:34:58"
   },
   "Chongqing": {
     "city": "Chongqing",
@@ -149,11 +149,11 @@
       }
     ],
     "weather": {
-      "clouds": 97,
-      "humidity": 50,
+      "clouds": 100,
+      "humidity": 46,
       "condition": "Overcast"
     },
-    "updated_at": "11:19:28"
+    "updated_at": "11:35:00"
   },
   "Taipei": {
     "city": "Taipei",
@@ -175,11 +175,11 @@
       }
     ],
     "weather": {
-      "clouds": 41,
-      "humidity": 61,
+      "clouds": 33,
+      "humidity": 62,
       "condition": "Clear"
     },
-    "updated_at": "11:19:29"
+    "updated_at": "11:35:01"
   },
   "Kuala Lumpur": {
     "city": "Kuala Lumpur",
@@ -201,37 +201,37 @@
       }
     ],
     "weather": {
-      "clouds": 92,
-      "humidity": 74,
+      "clouds": 95,
+      "humidity": 78,
       "condition": "Cloudy"
     },
-    "updated_at": "11:19:30"
+    "updated_at": "11:35:02"
   },
   "Lucknow": {
     "city": "Lucknow",
-    "metar_temp": 34,
-    "metar_raw": "METAR (VILK): VILK 070800Z 07010G20KT 5000 HZ SCT020 BKN100 34/25 Q0996 NOSIG",
-    "spread": 6.0,
+    "metar_temp": 33,
+    "metar_raw": "METAR (VILK): VILK 070830Z 10010G20KT 5000 HZ SCT020 BKN100 33/25 Q0995 NOSIG",
+    "spread": 6.8,
     "models": [
       {
         "name": "GFS",
-        "temp": 36.4
+        "temp": 36.9
       },
       {
         "name": "ICON",
-        "temp": 30.4
+        "temp": 30.2
       },
       {
         "name": "GEM",
-        "temp": 35.0
+        "temp": 30.1
       }
     ],
     "weather": {
-      "clouds": 64,
-      "humidity": 87,
+      "clouds": 70,
+      "humidity": 68,
       "condition": "Thunderstorm"
     },
-    "updated_at": "11:19:31"
+    "updated_at": "11:35:04"
   },
   "Busan": {
     "city": "Busan",
@@ -253,16 +253,16 @@
       }
     ],
     "weather": {
-      "clouds": 84,
+      "clouds": 90,
       "humidity": 94,
       "condition": "Overcast"
     },
-    "updated_at": "11:19:33"
+    "updated_at": "11:35:05"
   },
   "London": {
     "city": "London",
     "metar_temp": 22,
-    "metar_raw": "METAR (EGLL): EGLL 070750Z AUTO 27012KT 9999 NCD 22/12 Q1016",
+    "metar_raw": "METAR (EGLL): EGLL 070820Z AUTO 28010KT 9999 NCD 22/12 Q1016",
     "spread": 2.8,
     "models": [
       {
@@ -279,16 +279,16 @@
       }
     ],
     "weather": {
-      "clouds": 18,
+      "clouds": 21,
       "humidity": 55,
       "condition": "Clear"
     },
-    "updated_at": "11:19:34"
+    "updated_at": "11:35:06"
   },
   "Paris": {
     "city": "Paris",
     "metar_temp": 28,
-    "metar_raw": "METAR (LFPG): LFPG 070800Z 27007KT CAVOK 28/08 Q1018 NOSIG",
+    "metar_raw": "METAR (LFPG): LFPG 070830Z 30008KT CAVOK 28/09 Q1018 NOSIG",
     "spread": 1.8,
     "models": [
       {
@@ -305,16 +305,16 @@
       }
     ],
     "weather": {
-      "clouds": 77,
-      "humidity": 36,
+      "clouds": 85,
+      "humidity": 35,
       "condition": "Overcast"
     },
-    "updated_at": "11:19:35"
+    "updated_at": "11:35:08"
   },
   "Madrid": {
     "city": "Madrid",
-    "metar_temp": 28,
-    "metar_raw": "METAR (LEMD): LEMD 070800Z VRB02KT CAVOK 28/08 Q1021 NOSIG",
+    "metar_temp": 29,
+    "metar_raw": "METAR (LEMD): LEMD 070830Z 10002KT CAVOK 29/08 Q1021 NOSIG",
     "spread": 2.3,
     "models": [
       {
@@ -332,15 +332,15 @@
     ],
     "weather": {
       "clouds": 48,
-      "humidity": 27,
+      "humidity": 26,
       "condition": "Partly Cloudy"
     },
-    "updated_at": "11:19:36"
+    "updated_at": "11:35:09"
   },
   "Munich": {
     "city": "Munich",
-    "metar_temp": 26,
-    "metar_raw": "METAR (EDDM): EDDM 070750Z AUTO 26014KT 230V290 CAVOK 26/13 Q1018 BECMG 26015G25KT",
+    "metar_temp": 27,
+    "metar_raw": "METAR (EDDM): EDDM 070820Z AUTO 26016KT CAVOK 27/12 Q1018 BECMG 26015G25KT",
     "spread": 1.0,
     "models": [
       {
@@ -357,16 +357,16 @@
       }
     ],
     "weather": {
-      "clouds": 77,
-      "humidity": 41,
+      "clouds": 73,
+      "humidity": 39,
       "condition": "Partly Cloudy"
     },
-    "updated_at": "11:19:38"
+    "updated_at": "11:35:10"
   },
   "Helsinki": {
     "city": "Helsinki",
-    "metar_temp": 13,
-    "metar_raw": "METAR (EFHK): EFHK 070750Z 26007KT 230V290 9999 -SHRA SCT008 BKN029 FEW030CB 13/11 Q0993 NOSIG",
+    "metar_temp": 12,
+    "metar_raw": "METAR (EFHK): EFHK 070820Z 28008KT 9999 -SHRA FEW009 SCT030 FEW031CB 12/12 Q0993 TEMPO FEW009 SCT030",
     "spread": 2.5,
     "models": [
       {
@@ -387,12 +387,12 @@
       "humidity": 92,
       "condition": "Cloudy"
     },
-    "updated_at": "11:19:39"
+    "updated_at": "11:35:12"
   },
   "Moscow": {
     "city": "Moscow",
-    "metar_temp": 18,
-    "metar_raw": "METAR (UUEE): UUEE 070800Z 21007MPS 9999 FEW019 18/13 Q1005 R24L/220157 R24C/220157 NOSIG",
+    "metar_temp": 19,
+    "metar_raw": "METAR (UUEE): UUEE 070830Z 22008MPS 9999 SCT024 19/13 Q1005 R24L/220157 R24C/220157 NOSIG",
     "spread": 1.3,
     "models": [
       {
@@ -410,20 +410,20 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 71,
+      "humidity": 69,
       "condition": "Cloudy"
     },
-    "updated_at": "11:19:40"
+    "updated_at": "11:35:13"
   },
   "NYC": {
     "city": "NYC",
     "metar_temp": 18,
     "metar_raw": "METAR (KJFK): KJFK 070751Z 05010KT 5SM BR OVC005 18/17 A3002 RMK SLP165 T01780172 $",
-    "spread": 1.3,
+    "spread": 1.6,
     "models": [
       {
         "name": "GFS",
-        "temp": 19.0
+        "temp": 18.7
       },
       {
         "name": "ICON",
@@ -436,10 +436,10 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 95,
-      "condition": "Overcast"
+      "humidity": 96,
+      "condition": "Fog"
     },
-    "updated_at": "11:19:42"
+    "updated_at": "11:35:14"
   },
   "Mexico City": {
     "city": "Mexico City",
@@ -462,20 +462,20 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 91,
+      "humidity": 90,
       "condition": "Overcast"
     },
-    "updated_at": "11:19:43"
+    "updated_at": "11:35:16"
   },
   "San Francisco": {
     "city": "San Francisco",
     "metar_temp": 13,
     "metar_raw": "METAR (KSFO): KSFO 070756Z 26009G14KT 10SM FEW004 BKN007 OVC010 13/12 A3001 RMK AO2 SLP162 T01330117 402000133 $",
-    "spread": 0.8,
+    "spread": 0.3,
     "models": [
       {
         "name": "GFS",
-        "temp": 12.1
+        "temp": 12.6
       },
       {
         "name": "ICON",
@@ -488,10 +488,10 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 100,
+      "humidity": 96,
       "condition": "Overcast"
     },
-    "updated_at": "11:19:44"
+    "updated_at": "11:35:17"
   },
   "Panama": {
     "city": "Panama",
@@ -513,10 +513,10 @@
       }
     ],
     "weather": {
-      "clouds": 30,
+      "clouds": 26,
       "humidity": 89,
       "condition": "Clear"
     },
-    "updated_at": "11:19:45"
+    "updated_at": "11:35:18"
   }
 }
