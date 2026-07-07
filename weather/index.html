@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Sniper Pro Dashboard</title>
+    <title>Weather Sniper Pro Terminal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -11,17 +11,15 @@
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .text-gradient { background: linear-gradient(to right, #3b82f6, #93c5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .cutoff-badge { background: rgba(244, 63, 94, 0.1); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.2); }
         .region-divider { 
             display: flex; align-items: center; text-align: center; 
             margin-top: 3rem; margin-bottom: 2rem;
             color: #475569; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 900; font-size: 0.85rem;
         }
-        .region-divider::before, .region-divider::after {
-            content: ''; flex: 1; border-bottom: 1px solid #1e293b;
-        }
+        .region-divider::before, .region-divider::after { content: ''; flex: 1; border-bottom: 1px solid #1e293b; }
         .region-divider:not(:empty)::before { margin-right: 1.5rem; }
         .region-divider:not(:empty)::after { margin-left: 1.5rem; }
+        .bucket-cell { background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.05); }
     </style>
 </head>
 <body class="p-4 md:p-10 min-h-screen">
@@ -29,26 +27,20 @@
         <header class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div>
                 <h1 class="text-4xl font-black tracking-tighter text-white">
-                    🌀 WEATHER <span class="text-gradient">SNIPER</span> <span class="text-[10px] bg-blue-600 text-white px-2 py-0.5 rounded align-middle uppercase tracking-widest font-bold">Pro</span>
+                    🌀 WEATHER <span class="text-gradient">SNIPER</span> <span class="text-[10px] bg-blue-600 text-white px-2 py-0.5 rounded align-middle uppercase tracking-widest font-bold">Terminal</span>
                 </h1>
-                <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest font-bold text-blue-400/80">Анализ METAR и Ансамблей Моделей (Все 43 города)</p>
+                <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest font-bold text-blue-400/80">Real-time Arbitrage & Model Consensus</p>
             </div>
             <div id="lastUpdate" class="text-[10px] font-mono text-slate-500 bg-slate-900 px-4 py-2 rounded-full border border-slate-800">
                 СИНХРОНИЗАЦИЯ...
             </div>
         </header>
 
-        <div id="sections-container">
-            <!-- Regions and Cards will be injected here -->
-        </div>
+        <div id="sections-container"></div>
     </div>
 
     <script>
-        const TRANSLATIONS = {
-            'Clear': 'Ясно', 'Partly Cloudy': 'Облачно', 'Overcast': 'Пасмурно',
-            'Fog': 'Туман', 'Rain': 'Дождь', 'Thunderstorm': 'Гроза', 'Cloudy': 'Облачно'
-        };
-
+        const TRANSLATIONS = { 'Clear': 'Ясно', 'Partly Cloudy': 'Облачно', 'Overcast': 'Пасмурно', 'Fog': 'Туман', 'Rain': 'Дождь', 'Thunderstorm': 'Гроза', 'Cloudy': 'Облачно' };
         const REGION_LABELS = { "ASIA": "Азия и Океания", "EUROPE": "Европа", "AMERICAS": "Америка" };
         const REGION_ORDER = ["ASIA", "EUROPE", "AMERICAS"];
 
@@ -67,10 +59,7 @@
             container.innerHTML = '';
 
             REGION_ORDER.forEach(region => {
-                const cities = Object.entries(data)
-                    .filter(([_, info]) => info.region === region)
-                    .sort((a, b) => a[0].localeCompare(b[0]));
-
+                const cities = Object.entries(data).filter(([_, info]) => info.region === region).sort((a, b) => a[0].localeCompare(b[0]));
                 if (cities.length === 0) return;
 
                 const divider = document.createElement('div');
@@ -86,10 +75,34 @@
                     const status = spread < 1.0 ? 'СТАБИЛЬНО' : (spread < 2.0 ? 'НЕСТАБИЛЬНО' : 'ХАОС');
                     const color = spread < 1.0 ? 'emerald' : (spread < 2.0 ? 'amber' : 'rose');
                     const w = info.weather;
+                    const p = info.poly;
 
                     const card = document.createElement('div');
                     card.className = `glass rounded-3xl p-6 transition-all duration-300 hover:border-slate-500 group`;
                     
+                    let polyHtml = '<div class="text-[10px] text-slate-700 italic">Рынки не найдены</div>';
+                    if (p && p.fav) {
+                        polyHtml = `
+                            <div class="grid grid-cols-3 gap-2 text-center">
+                                <div class="bucket-cell rounded-xl p-2 ${p.minus1 ? '' : 'opacity-20'}">
+                                    <p class="text-[8px] text-slate-500 font-bold">-1°</p>
+                                    <p class="text-[11px] font-black text-slate-300">${p.minus1 ? p.minus1.title : '--'}</p>
+                                    <p class="text-xs font-black text-blue-400">${p.minus1 ? (p.minus1.price * 100).toFixed(0) + 'c' : '--'}</p>
+                                </div>
+                                <div class="bucket-cell rounded-xl p-2 border-blue-500/30 bg-blue-500/5">
+                                    <p class="text-[8px] text-blue-400 font-bold uppercase">Fav</p>
+                                    <p class="text-[11px] font-black text-white">${p.fav.title}</p>
+                                    <p class="text-xs font-black text-blue-500">${(p.fav.price * 100).toFixed(0)}c</p>
+                                </div>
+                                <div class="bucket-cell rounded-xl p-2 ${p.plus1 ? '' : 'opacity-20'}">
+                                    <p class="text-[8px] text-slate-500 font-bold">+1°</p>
+                                    <p class="text-[11px] font-black text-slate-300">${p.plus1 ? p.plus1.title : '--'}</p>
+                                    <p class="text-xs font-black text-blue-400">${p.plus1 ? (p.plus1.price * 100).toFixed(0) + 'c' : '--'}</p>
+                                </div>
+                            </div>
+                        `;
+                    }
+
                     card.innerHTML = `
                         <div class="flex justify-between items-start mb-2">
                             <h2 class="text-2xl font-black text-white group-hover:text-blue-400 transition-colors tracking-tight">${name}</h2>
@@ -101,12 +114,13 @@
                         </div>
 
                         <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-slate-900/40 rounded-2xl p-4 border border-white/5">
+                            <div class="bg-slate-900/40 rounded-2xl p-4 border border-white/5 relative overflow-hidden">
                                 <p class="text-[10px] text-slate-500 uppercase font-black mb-1 tracking-widest">Факт</p>
                                 <div class="flex items-baseline gap-1">
                                     <span class="text-5xl font-black text-white leading-none">${info.metar_temp !== null ? info.metar_temp : '--'}</span>
                                     <span class="text-base text-slate-500 font-black">°C</span>
                                 </div>
+                                <div class="absolute bottom-1 right-2 text-[9px] font-bold text-rose-500/60">MAX: ${info.max_today ? info.max_today.toFixed(1) : '--'}</div>
                             </div>
                             <div class="bg-slate-900/40 rounded-2xl p-4 border border-white/5 text-right">
                                 <p class="text-[10px] text-slate-500 uppercase font-black mb-1 tracking-widest">Разброс</p>
@@ -116,6 +130,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="mb-6">${polyHtml}</div>
 
                         <div class="flex justify-between items-center mb-8 px-1">
                             <div class="text-center">
@@ -141,10 +157,6 @@
                                     <span class="text-slate-200">${m.temp.toFixed(1)}°C</span>
                                 </div>
                             `).join('')}
-                        </div>
-
-                        <div class="text-[8px] font-mono text-slate-700 break-all opacity-20 group-hover:opacity-100 transition-opacity leading-relaxed">
-                            ${info.metar_raw || 'НЕТ ДАННЫХ'}
                         </div>
                     `;
                     grid.appendChild(card);
