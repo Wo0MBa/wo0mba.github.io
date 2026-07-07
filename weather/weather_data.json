@@ -3,43 +3,17 @@
     "city": "Guangzhou",
     "metar_temp": 29,
     "metar_raw": "2026/07/07 05:30\nZGGG 070530Z 12006MPS 9999 -SHRA SCT016 OVC040 29/25 Q1007 NOSIG",
-    "spread": 2.0,
-    "models": [
-      {
-        "name": "GFS",
-        "temp": 27.6
-      },
-      {
-        "name": "ICON",
-        "temp": 26.4
-      },
-      {
-        "name": "GEM",
-        "temp": 25.6
-      }
-    ],
-    "updated_at": "08:54:36"
+    "spread": 0,
+    "models": [],
+    "updated_at": "09:00:10"
   },
   "Chengdu": {
     "city": "Chengdu",
     "metar_temp": 35,
     "metar_raw": "2026/07/07 05:00\nZUUU 070500Z VRB01MPS 8000 FEW050 35/23 Q1001 NOSIG",
-    "spread": 2.0,
-    "models": [
-      {
-        "name": "GFS",
-        "temp": 29.0
-      },
-      {
-        "name": "ICON",
-        "temp": 31.0
-      },
-      {
-        "name": "GEM",
-        "temp": 29.7
-      }
-    ],
-    "updated_at": "08:54:37"
+    "spread": 0,
+    "models": [],
+    "updated_at": "09:00:11"
   },
   "Hong Kong": {
     "city": "Hong Kong",
@@ -60,7 +34,7 @@
         "temp": 27.6
       }
     ],
-    "updated_at": "08:54:38"
+    "updated_at": "09:00:13"
   },
   "London": {
     "city": "London",
@@ -81,12 +55,12 @@
         "temp": 23.5
       }
     ],
-    "updated_at": "08:54:39"
+    "updated_at": "09:00:14"
   },
   "NYC": {
     "city": "NYC",
-    "metar_temp": 19,
-    "metar_raw": "2026/07/07 04:51\nKJFK 070451Z 04010KT 10SM OVC007 19/18 A3003 RMK SLP183 402220189 $",
+    "metar_temp": 18,
+    "metar_raw": "2026/07/07 05:51\nKJFK 070551Z 03011KT 3SM OVC005 18/18 A3003 RMK SLP170 60000T01830178 10194 20183 55008 $",
     "spread": 1.4,
     "models": [
       {
@@ -102,7 +76,7 @@
         "temp": 19.5
       }
     ],
-    "updated_at": "08:54:40"
+    "updated_at": "09:00:16"
   },
   "Madrid": {
     "city": "Madrid",
@@ -123,7 +97,7 @@
         "temp": 26.6
       }
     ],
-    "updated_at": "08:54:41"
+    "updated_at": "09:00:17"
   },
   "Moscow": {
     "city": "Moscow",
@@ -144,7 +118,7 @@
         "temp": 15.4
       }
     ],
-    "updated_at": "08:54:42"
+    "updated_at": "09:00:18"
   },
   "Paris": {
     "city": "Paris",
@@ -165,6 +139,6 @@
         "temp": 23.3
       }
     ],
-    "updated_at": "08:54:43"
+    "updated_at": "09:00:19"
   }
 }
