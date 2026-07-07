@@ -15,7 +15,7 @@
         .region-divider { 
             display: flex; align-items: center; text-align: center; 
             margin-top: 3rem; margin-bottom: 2rem;
-            color: #475569; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 900; font-size: 0.75rem;
+            color: #475569; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 900; font-size: 0.85rem;
         }
         .region-divider::before, .region-divider::after {
             content: ''; flex: 1; border-bottom: 1px solid #1e293b;
@@ -31,10 +31,10 @@
                 <h1 class="text-4xl font-black tracking-tighter text-white">
                     🌀 WEATHER <span class="text-gradient">SNIPER</span> <span class="text-[10px] bg-blue-600 text-white px-2 py-0.5 rounded align-middle uppercase tracking-widest font-bold">Pro</span>
                 </h1>
-                <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest font-bold">Real-time METAR & Multi-Model Ensemble</p>
+                <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest font-bold text-blue-400/80">Анализ METAR и Ансамблей Моделей</p>
             </div>
             <div id="lastUpdate" class="text-[10px] font-mono text-slate-500 bg-slate-900 px-4 py-2 rounded-full border border-slate-800">
-                SYNCING...
+                СИНХРОНИЗАЦИЯ...
             </div>
         </header>
 
@@ -49,7 +49,7 @@
             'Fog': 'Туман', 'Rain': 'Дождь', 'Thunderstorm': 'Гроза', 'Cloudy': 'Облачно'
         };
 
-        const REGION_LABELS = { "ASIA": "Asia & Oceania", "EUROPE": "Europe", "AMERICAS": "The Americas" };
+        const REGION_LABELS = { "ASIA": "Азия и Океания", "EUROPE": "Европа", "AMERICAS": "Америка" };
         const REGION_ORDER = ["ASIA", "EUROPE", "AMERICAS"];
 
         async function loadData() {
@@ -58,7 +58,7 @@
                 const data = await response.json();
                 renderCards(data);
                 const first = Object.values(data)[0];
-                document.getElementById('lastUpdate').innerText = 'СИНХРОНИЗАЦИЯ: ' + first.updated_at + ' (MSK)';
+                document.getElementById('lastUpdate').innerText = 'ОБНОВЛЕНО: ' + first.updated_at + ' (MSK)';
             } catch (e) { console.error(e); }
         }
 
@@ -67,20 +67,17 @@
             container.innerHTML = '';
 
             REGION_ORDER.forEach(region => {
-                // Filter cities for this region
                 const cities = Object.entries(data)
                     .filter(([_, info]) => info.region === region)
                     .sort((a, b) => a[0].localeCompare(b[0]));
 
                 if (cities.length === 0) return;
 
-                // Add Divider
                 const divider = document.createElement('div');
                 divider.className = 'region-divider';
                 divider.innerText = REGION_LABELS[region];
                 container.appendChild(divider);
 
-                // Create Grid
                 const grid = document.createElement('div');
                 grid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6';
                 
@@ -99,20 +96,20 @@
                             <span class="text-[10px] font-black px-2 py-0.5 rounded bg-${color}-500/10 text-${color}-400 border border-${color}-500/20">${status}</span>
                         </div>
                         <div class="text-[10px] font-bold text-slate-500 mb-6 flex justify-between uppercase tracking-wider">
-                            <span>Time: ${w.local_time}</span>
-                            <span class="cutoff-badge px-2 rounded">STOP: ${info.cutoff}</span>
+                            <span>Время: ${w.local_time}</span>
+                            <span class="cutoff-badge px-2 rounded">STOP МСК: ${info.cutoff}</span>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4 mb-6">
                             <div class="bg-slate-900/40 rounded-2xl p-4 border border-white/5">
-                                <p class="text-[10px] text-slate-500 uppercase font-black mb-1 tracking-widest">Fact</p>
+                                <p class="text-[10px] text-slate-500 uppercase font-black mb-1 tracking-widest">Факт</p>
                                 <div class="flex items-baseline gap-1">
                                     <span class="text-5xl font-black text-white leading-none">${info.metar_temp !== null ? info.metar_temp : '--'}</span>
                                     <span class="text-base text-slate-500 font-black">°C</span>
                                 </div>
                             </div>
                             <div class="bg-slate-900/40 rounded-2xl p-4 border border-white/5 text-right">
-                                <p class="text-[10px] text-slate-500 uppercase font-black mb-1 tracking-widest">Spread</p>
+                                <p class="text-[10px] text-slate-500 uppercase font-black mb-1 tracking-widest">Разброс</p>
                                 <div class="flex items-baseline justify-end gap-1">
                                     <span class="text-5xl font-black text-${color}-400 leading-none">${spread.toFixed(1)}</span>
                                     <span class="text-base text-slate-500 font-black">°C</span>
@@ -122,22 +119,22 @@
 
                         <div class="flex justify-between items-center mb-8 px-1">
                             <div class="text-center">
-                                <p class="text-[9px] text-slate-500 uppercase font-black tracking-tighter">Clouds</p>
+                                <p class="text-[9px] text-slate-500 uppercase font-black tracking-tighter">Облака</p>
                                 <p class="text-sm font-black text-slate-200">${w.clouds}%</p>
                             </div>
                             <div class="h-8 w-px bg-slate-800"></div>
                             <div class="text-center">
-                                <p class="text-[9px] text-slate-500 uppercase font-black tracking-tighter">Humidity</p>
+                                <p class="text-[9px] text-slate-500 uppercase font-black tracking-tighter">Влажность</p>
                                 <p class="text-sm font-black text-slate-200">${w.humidity}%</p>
                             </div>
                             <div class="h-8 w-px bg-slate-800"></div>
                             <div class="text-center">
-                                <p class="text-[9px] text-slate-500 uppercase font-black tracking-tighter">Condition</p>
+                                <p class="text-[9px] text-slate-500 uppercase font-black tracking-tighter">Статус</p>
                                 <p class="text-[11px] font-black text-blue-400 leading-tight uppercase">${TRANSLATIONS[w.condition] || w.condition}</p>
                             </div>
                         </div>
 
-                        <div class="space-y-2 mb-8 px-1">
+                        <div class="space-y-2 mb-8 px-1 border-t border-white/5 pt-4">
                             ${info.models.map(m => `
                                 <div class="flex justify-between text-[11px] font-bold">
                                     <span class="text-slate-500 font-mono tracking-tighter uppercase">${m.name}</span>
@@ -147,7 +144,7 @@
                         </div>
 
                         <div class="text-[8px] font-mono text-slate-700 break-all opacity-20 group-hover:opacity-100 transition-opacity leading-relaxed">
-                            ${info.metar_raw || 'NO DATA AVAILABLE'}
+                            ${info.metar_raw || 'НЕТ ДАННЫХ'}
                         </div>
                     `;
                     grid.appendChild(card);
