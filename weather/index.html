@@ -15,8 +15,8 @@
         
         /* Accordion Styles */
         .accordion-header { cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; border-bottom: 1px solid #1e293b; }
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
-        .accordion-active .accordion-content { max-height: 5000px; padding-top: 2rem; }
+        .accordion-content { display: none; }
+        .accordion-active .accordion-content { display: block; padding-top: 2rem; }
         .chevron { transition: transform 0.3s; }
         .accordion-active .chevron { transform: rotate(180deg); }
     </style>
