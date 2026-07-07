@@ -22,7 +22,7 @@
       "clouds": 100,
       "humidity": 94,
       "condition": "Cloudy",
-      "local_time": "03:28"
+      "local_time": "03:45"
     },
     "cutoff": "07:00",
     "region": "ASIA",
@@ -43,7 +43,7 @@
         "temp": 14
       }
     },
-    "updated_at": "18:28:58"
+    "updated_at": "18:45:29"
   },
   "Busan": {
     "city": "Busan",
@@ -65,17 +65,17 @@
       }
     ],
     "weather": {
-      "clouds": 67,
-      "humidity": 98,
+      "clouds": 68,
+      "humidity": 99,
       "condition": "Partly Cloudy",
-      "local_time": "00:28"
+      "local_time": "00:45"
     },
     "cutoff": "11:30",
     "region": "ASIA",
     "poly": {
       "fav": {
         "title": "29°C",
-        "price": 0.9995,
+        "price": 1.0,
         "temp": 29
       },
       "minus1": {
@@ -89,7 +89,7 @@
         "temp": 30
       }
     },
-    "updated_at": "18:29:00"
+    "updated_at": "18:45:31"
   },
   "Seoul": {
     "city": "Seoul",
@@ -111,17 +111,17 @@
       }
     ],
     "weather": {
-      "clouds": 82,
-      "humidity": 94,
-      "condition": "Overcast",
-      "local_time": "00:29"
+      "clouds": 47,
+      "humidity": 92,
+      "condition": "Clear",
+      "local_time": "00:45"
     },
     "cutoff": "11:30",
     "region": "ASIA",
     "poly": {
       "fav": {
         "title": "30°C or higher",
-        "price": 0.9995,
+        "price": 1.0,
         "temp": 30
       },
       "minus1": {
@@ -131,7 +131,7 @@
       },
       "plus1": null
     },
-    "updated_at": "18:29:01"
+    "updated_at": "18:45:32"
   },
   "Tokyo": {
     "city": "Tokyo",
@@ -153,17 +153,17 @@
       }
     ],
     "weather": {
-      "clouds": 49,
-      "humidity": 84,
+      "clouds": 43,
+      "humidity": 85,
       "condition": "Clear",
-      "local_time": "00:29"
+      "local_time": "00:45"
     },
     "cutoff": "09:30",
     "region": "ASIA",
     "poly": {
       "fav": {
         "title": "24°C",
-        "price": 0.9995,
+        "price": 1.0,
         "temp": 24
       },
       "minus1": {
@@ -177,7 +177,7 @@
         "temp": 25
       }
     },
-    "updated_at": "18:29:03"
+    "updated_at": "18:45:34"
   },
   "Chengdu": {
     "city": "Chengdu",
@@ -199,10 +199,10 @@
       }
     ],
     "weather": {
-      "clouds": 2,
-      "humidity": 65,
+      "clouds": 1,
+      "humidity": 67,
       "condition": "Clear",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "15:30",
     "region": "ASIA",
@@ -223,7 +223,7 @@
         "temp": 38
       }
     },
-    "updated_at": "18:29:05"
+    "updated_at": "18:45:36"
   },
   "Shenzhen": {
     "city": "Shenzhen",
@@ -245,10 +245,10 @@
       }
     ],
     "weather": {
-      "clouds": 96,
-      "humidity": 96,
+      "clouds": 89,
+      "humidity": 97,
       "condition": "Cloudy",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "11:30",
     "region": "ASIA",
@@ -269,7 +269,7 @@
         "temp": 29
       }
     },
-    "updated_at": "18:29:07"
+    "updated_at": "18:45:37"
   },
   "Beijing": {
     "city": "Beijing",
@@ -291,17 +291,17 @@
       }
     ],
     "weather": {
-      "clouds": 47,
+      "clouds": 29,
       "humidity": 98,
       "condition": "Clear",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "14:30",
     "region": "ASIA",
     "poly": {
       "fav": {
         "title": "33°C",
-        "price": 0.9995,
+        "price": 0.999,
         "temp": 33
       },
       "minus1": {
@@ -315,7 +315,7 @@
         "temp": 34
       }
     },
-    "updated_at": "18:29:08"
+    "updated_at": "18:45:39"
   },
   "Wuhan": {
     "city": "Wuhan",
@@ -337,10 +337,10 @@
       }
     ],
     "weather": {
-      "clouds": 63,
-      "humidity": 97,
+      "clouds": 67,
+      "humidity": 98,
       "condition": "Cloudy",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "15:00",
     "region": "ASIA",
@@ -361,7 +361,7 @@
         "temp": 33
       }
     },
-    "updated_at": "18:29:10"
+    "updated_at": "18:45:41"
   },
   "Chongqing": {
     "city": "Chongqing",
@@ -383,10 +383,10 @@
       }
     ],
     "weather": {
-      "clouds": 5,
-      "humidity": 71,
+      "clouds": 6,
+      "humidity": 72,
       "condition": "Clear",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "22:00",
     "region": "ASIA",
@@ -407,11 +407,11 @@
         "temp": 38
       }
     },
-    "updated_at": "18:29:12"
+    "updated_at": "18:45:42"
   },
   "Taipei": {
     "city": "Taipei",
-    "metar_temp": 28,
+    "metar_temp": 29,
     "max_today": 31.5,
     "spread": 1.5,
     "models": [
@@ -430,9 +430,9 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 83,
+      "humidity": 84,
       "condition": "Clear",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "11:30",
     "region": "ASIA",
@@ -453,11 +453,11 @@
         "temp": 36
       }
     },
-    "updated_at": "18:29:13"
+    "updated_at": "18:45:44"
   },
   "Singapore": {
     "city": "Singapore",
-    "metar_temp": 30,
+    "metar_temp": 29,
     "max_today": 31.7,
     "spread": 1.0,
     "models": [
@@ -475,10 +475,10 @@
       }
     ],
     "weather": {
-      "clouds": 71,
-      "humidity": 70,
+      "clouds": 74,
+      "humidity": 68,
       "condition": "Partly Cloudy",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "14:30",
     "region": "ASIA",
@@ -499,7 +499,7 @@
         "temp": 33
       }
     },
-    "updated_at": "18:29:15"
+    "updated_at": "18:45:46"
   },
   "Hong Kong": {
     "city": "Hong Kong",
@@ -521,10 +521,10 @@
       }
     ],
     "weather": {
-      "clouds": 78,
-      "humidity": 90,
+      "clouds": 85,
+      "humidity": 89,
       "condition": "Cloudy",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "11:30",
     "region": "ASIA",
@@ -541,11 +541,11 @@
       },
       "plus1": {
         "title": "29°C",
-        "price": 0.001,
+        "price": 0.0005,
         "temp": 29
       }
     },
-    "updated_at": "18:29:19"
+    "updated_at": "18:45:48"
   },
   "Kuala Lumpur": {
     "city": "Kuala Lumpur",
@@ -567,10 +567,10 @@
       }
     ],
     "weather": {
-      "clouds": 26,
-      "humidity": 87,
+      "clouds": 21,
+      "humidity": 88,
       "condition": "Clear",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "13:30",
     "region": "ASIA",
@@ -591,11 +591,11 @@
         "temp": 33
       }
     },
-    "updated_at": "18:29:20"
+    "updated_at": "18:45:50"
   },
   "Shanghai": {
     "city": "Shanghai",
-    "metar_temp": 30,
+    "metar_temp": 29,
     "max_today": 33.5,
     "spread": 3.1,
     "models": [
@@ -613,10 +613,10 @@
       }
     ],
     "weather": {
-      "clouds": 30,
+      "clouds": 23,
       "humidity": 86,
       "condition": "Clear",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "12:30",
     "region": "ASIA",
@@ -637,7 +637,7 @@
         "temp": 35
       }
     },
-    "updated_at": "18:29:22"
+    "updated_at": "18:45:52"
   },
   "Guangzhou": {
     "city": "Guangzhou",
@@ -659,10 +659,10 @@
       }
     ],
     "weather": {
-      "clouds": 78,
+      "clouds": 93,
       "humidity": 97,
       "condition": "Cloudy",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "15:30",
     "region": "ASIA",
@@ -683,7 +683,7 @@
         "temp": 32
       }
     },
-    "updated_at": "18:29:24"
+    "updated_at": "18:45:53"
   },
   "Qingdao": {
     "city": "Qingdao",
@@ -705,10 +705,10 @@
       }
     ],
     "weather": {
-      "clouds": 1,
+      "clouds": 0,
       "humidity": 98,
       "condition": "Clear",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "14:00",
     "region": "ASIA",
@@ -729,7 +729,7 @@
         "temp": 24
       }
     },
-    "updated_at": "18:29:25"
+    "updated_at": "18:45:55"
   },
   "Manila": {
     "city": "Manila",
@@ -751,10 +751,10 @@
       }
     ],
     "weather": {
-      "clouds": 16,
-      "humidity": 81,
+      "clouds": 15,
+      "humidity": 82,
       "condition": "Clear",
-      "local_time": "23:29"
+      "local_time": "23:45"
     },
     "cutoff": "14:30",
     "region": "ASIA",
@@ -775,32 +775,32 @@
         "temp": 34
       }
     },
-    "updated_at": "18:29:27"
+    "updated_at": "18:45:57"
   },
   "Lucknow": {
     "city": "Lucknow",
     "metar_temp": 29,
     "max_today": 33.5,
-    "spread": 2.8,
+    "spread": 3.3,
     "models": [
       {
         "name": "GFS",
-        "temp": 30.9
+        "temp": 30.5
       },
       {
         "name": "ICON",
-        "temp": 28.7
+        "temp": 28.3
       },
       {
         "name": "GEM",
-        "temp": 28.1
+        "temp": 27.2
       }
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 95,
+      "humidity": 96,
       "condition": "Cloudy",
-      "local_time": "20:59"
+      "local_time": "21:15"
     },
     "cutoff": "16:00",
     "region": "ASIA",
@@ -817,11 +817,11 @@
       },
       "plus1": {
         "title": "35°C",
-        "price": 0.0015,
+        "price": 0.001,
         "temp": 35
       }
     },
-    "updated_at": "18:29:28"
+    "updated_at": "18:45:58"
   },
   "Karachi": {
     "city": "Karachi",
@@ -843,10 +843,10 @@
       }
     ],
     "weather": {
-      "clouds": 90,
+      "clouds": 55,
       "humidity": 77,
-      "condition": "Overcast",
-      "local_time": "20:29"
+      "condition": "Partly Cloudy",
+      "local_time": "20:45"
     },
     "cutoff": "17:00",
     "region": "ASIA",
@@ -867,7 +867,7 @@
         "temp": 36
       }
     },
-    "updated_at": "18:29:30"
+    "updated_at": "18:46:00"
   },
   "Moscow": {
     "city": "Moscow",
@@ -889,17 +889,17 @@
       }
     ],
     "weather": {
-      "clouds": 99,
-      "humidity": 78,
+      "clouds": 96,
+      "humidity": 79,
       "condition": "Overcast",
-      "local_time": "18:29"
+      "local_time": "18:46"
     },
     "cutoff": "17:30",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "20°C",
-        "price": 0.996,
+        "price": 0.9995,
         "temp": 20
       },
       "minus1": {
@@ -909,16 +909,16 @@
       },
       "plus1": {
         "title": "21°C",
-        "price": 0.004,
+        "price": 0.0005,
         "temp": 21
       }
     },
-    "updated_at": "18:29:32"
+    "updated_at": "18:46:02"
   },
   "Helsinki": {
     "city": "Helsinki",
     "metar_temp": 14,
-    "max_today": 17.2,
+    "max_today": 16.4,
     "spread": 2.5,
     "models": [
       {
@@ -935,17 +935,17 @@
       }
     ],
     "weather": {
-      "clouds": 96,
-      "humidity": 72,
+      "clouds": 98,
+      "humidity": 74,
       "condition": "Overcast",
-      "local_time": "18:29"
+      "local_time": "18:46"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "17°C",
-        "price": 0.996,
+        "price": 0.9985,
         "temp": 17
       },
       "minus1": {
@@ -955,11 +955,11 @@
       },
       "plus1": {
         "title": "18°C",
-        "price": 0.0045,
+        "price": 0.0015,
         "temp": 18
       }
     },
-    "updated_at": "18:29:33"
+    "updated_at": "18:46:04"
   },
   "Ankara": {
     "city": "Ankara",
@@ -981,17 +981,17 @@
       }
     ],
     "weather": {
-      "clouds": 42,
+      "clouds": 49,
       "humidity": 33,
       "condition": "Partly Cloudy",
-      "local_time": "18:29"
+      "local_time": "18:46"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "28°C",
-        "price": 0.9955,
+        "price": 0.9985,
         "temp": 28
       },
       "minus1": {
@@ -1001,11 +1001,11 @@
       },
       "plus1": {
         "title": "29°C",
-        "price": 0.0035,
+        "price": 0.0015,
         "temp": 29
       }
     },
-    "updated_at": "18:29:35"
+    "updated_at": "18:46:05"
   },
   "Tel Aviv": {
     "city": "Tel Aviv",
@@ -1027,10 +1027,10 @@
       }
     ],
     "weather": {
-      "clouds": 57,
-      "humidity": 69,
+      "clouds": 58,
+      "humidity": 70,
       "condition": "Partly Cloudy",
-      "local_time": "18:29"
+      "local_time": "18:46"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
@@ -1051,7 +1051,7 @@
         "temp": 32
       }
     },
-    "updated_at": "18:29:37"
+    "updated_at": "18:46:07"
   },
   "Jeddah": {
     "city": "Jeddah",
@@ -1073,17 +1073,17 @@
       }
     ],
     "weather": {
-      "clouds": 6,
+      "clouds": 5,
       "humidity": 40,
       "condition": "Clear",
-      "local_time": "18:29"
+      "local_time": "18:46"
     },
     "cutoff": "16:00",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "38°C",
-        "price": 0.9975,
+        "price": 0.997,
         "temp": 38
       },
       "minus1": {
@@ -1097,7 +1097,7 @@
         "temp": 39
       }
     },
-    "updated_at": "18:29:39"
+    "updated_at": "18:46:09"
   },
   "Istanbul": {
     "city": "Istanbul",
@@ -1120,16 +1120,16 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 58,
+      "humidity": 60,
       "condition": "Clear",
-      "local_time": "18:29"
+      "local_time": "18:46"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "27°C",
-        "price": 0.9945,
+        "price": 0.995,
         "temp": 27
       },
       "minus1": {
@@ -1139,15 +1139,15 @@
       },
       "plus1": {
         "title": "28°C",
-        "price": 0.0055,
+        "price": 0.0005,
         "temp": 28
       }
     },
-    "updated_at": "18:29:40"
+    "updated_at": "18:46:10"
   },
   "Madrid": {
     "city": "Madrid",
-    "metar_temp": 40,
+    "metar_temp": 39,
     "max_today": 39.1,
     "spread": 0.1,
     "models": [
@@ -1165,17 +1165,17 @@
       }
     ],
     "weather": {
-      "clouds": 70,
-      "humidity": 14,
+      "clouds": 90,
+      "humidity": 16,
       "condition": "Overcast",
-      "local_time": "17:29"
+      "local_time": "17:46"
     },
     "cutoff": "21:00",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "40°C",
-        "price": 0.965,
+        "price": 0.995,
         "temp": 40
       },
       "minus1": {
@@ -1185,11 +1185,11 @@
       },
       "plus1": {
         "title": "41°C",
-        "price": 0.0205,
+        "price": 0.005,
         "temp": 41
       }
     },
-    "updated_at": "18:29:42"
+    "updated_at": "18:46:12"
   },
   "Milan": {
     "city": "Milan",
@@ -1212,16 +1212,16 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 27,
+      "humidity": 26,
       "condition": "Overcast",
-      "local_time": "17:29"
+      "local_time": "17:46"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "33°C",
-        "price": 0.86,
+        "price": 0.95,
         "temp": 33
       },
       "minus1": {
@@ -1231,15 +1231,15 @@
       },
       "plus1": {
         "title": "34°C",
-        "price": 0.135,
+        "price": 0.04,
         "temp": 34
       }
     },
-    "updated_at": "18:29:44"
+    "updated_at": "18:46:14"
   },
   "Warsaw": {
     "city": "Warsaw",
-    "metar_temp": 20,
+    "metar_temp": 17,
     "max_today": 18.7,
     "spread": 2.6,
     "models": [
@@ -1260,14 +1260,14 @@
       "clouds": 100,
       "humidity": 90,
       "condition": "Cloudy",
-      "local_time": "17:29"
+      "local_time": "17:46"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "20°C",
-        "price": 0.9675,
+        "price": 0.9745,
         "temp": 20
       },
       "minus1": {
@@ -1277,11 +1277,11 @@
       },
       "plus1": {
         "title": "21°C",
-        "price": 0.0275,
+        "price": 0.021,
         "temp": 21
       }
     },
-    "updated_at": "18:29:45"
+    "updated_at": "18:46:15"
   },
   "Paris": {
     "city": "Paris",
@@ -1304,16 +1304,16 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 22,
+      "humidity": 20,
       "condition": "Overcast",
-      "local_time": "17:29"
+      "local_time": "17:46"
     },
     "cutoff": "21:00",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "33°C",
-        "price": 0.9,
+        "price": 0.9695,
         "temp": 33
       },
       "minus1": {
@@ -1323,11 +1323,11 @@
       },
       "plus1": {
         "title": "34°C",
-        "price": 0.1,
+        "price": 0.0165,
         "temp": 34
       }
     },
-    "updated_at": "18:29:47"
+    "updated_at": "18:46:17"
   },
   "Amsterdam": {
     "city": "Amsterdam",
@@ -1349,17 +1349,17 @@
       }
     ],
     "weather": {
-      "clouds": 78,
-      "humidity": 49,
-      "condition": "Partly Cloudy",
-      "local_time": "17:29"
+      "clouds": 96,
+      "humidity": 52,
+      "condition": "Overcast",
+      "local_time": "17:46"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "23°C",
-        "price": 0.994,
+        "price": 0.995,
         "temp": 23
       },
       "minus1": {
@@ -1373,7 +1373,7 @@
         "temp": 24
       }
     },
-    "updated_at": "18:29:49"
+    "updated_at": "18:46:19"
   },
   "Munich": {
     "city": "Munich",
@@ -1396,16 +1396,16 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 22,
+      "humidity": 24,
       "condition": "Overcast",
-      "local_time": "17:29"
+      "local_time": "17:46"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "30°C",
-        "price": 0.9725,
+        "price": 0.996,
         "temp": 30
       },
       "minus1": {
@@ -1415,11 +1415,11 @@
       },
       "plus1": {
         "title": "31°C",
-        "price": 0.0305,
+        "price": 0.0005,
         "temp": 31
       }
     },
-    "updated_at": "18:29:50"
+    "updated_at": "18:46:21"
   },
   "London": {
     "city": "London",
@@ -1442,16 +1442,16 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 25,
+      "humidity": 24,
       "condition": "Clear",
-      "local_time": "16:29"
+      "local_time": "16:46"
     },
     "cutoff": "22:00",
     "region": "EUROPE",
     "poly": {
       "fav": {
         "title": "31°C",
-        "price": 0.7,
+        "price": 0.76,
         "temp": 31
       },
       "minus1": {
@@ -1461,11 +1461,11 @@
       },
       "plus1": {
         "title": "32°C",
-        "price": 0.27,
+        "price": 0.22,
         "temp": 32
       }
     },
-    "updated_at": "18:29:52"
+    "updated_at": "18:46:22"
   },
   "Cape Town": {
     "city": "Cape Town",
@@ -1487,15 +1487,15 @@
       }
     ],
     "weather": {
-      "clouds": 86,
-      "humidity": 82,
-      "condition": "Overcast",
-      "local_time": "17:29"
+      "clouds": 58,
+      "humidity": 87,
+      "condition": "Partly Cloudy",
+      "local_time": "17:46"
     },
     "cutoff": "18:30",
     "region": "EUROPE",
     "poly": [],
-    "updated_at": "18:29:54"
+    "updated_at": "18:46:24"
   },
   "Buenos Aires": {
     "city": "Buenos Aires",
@@ -1517,31 +1517,31 @@
       }
     ],
     "weather": {
-      "clouds": 4,
-      "humidity": 62,
+      "clouds": 14,
+      "humidity": 59,
       "condition": "Clear",
-      "local_time": "12:29"
+      "local_time": "12:46"
     },
     "cutoff": "22:00",
     "region": "AMERICAS",
     "poly": {
       "fav": {
         "title": "17°C",
-        "price": 0.465,
+        "price": 0.515,
         "temp": 17
       },
       "minus1": {
         "title": "15°C",
-        "price": 0.0625,
+        "price": 0.0375,
         "temp": 15
       },
       "plus1": {
         "title": "19°C",
-        "price": 0.0275,
+        "price": 0.026,
         "temp": 19
       }
     },
-    "updated_at": "18:29:56"
+    "updated_at": "18:46:26"
   },
   "Sao Paulo": {
     "city": "Sao Paulo",
@@ -1563,31 +1563,31 @@
       }
     ],
     "weather": {
-      "clouds": 49,
-      "humidity": 64,
+      "clouds": 42,
+      "humidity": 62,
       "condition": "Cloudy",
-      "local_time": "12:29"
+      "local_time": "12:46"
     },
     "cutoff": "22:00",
     "region": "AMERICAS",
     "poly": {
       "fav": {
-        "title": "22°C",
-        "price": 0.4,
-        "temp": 22
+        "title": "21°C",
+        "price": 0.46,
+        "temp": 21
       },
       "minus1": {
-        "title": "20°C",
+        "title": "19°C",
         "price": 0.0005,
-        "temp": 20
+        "temp": 19
       },
       "plus1": {
-        "title": "24°C",
-        "price": 0.0255,
-        "temp": 24
+        "title": "23°C",
+        "price": 0.121,
+        "temp": 23
       }
     },
-    "updated_at": "18:29:57"
+    "updated_at": "18:46:28"
   },
   "NYC": {
     "city": "NYC",
@@ -1610,53 +1610,79 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 92,
+      "humidity": 91,
       "condition": "Overcast",
-      "local_time": "11:29"
+      "local_time": "11:46"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:29:59"
+    "updated_at": "18:46:29"
   },
   "Miami": {
     "city": "Miami",
     "metar_temp": 32,
     "max_today": 31.1,
-    "spread": 0,
-    "models": [],
+    "spread": 1.2,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 30.6
+      },
+      {
+        "name": "ICON",
+        "temp": 31.3
+      },
+      {
+        "name": "GEM",
+        "temp": 30.1
+      }
+    ],
     "weather": {
-      "clouds": 96,
-      "humidity": 74,
-      "condition": "Overcast",
-      "local_time": "11:29"
+      "clouds": 69,
+      "humidity": 71,
+      "condition": "Partly Cloudy",
+      "local_time": "11:46"
     },
     "cutoff": "22:00",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:30:02"
+    "updated_at": "18:46:31"
   },
   "Atlanta": {
     "city": "Atlanta",
     "metar_temp": 29,
-    "max_today": null,
-    "spread": 0,
-    "models": [],
+    "max_today": 33.2,
+    "spread": 1.5,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 28.5
+      },
+      {
+        "name": "ICON",
+        "temp": 28.7
+      },
+      {
+        "name": "GEM",
+        "temp": 27.2
+      }
+    ],
     "weather": {
-      "clouds": "--",
-      "humidity": "--",
+      "clouds": 25,
+      "humidity": 61,
       "condition": "Clear",
-      "local_time": "11:30"
+      "local_time": "11:46"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:30:04"
+    "updated_at": "18:46:33"
   },
   "Toronto": {
     "city": "Toronto",
     "metar_temp": 24,
-    "max_today": null,
+    "max_today": 25.9,
     "spread": 3.1,
     "models": [
       {
@@ -1673,31 +1699,31 @@
       }
     ],
     "weather": {
-      "clouds": "--",
-      "humidity": "--",
-      "condition": "Clear",
-      "local_time": "11:30"
+      "clouds": 58,
+      "humidity": 84,
+      "condition": "Partly Cloudy",
+      "local_time": "11:46"
     },
     "cutoff": "23:00",
     "region": "AMERICAS",
     "poly": {
       "fav": {
         "title": "27°C",
-        "price": 0.505,
+        "price": 0.485,
         "temp": 27
       },
       "minus1": {
         "title": "25°C",
-        "price": 0.0145,
+        "price": 0.0115,
         "temp": 25
       },
       "plus1": {
         "title": "29°C",
-        "price": 0.124,
+        "price": 0.104,
         "temp": 29
       }
     },
-    "updated_at": "18:30:06"
+    "updated_at": "18:46:35"
   },
   "Chicago": {
     "city": "Chicago",
@@ -1719,15 +1745,15 @@
       }
     ],
     "weather": {
-      "clouds": 3,
+      "clouds": 2,
       "humidity": 83,
       "condition": "Clear",
-      "local_time": "10:30"
+      "local_time": "10:46"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:30:08"
+    "updated_at": "18:46:36"
   },
   "Austin": {
     "city": "Austin",
@@ -1749,15 +1775,15 @@
       }
     ],
     "weather": {
-      "clouds": 5,
-      "humidity": 60,
+      "clouds": 9,
+      "humidity": 58,
       "condition": "Clear",
-      "local_time": "10:30"
+      "local_time": "10:46"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:30:10"
+    "updated_at": "18:46:38"
   },
   "Houston": {
     "city": "Houston",
@@ -1779,15 +1805,15 @@
       }
     ],
     "weather": {
-      "clouds": 6,
-      "humidity": 78,
+      "clouds": 4,
+      "humidity": 76,
       "condition": "Clear",
-      "local_time": "10:30"
+      "local_time": "10:46"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:30:11"
+    "updated_at": "18:46:39"
   },
   "Dallas": {
     "city": "Dallas",
@@ -1809,15 +1835,15 @@
       }
     ],
     "weather": {
-      "clouds": 3,
-      "humidity": 53,
+      "clouds": 2,
+      "humidity": 50,
       "condition": "Clear",
-      "local_time": "10:30"
+      "local_time": "10:46"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:30:13"
+    "updated_at": "18:46:41"
   },
   "Panama City": {
     "city": "Panama City",
@@ -1839,10 +1865,10 @@
       }
     ],
     "weather": {
-      "clouds": 27,
-      "humidity": 63,
+      "clouds": 26,
+      "humidity": 62,
       "condition": "Cloudy",
-      "local_time": "10:30"
+      "local_time": "10:46"
     },
     "cutoff": "23:00",
     "region": "AMERICAS",
@@ -1854,7 +1880,7 @@
       },
       "minus1": {
         "title": "33°C",
-        "price": 0.185,
+        "price": 0.19,
         "temp": 33
       },
       "plus1": {
@@ -1863,7 +1889,7 @@
         "temp": 37
       }
     },
-    "updated_at": "18:30:15"
+    "updated_at": "18:46:43"
   },
   "Denver": {
     "city": "Denver",
@@ -1886,14 +1912,14 @@
     ],
     "weather": {
       "clouds": 1,
-      "humidity": 31,
+      "humidity": 28,
       "condition": "Clear",
-      "local_time": "09:30"
+      "local_time": "09:46"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:30:17"
+    "updated_at": "18:46:45"
   },
   "Mexico City": {
     "city": "Mexico City",
@@ -1915,10 +1941,10 @@
       }
     ],
     "weather": {
-      "clouds": 99,
-      "humidity": 70,
+      "clouds": 98,
+      "humidity": 68,
       "condition": "Overcast",
-      "local_time": "09:30"
+      "local_time": "09:46"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
@@ -1930,16 +1956,16 @@
       },
       "minus1": {
         "title": "24°C",
-        "price": 0.225,
+        "price": 0.235,
         "temp": 24
       },
       "plus1": {
         "title": "26°C",
-        "price": 0.14,
+        "price": 0.145,
         "temp": 26
       }
     },
-    "updated_at": "18:30:18"
+    "updated_at": "18:46:47"
   },
   "Los Angeles": {
     "city": "Los Angeles",
@@ -1962,14 +1988,14 @@
     ],
     "weather": {
       "clouds": 4,
-      "humidity": 68,
+      "humidity": 64,
       "condition": "Clear",
-      "local_time": "08:30"
+      "local_time": "08:46"
     },
     "cutoff": "01:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:30:20"
+    "updated_at": "18:46:48"
   },
   "San Francisco": {
     "city": "San Francisco",
@@ -1992,43 +2018,30 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 87,
+      "humidity": 86,
       "condition": "Overcast",
-      "local_time": "08:30"
+      "local_time": "08:46"
     },
     "cutoff": "01:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:30:21"
+    "updated_at": "18:46:50"
   },
   "Seattle": {
     "city": "Seattle",
     "metar_temp": 13,
     "max_today": 23.7,
-    "spread": 1.4,
-    "models": [
-      {
-        "name": "GFS",
-        "temp": 14.5
-      },
-      {
-        "name": "ICON",
-        "temp": 13.6
-      },
-      {
-        "name": "GEM",
-        "temp": 15.0
-      }
-    ],
+    "spread": 0,
+    "models": [],
     "weather": {
-      "clouds": 22,
-      "humidity": 85,
+      "clouds": 28,
+      "humidity": 84,
       "condition": "Clear",
-      "local_time": "08:30"
+      "local_time": "08:46"
     },
     "cutoff": "01:00",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "18:30:23"
+    "updated_at": "18:47:01"
   }
 }
