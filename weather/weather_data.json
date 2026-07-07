@@ -19,14 +19,14 @@
       }
     ],
     "weather": {
-      "clouds": 27,
+      "clouds": 46,
       "humidity": 27,
       "condition": "Clear",
-      "local_time": "14:02"
+      "local_time": "14:18"
     },
     "cutoff": "22:00",
     "region": "EUROPE",
-    "updated_at": "16:02:54"
+    "updated_at": "16:18:22"
   },
   "Paris": {
     "city": "Paris",
@@ -51,16 +51,16 @@
       "clouds": 100,
       "humidity": 24,
       "condition": "Overcast",
-      "local_time": "15:02"
+      "local_time": "15:18"
     },
     "cutoff": "21:00",
     "region": "EUROPE",
-    "updated_at": "16:02:55"
+    "updated_at": "16:18:23"
   },
   "Madrid": {
     "city": "Madrid",
-    "metar_temp": 38,
-    "metar_raw": "METAR (LEMD): LEMD 071230Z 21006G20KT 130V280 CAVOK 38/08 Q1019 NOSIG",
+    "metar_temp": 39,
+    "metar_raw": "METAR (LEMD): LEMD 071300Z 17007KT 110V210 CAVOK 39/07 Q1019 NOSIG",
     "spread": 0.9,
     "models": [
       {
@@ -77,14 +77,14 @@
       }
     ],
     "weather": {
-      "clouds": 7,
+      "clouds": 13,
       "humidity": 16,
       "condition": "Clear",
-      "local_time": "15:02"
+      "local_time": "15:18"
     },
     "cutoff": "21:00",
     "region": "EUROPE",
-    "updated_at": "16:02:56"
+    "updated_at": "16:18:24"
   },
   "Ankara": {
     "city": "Ankara",
@@ -106,14 +106,14 @@
       }
     ],
     "weather": {
-      "clouds": 30,
+      "clouds": 36,
       "humidity": 30,
-      "condition": "Partly Cloudy",
-      "local_time": "16:02"
+      "condition": "Clear",
+      "local_time": "16:18"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
-    "updated_at": "16:02:58"
+    "updated_at": "16:18:26"
   },
   "Istanbul": {
     "city": "Istanbul",
@@ -138,11 +138,11 @@
       "clouds": 0,
       "humidity": 52,
       "condition": "Clear",
-      "local_time": "16:02"
+      "local_time": "16:18"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
-    "updated_at": "16:02:59"
+    "updated_at": "16:18:27"
   },
   "Helsinki": {
     "city": "Helsinki",
@@ -164,19 +164,19 @@
       }
     ],
     "weather": {
-      "clouds": 97,
-      "humidity": 85,
+      "clouds": 95,
+      "humidity": 84,
       "condition": "Overcast",
-      "local_time": "16:02"
+      "local_time": "16:18"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
-    "updated_at": "16:03:00"
+    "updated_at": "16:18:28"
   },
   "Moscow": {
     "city": "Moscow",
     "metar_temp": 17,
-    "metar_raw": "METAR (UUEE): UUEE 071230Z 24007MPS 9999 -SHRA SCT043CB 17/11 Q1006 R24L/220157 R24C/220157 NOSIG",
+    "metar_raw": "METAR (UUEE): UUEE 071300Z 25005MPS 9999 -SHRA SCT047CB 17/10 Q1006 R24L/290151 R24C/290151 NOSIG",
     "spread": 2.6,
     "models": [
       {
@@ -194,13 +194,13 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 76,
+      "humidity": 77,
       "condition": "Rain",
-      "local_time": "16:03"
+      "local_time": "16:18"
     },
     "cutoff": "17:30",
     "region": "EUROPE",
-    "updated_at": "16:03:02"
+    "updated_at": "16:18:29"
   },
   "Rome": {
     "city": "Rome",
@@ -222,14 +222,14 @@
       }
     ],
     "weather": {
-      "clouds": 16,
+      "clouds": 17,
       "humidity": 61,
       "condition": "Clear",
-      "local_time": "15:03"
+      "local_time": "15:18"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
-    "updated_at": "16:03:03"
+    "updated_at": "16:18:31"
   },
   "Berlin": {
     "city": "Berlin",
@@ -252,13 +252,13 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 52,
+      "humidity": 51,
       "condition": "Overcast",
-      "local_time": "15:03"
+      "local_time": "15:18"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
-    "updated_at": "16:03:04"
+    "updated_at": "16:18:32"
   },
   "Munich": {
     "city": "Munich",
@@ -281,13 +281,13 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 28,
+      "humidity": 27,
       "condition": "Overcast",
-      "local_time": "15:03"
+      "local_time": "15:18"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
-    "updated_at": "16:03:05"
+    "updated_at": "16:18:33"
   },
   "Amsterdam": {
     "city": "Amsterdam",
@@ -309,14 +309,14 @@
       }
     ],
     "weather": {
-      "clouds": 80,
+      "clouds": 73,
       "humidity": 52,
-      "condition": "Overcast",
-      "local_time": "15:03"
+      "condition": "Partly Cloudy",
+      "local_time": "15:18"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
-    "updated_at": "16:03:06"
+    "updated_at": "16:18:34"
   },
   "Vienna": {
     "city": "Vienna",
@@ -341,11 +341,11 @@
       "clouds": 100,
       "humidity": 29,
       "condition": "Overcast",
-      "local_time": "15:03"
+      "local_time": "15:18"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
-    "updated_at": "16:03:08"
+    "updated_at": "16:18:36"
   },
   "Prague": {
     "city": "Prague",
@@ -367,14 +367,14 @@
       }
     ],
     "weather": {
-      "clouds": 98,
-      "humidity": 35,
+      "clouds": 99,
+      "humidity": 34,
       "condition": "Overcast",
-      "local_time": "15:03"
+      "local_time": "15:18"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
-    "updated_at": "16:03:09"
+    "updated_at": "16:18:37"
   },
   "Warsaw": {
     "city": "Warsaw",
@@ -399,11 +399,11 @@
       "clouds": 100,
       "humidity": 92,
       "condition": "Cloudy",
-      "local_time": "15:03"
+      "local_time": "15:18"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
-    "updated_at": "16:03:10"
+    "updated_at": "16:18:38"
   },
   "Stockholm": {
     "city": "Stockholm",
@@ -426,13 +426,13 @@
     ],
     "weather": {
       "clouds": 84,
-      "humidity": 34,
+      "humidity": 37,
       "condition": "Overcast",
-      "local_time": "15:03"
+      "local_time": "15:18"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
-    "updated_at": "16:03:11"
+    "updated_at": "16:18:40"
   },
   "Oslo": {
     "city": "Oslo",
@@ -454,14 +454,14 @@
       }
     ],
     "weather": {
-      "clouds": 79,
-      "humidity": 60,
+      "clouds": 63,
+      "humidity": 58,
       "condition": "Partly Cloudy",
-      "local_time": "15:03"
+      "local_time": "15:18"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
-    "updated_at": "16:03:13"
+    "updated_at": "16:18:41"
   },
   "Athens": {
     "city": "Athens",
@@ -483,19 +483,19 @@
       }
     ],
     "weather": {
-      "clouds": 18,
+      "clouds": 15,
       "humidity": 33,
       "condition": "Clear",
-      "local_time": "16:03"
+      "local_time": "16:18"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
-    "updated_at": "16:03:14"
+    "updated_at": "16:18:42"
   },
   "Lisbon": {
     "city": "Lisbon",
-    "metar_temp": 30,
-    "metar_raw": "METAR (LPPT): LPPT 071230Z 06004KT 340V130 CAVOK 30/17 Q1019 NOSIG",
+    "metar_temp": 31,
+    "metar_raw": "METAR (LPPT): LPPT 071300Z 36009KT 310V030 CAVOK 31/16 Q1019 NOSIG",
     "spread": 2.8,
     "models": [
       {
@@ -513,18 +513,18 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 44,
+      "humidity": 43,
       "condition": "Clear",
-      "local_time": "14:03"
+      "local_time": "14:18"
     },
     "cutoff": "22:00",
     "region": "EUROPE",
-    "updated_at": "16:03:15"
+    "updated_at": "16:18:43"
   },
   "Dublin": {
     "city": "Dublin",
     "metar_temp": 23,
-    "metar_raw": "METAR (EIDW): EIDW 071230Z 28010KT 210V300 9999 FEW018 23/14 Q1018 NOSIG",
+    "metar_raw": "METAR (EIDW): EIDW 071300Z 28010KT 240V300 9999 FEW018 23/15 Q1018 NOSIG",
     "spread": 1.9,
     "models": [
       {
@@ -541,13 +541,13 @@
       }
     ],
     "weather": {
-      "clouds": 7,
+      "clouds": 4,
       "humidity": 57,
       "condition": "Clear",
-      "local_time": "14:03"
+      "local_time": "14:18"
     },
     "cutoff": "22:00",
     "region": "EUROPE",
-    "updated_at": "16:03:16"
+    "updated_at": "16:18:45"
   }
 }
