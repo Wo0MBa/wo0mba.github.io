@@ -11,6 +11,7 @@
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
         .text-gradient { background: linear-gradient(to right, #3b82f6, #93c5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .cutoff-badge { background: rgba(244, 63, 94, 0.1); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.2); }
     </style>
 </head>
 <body class="p-4 md:p-10 min-h-screen">
@@ -20,10 +21,10 @@
                 <h1 class="text-4xl font-black tracking-tighter text-white">
                     🌀 WEATHER <span class="text-gradient">SNIPER</span> <span class="text-[10px] bg-blue-600 text-white px-2 py-0.5 rounded align-middle uppercase tracking-widest font-bold">Pro</span>
                 </h1>
-                <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest font-bold">Анализ METAR и Ансамблей Моделей в Реальном Времени</p>
+                <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest font-bold">Real-time METAR & Ensemble Analysis</p>
             </div>
             <div id="lastUpdate" class="text-[10px] font-mono text-slate-500 bg-slate-900 px-4 py-2 rounded-full border border-slate-800">
-                СИНХРОНИЗАЦИЯ...
+                SYNCING...
             </div>
         </header>
 
@@ -34,18 +35,11 @@
 
     <script>
         const TRANSLATIONS = {
-            'Clear': 'Ясно',
-            'Mainly Clear': 'Преимущественно ясно',
-            'Partly Cloudy': 'Облачно',
-            'Overcast': 'Пасмурно',
-            'Fog': 'Туман',
-            'Drizzle': 'Морось',
-            'Rain': 'Дождь',
-            'Showers': 'Ливень',
-            'Thunderstorm': 'Гроза',
-            'Unknown': 'Неизвестно',
-            'Cloudy': 'Облачно'
+            'Clear': 'Ясно', 'Partly Cloudy': 'Облачно', 'Overcast': 'Пасмурно',
+            'Fog': 'Туман', 'Rain': 'Дождь', 'Thunderstorm': 'Гроза', 'Cloudy': 'Облачно'
         };
+
+        const REGION_ORDER = { "ASIA": 1, "EUROPE": 2, "AMERICAS": 3 };
 
         async function loadData() {
             try {
@@ -53,29 +47,38 @@
                 const data = await response.json();
                 renderCards(data);
                 const first = Object.values(data)[0];
-                document.getElementById('lastUpdate').innerText = 'ОБНОВЛЕНО: ' + first.updated_at + ' (LOCAL)';
+                document.getElementById('lastUpdate').innerText = 'СИНХРОНИЗАЦИЯ: ' + first.updated_at + ' (MSK)';
             } catch (e) { console.error(e); }
         }
 
         function renderCards(data) {
             const grid = document.getElementById('grid');
             grid.innerHTML = '';
-            const sorted = Object.entries(data).sort((a, b) => a[0].localeCompare(b[0]));
+
+            const sorted = Object.entries(data).sort((a, b) => {
+                if (REGION_ORDER[a[1].region] !== REGION_ORDER[b[1].region]) {
+                    return REGION_ORDER[a[1].region] - REGION_ORDER[b[1].region];
+                }
+                return a[0].localeCompare(b[0]);
+            });
 
             sorted.forEach(([name, info]) => {
                 const spread = info.spread;
                 const status = spread < 1.0 ? 'СТАБИЛЬНО' : (spread < 2.0 ? 'НЕСТАБИЛЬНО' : 'ХАОС');
                 const color = spread < 1.0 ? 'emerald' : (spread < 2.0 ? 'amber' : 'rose');
                 const w = info.weather;
-                const ruCondition = TRANSLATIONS[w.condition] || w.condition;
 
                 const card = document.createElement('div');
                 card.className = `glass rounded-3xl p-5 transition-all duration-300 hover:border-slate-500 group`;
                 
                 card.innerHTML = `
-                    <div class="flex justify-between items-start mb-6">
+                    <div class="flex justify-between items-start mb-2">
                         <h2 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">${name}</h2>
                         <span class="text-[8px] font-black px-2 py-0.5 rounded bg-${color}-500/10 text-${color}-400 border border-${color}-500/20">${status}</span>
+                    </div>
+                    <div class="text-[9px] font-mono text-slate-500 mb-6 flex justify-between">
+                        <span>Местное время: ${w.local_time}</span>
+                        <span class="cutoff-badge px-1.5 rounded">STOP MSK: ${info.cutoff}</span>
                     </div>
 
                     <div class="grid grid-cols-2 gap-3 mb-6">
@@ -108,7 +111,7 @@
                         <div class="h-6 w-px bg-slate-800"></div>
                         <div class="text-center">
                             <p class="text-[7px] text-slate-500 uppercase font-bold">Статус</p>
-                            <p class="text-[9px] font-bold text-blue-400 leading-tight">${ruCondition}</p>
+                            <p class="text-[9px] font-bold text-blue-400 leading-tight">${TRANSLATIONS[w.condition] || w.condition}</p>
                         </div>
                     </div>
 
@@ -122,7 +125,7 @@
                     </div>
 
                     <div class="text-[7px] font-mono text-slate-700 break-all opacity-30 group-hover:opacity-100 transition-opacity">
-                        ${info.metar_raw || 'НЕТ ДАННЫХ METAR'}
+                        ${info.metar_raw || 'NO DATA'}
                     </div>
                 `;
                 grid.appendChild(card);
