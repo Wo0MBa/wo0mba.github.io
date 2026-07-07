@@ -2,7 +2,7 @@
   "Guangzhou": {
     "city": "Guangzhou",
     "metar_temp": 29,
-    "metar_raw": "2026/07/07 05:00\nZGGG 070500Z 14006MPS 9999 FEW016 OVC040 29/25 Q1007 BECMG AT0540 SHRA FEW026CB BKN033",
+    "metar_raw": "2026/07/07 05:30\nZGGG 070530Z 12006MPS 9999 -SHRA SCT016 OVC040 29/25 Q1007 NOSIG",
     "spread": 2.0,
     "models": [
       {
@@ -18,7 +18,7 @@
         "temp": 25.6
       }
     ],
-    "updated_at": "08:24:13"
+    "updated_at": "08:39:24"
   },
   "Chengdu": {
     "city": "Chengdu",
@@ -39,12 +39,12 @@
         "temp": 29.7
       }
     ],
-    "updated_at": "08:24:13"
+    "updated_at": "08:39:25"
   },
   "Hong Kong": {
     "city": "Hong Kong",
     "metar_temp": 29,
-    "metar_raw": "2026/07/07 05:00\nVHHH 070500Z VRB04KT 9999 FEW010 FEW015CB SCT025 29/26 Q1007 TEMPO 19015G25KT 2000 TSRA SHRA FEW008CB SCT020",
+    "metar_raw": "2026/07/07 05:30\nVHHH 070530Z 08010KT 9999 FEW010 FEW015CB SCT025 29/26 Q1007 TEMPO 19015G25KT 2000 TSRA SHRA FEW008CB SCT020",
     "spread": 0.7,
     "models": [
       {
@@ -60,7 +60,7 @@
         "temp": 27.6
       }
     ],
-    "updated_at": "08:24:14"
+    "updated_at": "08:39:26"
   },
   "London": {
     "city": "London",
@@ -81,7 +81,7 @@
         "temp": 23.5
       }
     ],
-    "updated_at": "08:24:15"
+    "updated_at": "08:39:27"
   },
   "NYC": {
     "city": "NYC",
@@ -102,12 +102,12 @@
         "temp": 19.5
       }
     ],
-    "updated_at": "08:24:16"
+    "updated_at": "08:39:28"
   },
   "Madrid": {
     "city": "Madrid",
     "metar_temp": 22,
-    "metar_raw": "2026/07/07 05:00\nLEMD 070500Z 35005KT CAVOK 22/07 Q1020 NOSIG",
+    "metar_raw": "2026/07/07 05:30\nLEMD 070530Z 33003KT 290V360 CAVOK 22/08 Q1020 NOSIG",
     "spread": 6.2,
     "models": [
       {
@@ -123,12 +123,12 @@
         "temp": 26.6
       }
     ],
-    "updated_at": "08:24:17"
+    "updated_at": "08:39:29"
   },
   "Moscow": {
     "city": "Moscow",
     "metar_temp": 15,
-    "metar_raw": "2026/07/07 05:11\nUUEE 070511Z 23005MPS 9999 SCT009 15/13 Q1004 R24L/209145 R24C/290145 NOSIG",
+    "metar_raw": "2026/07/07 05:30\nUUEE 070530Z 22005MPS 200V260 9999 SCT009 15/13 Q1004 R24L/209145 R24C/290145 NOSIG",
     "spread": 0.8,
     "models": [
       {
@@ -144,12 +144,12 @@
         "temp": 15.4
       }
     ],
-    "updated_at": "08:24:18"
+    "updated_at": "08:39:30"
   },
   "Paris": {
     "city": "Paris",
     "metar_temp": 21,
-    "metar_raw": "2026/07/07 05:00\nLFPG 070500Z 32003KT CAVOK 21/09 Q1018 NOSIG",
+    "metar_raw": "2026/07/07 05:30\nLFPG 070530Z 25003KT CAVOK 21/10 Q1018 NOSIG",
     "spread": 5.2,
     "models": [
       {
@@ -165,6 +165,6 @@
         "temp": 23.3
       }
     ],
-    "updated_at": "08:24:19"
+    "updated_at": "08:39:31"
   }
 }
