@@ -1,6 +1,6 @@
 {
-  "Гуанчжоу": {
-    "city": "Гуанчжоу",
+  "Guangzhou": {
+    "city": "Guangzhou",
     "metar_temp": 29,
     "metar_raw": "2026/07/07 06:00\nZGGG 070600Z 12007MPS 9999 -SHRA SCT016 OVC040 29/25 Q1007 NOSIG",
     "spread": 2.1,
@@ -18,10 +18,16 @@
         "temp": 28.0
       }
     ],
-    "updated_at": "09:06:12"
+    "weather": {
+      "clouds": 98,
+      "humidity": 82,
+      "condition": "Thunderstorm",
+      "precip": 0.6
+    },
+    "updated_at": "09:12:17"
   },
-  "Чэнду": {
-    "city": "Чэнду",
+  "Chengdu": {
+    "city": "Chengdu",
     "metar_temp": 36,
     "metar_raw": "2026/07/07 06:00\nZUUU 070600Z 15003MPS 050V190 9999 FEW023 36/22 Q1001 NOSIG",
     "spread": 3.0,
@@ -39,10 +45,16 @@
         "temp": 32.0
       }
     ],
-    "updated_at": "09:06:13"
+    "weather": {
+      "clouds": 23,
+      "humidity": 46,
+      "condition": "Mainly Clear",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:18"
   },
-  "Гонконг": {
-    "city": "Гонконг",
+  "Hong Kong": {
+    "city": "Hong Kong",
     "metar_temp": 29,
     "metar_raw": "2026/07/07 06:00\nVHHH 070600Z 09009KT 060V120 9999 3100E SHRA FEW010 SCT025 29/26 Q1006 TEMPO 19015G25KT 2000 TSRA SHRA FEW008CB SCT020",
     "spread": 2.4,
@@ -60,10 +72,16 @@
         "temp": 28.9
       }
     ],
-    "updated_at": "09:06:14"
+    "weather": {
+      "clouds": 100,
+      "humidity": 85,
+      "condition": "Drizzle",
+      "precip": 0.1
+    },
+    "updated_at": "09:12:19"
   },
-  "Шэньчжэнь": {
-    "city": "Шэньчжэнь",
+  "Shenzhen": {
+    "city": "Shenzhen",
     "metar_temp": 26,
     "metar_raw": "2026/07/07 06:00\nZGSZ 070600Z 05003MPS 030V100 7000 TSRA FEW009 FEW020CB BKN043 26/25 Q1007 BECMG AT0640 -SHRA",
     "spread": 3.2,
@@ -81,10 +99,16 @@
         "temp": 29.0
       }
     ],
-    "updated_at": "09:06:15"
+    "weather": {
+      "clouds": 97,
+      "humidity": 93,
+      "condition": "Thunderstorm",
+      "precip": 0.2
+    },
+    "updated_at": "09:12:21"
   },
-  "Пекин": {
-    "city": "Пекин",
+  "Beijing": {
+    "city": "Beijing",
     "metar_temp": 30,
     "metar_raw": "2026/07/07 06:00\nZBAA 070600Z 12007G12MPS 080V150 9999 FEW050CB 30/23 Q0997 NOSIG",
     "spread": 1.3,
@@ -102,10 +126,16 @@
         "temp": 28.5
       }
     ],
-    "updated_at": "09:06:16"
+    "weather": {
+      "clouds": 97,
+      "humidity": 69,
+      "condition": "Thunderstorm",
+      "precip": 0.7
+    },
+    "updated_at": "09:12:22"
   },
-  "Чунцин": {
-    "city": "Чунцин",
+  "Chongqing": {
+    "city": "Chongqing",
     "metar_temp": 37,
     "metar_raw": "2026/07/07 06:00\nZUCK 070600Z 08004MPS 030V130 CAVOK 37/23 Q1000 NOSIG",
     "spread": 1.2,
@@ -123,12 +153,18 @@
         "temp": 31.3
       }
     ],
-    "updated_at": "09:06:17"
+    "weather": {
+      "clouds": 98,
+      "humidity": 50,
+      "condition": "Overcast",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:23"
   },
-  "Тайбэй": {
-    "city": "Тайбэй",
-    "metar_temp": 34,
-    "metar_raw": "2026/07/07 05:30\nRCTP 070530Z 29014KT 9999 FEW020 34/25 Q1008 NOSIG RMK A2979",
+  "Taipei": {
+    "city": "Taipei",
+    "metar_temp": 35,
+    "metar_raw": "2026/07/07 06:00\nRCTP 070600Z 29014KT 9999 FEW020 35/23 Q1008 NOSIG RMK A2978",
     "spread": 1.6,
     "models": [
       {
@@ -144,12 +180,18 @@
         "temp": 29.7
       }
     ],
-    "updated_at": "09:06:18"
+    "weather": {
+      "clouds": 52,
+      "humidity": 57,
+      "condition": "Cloudy",
+      "precip": 0.2
+    },
+    "updated_at": "09:12:24"
   },
-  "Куала-Лумпур": {
-    "city": "Куала-Лумпур",
-    "metar_temp": 32,
-    "metar_raw": "2026/07/07 05:30\nWMKK 070530Z VRB03KT 9000 VCSH FEW017CB SCT018 32/26 Q1010 NOSIG",
+  "Kuala Lumpur": {
+    "city": "Kuala Lumpur",
+    "metar_temp": 30,
+    "metar_raw": "2026/07/07 06:00\nWMKK 070600Z VRB03KT 9000 VCSH FEW017CB SCT018 30/25 Q1010 NOSIG",
     "spread": 2.1,
     "models": [
       {
@@ -165,10 +207,16 @@
         "temp": 25.8
       }
     ],
-    "updated_at": "09:06:19"
+    "weather": {
+      "clouds": 81,
+      "humidity": 78,
+      "condition": "Showers",
+      "precip": 0.4
+    },
+    "updated_at": "09:12:25"
   },
-  "Лакнау": {
-    "city": "Лакнау",
+  "Lucknow": {
+    "city": "Lucknow",
     "metar_temp": 34,
     "metar_raw": "2026/07/07 06:00\nVILK 070600Z 08008G18KT 5000 HZ SCT020 BKN100 34/25 Q0998 NOSIG",
     "spread": 1.2,
@@ -186,10 +234,16 @@
         "temp": 31.5
       }
     ],
-    "updated_at": "09:06:20"
+    "weather": {
+      "clouds": 78,
+      "humidity": 69,
+      "condition": "Partly Cloudy",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:27"
   },
-  "Пусан": {
-    "city": "Пусан",
+  "Busan": {
+    "city": "Busan",
     "metar_temp": 29,
     "metar_raw": "2026/07/07 06:00\nRKPK 070600Z 19011KT 9999 FEW005 SCT020 BKN030 29/26 Q1008",
     "spread": 3.3,
@@ -207,10 +261,16 @@
         "temp": 27.1
       }
     ],
-    "updated_at": "09:06:21"
+    "weather": {
+      "clouds": 63,
+      "humidity": 90,
+      "condition": "Partly Cloudy",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:28"
   },
-  "Лондон": {
-    "city": "Лондон",
+  "London": {
+    "city": "London",
     "metar_temp": 19,
     "metar_raw": "2026/07/07 05:50\nEGLL 070550Z AUTO 27009KT 9999 NCD 19/10 Q1016",
     "spread": 2.6,
@@ -228,10 +288,16 @@
         "temp": 23.0
       }
     ],
-    "updated_at": "09:06:22"
+    "weather": {
+      "clouds": 73,
+      "humidity": 61,
+      "condition": "Partly Cloudy",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:29"
   },
-  "Париж": {
-    "city": "Париж",
+  "Paris": {
+    "city": "Paris",
     "metar_temp": 24,
     "metar_raw": "2026/07/07 06:00\nLFPG 070600Z 24004KT CAVOK 24/10 Q1018 NOSIG",
     "spread": 3.1,
@@ -249,10 +315,16 @@
         "temp": 22.5
       }
     ],
-    "updated_at": "09:06:23"
+    "weather": {
+      "clouds": 34,
+      "humidity": 49,
+      "condition": "Mainly Clear",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:30"
   },
-  "Мадрид": {
-    "city": "Мадрид",
+  "Madrid": {
+    "city": "Madrid",
     "metar_temp": 23,
     "metar_raw": "2026/07/07 06:00\nLEMD 070600Z 34002KT CAVOK 23/08 Q1021 NOSIG",
     "spread": 5.0,
@@ -270,10 +342,16 @@
         "temp": 23.5
       }
     ],
-    "updated_at": "09:06:24"
+    "weather": {
+      "clouds": 30,
+      "humidity": 44,
+      "condition": "Mainly Clear",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:32"
   },
-  "Мюнхен": {
-    "city": "Мюнхен",
+  "Munich": {
+    "city": "Munich",
     "metar_temp": 21,
     "metar_raw": "2026/07/07 05:50\nEDDM 070550Z AUTO 26010KT CAVOK 21/13 Q1018 NOSIG",
     "spread": 1.2,
@@ -291,10 +369,16 @@
         "temp": 22.2
       }
     ],
-    "updated_at": "09:06:25"
+    "weather": {
+      "clouds": 100,
+      "humidity": 56,
+      "condition": "Overcast",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:33"
   },
-  "Хельсинки": {
-    "city": "Хельсинки",
+  "Helsinki": {
+    "city": "Helsinki",
     "metar_temp": 11,
     "metar_raw": "2026/07/07 05:50\nEFHK 070550Z 22008KT 4000 -DZ BKN005 11/11 Q0992 BECMG 8000",
     "spread": 1.4,
@@ -312,10 +396,16 @@
         "temp": 12.5
       }
     ],
-    "updated_at": "09:06:26"
+    "weather": {
+      "clouds": 100,
+      "humidity": 90,
+      "condition": "Overcast",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:34"
   },
-  "Москва": {
-    "city": "Москва",
+  "Moscow": {
+    "city": "Moscow",
     "metar_temp": 16,
     "metar_raw": "2026/07/07 06:00\nUUEE 070600Z 21005MPS 9999 FEW011 16/13 Q1004 R24L/220157 R24C/220157 NOSIG",
     "spread": 1.1,
@@ -333,10 +423,16 @@
         "temp": 16.5
       }
     ],
-    "updated_at": "09:06:27"
+    "weather": {
+      "clouds": 88,
+      "humidity": 79,
+      "condition": "Showers",
+      "precip": 0.1
+    },
+    "updated_at": "09:12:35"
   },
-  "Нью-Йорк": {
-    "city": "Нью-Йорк",
+  "NYC": {
+    "city": "NYC",
     "metar_temp": 18,
     "metar_raw": "2026/07/07 05:51\nKJFK 070551Z 03011KT 3SM OVC005 18/18 A3003 RMK SLP170 60000T01830178 10194 20183 55008 $",
     "spread": 1.6,
@@ -354,10 +450,16 @@
         "temp": 19.9
       }
     ],
-    "updated_at": "09:06:28"
+    "weather": {
+      "clouds": 100,
+      "humidity": 94,
+      "condition": "Overcast",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:36"
   },
-  "Мехико": {
-    "city": "Мехико",
+  "Mexico City": {
+    "city": "Mexico City",
     "metar_temp": 16,
     "metar_raw": "2026/07/07 05:53\nMMMX 070553Z 30005KT 10SM FEW100 BKN250 16/12 A3037 NOSIG RMK SLP123 52015 904 8/038 HZY",
     "spread": 1.8,
@@ -375,10 +477,16 @@
         "temp": 15.3
       }
     ],
-    "updated_at": "09:06:29"
+    "weather": {
+      "clouds": 98,
+      "humidity": 90,
+      "condition": "Overcast",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:38"
   },
-  "Сан-Франциско": {
-    "city": "Сан-Франциско",
+  "San Francisco": {
+    "city": "San Francisco",
     "metar_temp": 14,
     "metar_raw": "2026/07/07 05:56\nKSFO 070556Z 27012KT 10SM FEW004 BKN007 OVC011 14/12 A3002 RMK AO2 SLP165 T01390117 10178 20133 52009 $",
     "spread": 1.0,
@@ -396,10 +504,16 @@
         "temp": 14.7
       }
     ],
-    "updated_at": "09:06:30"
+    "weather": {
+      "clouds": 81,
+      "humidity": 93,
+      "condition": "Overcast",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:39"
   },
-  "Панама": {
-    "city": "Панама",
+  "Panama": {
+    "city": "Panama",
     "metar_temp": 26,
     "metar_raw": "2026/07/07 06:00\nMPTO 070600Z 29003KT 240V310 9999 FEW018 26/24 Q1009 NOSIG",
     "spread": 1.3,
@@ -417,6 +531,12 @@
         "temp": 30.2
       }
     ],
-    "updated_at": "09:06:31"
+    "weather": {
+      "clouds": 76,
+      "humidity": 89,
+      "condition": "Partly Cloudy",
+      "precip": 0.0
+    },
+    "updated_at": "09:12:40"
   }
 }
