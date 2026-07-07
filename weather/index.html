@@ -25,13 +25,13 @@
     </style>
 </head>
 <body class="p-4 md:p-10 min-h-screen">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-[1600px] mx-auto">
         <header class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div>
                 <h1 class="text-4xl font-black tracking-tighter text-white">
                     🌀 WEATHER <span class="text-gradient">SNIPER</span> <span class="text-[10px] bg-blue-600 text-white px-2 py-0.5 rounded align-middle uppercase tracking-widest font-bold">Pro</span>
                 </h1>
-                <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest font-bold text-blue-400/80">Анализ METAR и Ансамблей Моделей</p>
+                <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest font-bold text-blue-400/80">Анализ METAR и Ансамблей Моделей (Все 43 города)</p>
             </div>
             <div id="lastUpdate" class="text-[10px] font-mono text-slate-500 bg-slate-900 px-4 py-2 rounded-full border border-slate-800">
                 СИНХРОНИЗАЦИЯ...
@@ -79,7 +79,7 @@
                 container.appendChild(divider);
 
                 const grid = document.createElement('div');
-                grid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6';
+                grid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6';
                 
                 cities.forEach(([name, info]) => {
                     const spread = info.spread;
@@ -92,7 +92,7 @@
                     
                     card.innerHTML = `
                         <div class="flex justify-between items-start mb-2">
-                            <h2 class="text-xl font-black text-white group-hover:text-blue-400 transition-colors tracking-tight">${name}</h2>
+                            <h2 class="text-2xl font-black text-white group-hover:text-blue-400 transition-colors tracking-tight">${name}</h2>
                             <span class="text-[10px] font-black px-2 py-0.5 rounded bg-${color}-500/10 text-${color}-400 border border-${color}-500/20">${status}</span>
                         </div>
                         <div class="text-[10px] font-bold text-slate-500 mb-6 flex justify-between uppercase tracking-wider">
@@ -119,17 +119,17 @@
 
                         <div class="flex justify-between items-center mb-8 px-1">
                             <div class="text-center">
-                                <p class="text-[9px] text-slate-500 uppercase font-black tracking-tighter">Облака</p>
-                                <p class="text-sm font-black text-slate-200">${w.clouds}%</p>
+                                <p class="text-[10px] text-slate-500 uppercase font-black tracking-tighter">Облака</p>
+                                <p class="text-base font-black text-slate-200">${w.clouds}%</p>
                             </div>
                             <div class="h-8 w-px bg-slate-800"></div>
                             <div class="text-center">
-                                <p class="text-[9px] text-slate-500 uppercase font-black tracking-tighter">Влажность</p>
-                                <p class="text-sm font-black text-slate-200">${w.humidity}%</p>
+                                <p class="text-[10px] text-slate-500 uppercase font-black tracking-tighter">Влажность</p>
+                                <p class="text-base font-black text-slate-200">${w.humidity}%</p>
                             </div>
                             <div class="h-8 w-px bg-slate-800"></div>
                             <div class="text-center">
-                                <p class="text-[9px] text-slate-500 uppercase font-black tracking-tighter">Статус</p>
+                                <p class="text-[10px] text-slate-500 uppercase font-black tracking-tighter">Статус</p>
                                 <p class="text-[11px] font-black text-blue-400 leading-tight uppercase">${TRANSLATIONS[w.condition] || w.condition}</p>
                             </div>
                         </div>
