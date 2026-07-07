@@ -1,8 +1,8 @@
 {
   "London": {
     "city": "London",
-    "metar_temp": 27,
-    "metar_raw": "METAR (EGLC): EGLC 071150Z AUTO 27011KT 9999 NCD 27/11 Q1016",
+    "metar_temp": 28,
+    "metar_raw": "METAR (EGLC): EGLC 071220Z AUTO 27011KT 230V320 9999 NCD 28/12 Q1016",
     "spread": 2.2,
     "models": [
       {
@@ -19,14 +19,14 @@
       }
     ],
     "weather": {
-      "clouds": 4,
-      "humidity": 30,
+      "clouds": 9,
+      "humidity": 29,
       "condition": "Clear",
-      "local_time": "13:16"
+      "local_time": "13:31"
     },
     "cutoff": "22:00",
     "region": "EUROPE",
-    "updated_at": "15:16:26"
+    "updated_at": "15:31:55"
   },
   "Paris": {
     "city": "Paris",
@@ -51,11 +51,11 @@
       "clouds": 100,
       "humidity": 24,
       "condition": "Overcast",
-      "local_time": "14:16"
+      "local_time": "14:31"
     },
     "cutoff": "21:00",
     "region": "EUROPE",
-    "updated_at": "15:16:28"
+    "updated_at": "15:31:56"
   },
   "Madrid": {
     "city": "Madrid",
@@ -80,16 +80,16 @@
       "clouds": 6,
       "humidity": 17,
       "condition": "Clear",
-      "local_time": "14:16"
+      "local_time": "14:31"
     },
     "cutoff": "21:00",
     "region": "EUROPE",
-    "updated_at": "15:16:29"
+    "updated_at": "15:31:58"
   },
   "Ankara": {
     "city": "Ankara",
-    "metar_temp": 27,
-    "metar_raw": "METAR (LTAC): LTAC 071150Z VRB04KT 9999 SCT040 27/08 Q1015 NOSIG",
+    "metar_temp": 28,
+    "metar_raw": "METAR (LTAC): LTAC 071220Z VRB05KT 9999 SCT040 SCT100 28/09 Q1015 NOSIG",
     "spread": 0.7,
     "models": [
       {
@@ -106,19 +106,19 @@
       }
     ],
     "weather": {
-      "clouds": 46,
+      "clouds": 41,
       "humidity": 31,
       "condition": "Partly Cloudy",
-      "local_time": "15:16"
+      "local_time": "15:31"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
-    "updated_at": "15:16:30"
+    "updated_at": "15:31:59"
   },
   "Istanbul": {
     "city": "Istanbul",
     "metar_temp": 27,
-    "metar_raw": "METAR (LTFM): LTFM 071150Z 06012KT 030V090 CAVOK 27/14 Q1016 NOSIG",
+    "metar_raw": "METAR (LTFM): LTFM 071220Z 06011KT 020V090 CAVOK 27/14 Q1015 NOSIG",
     "spread": 0.8,
     "models": [
       {
@@ -138,16 +138,16 @@
       "clouds": 0,
       "humidity": 51,
       "condition": "Clear",
-      "local_time": "15:16"
+      "local_time": "15:31"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
-    "updated_at": "15:16:31"
+    "updated_at": "15:32:00"
   },
   "Helsinki": {
     "city": "Helsinki",
     "metar_temp": 15,
-    "metar_raw": "METAR (EFHK): EFHK 071150Z 26009KT 9999 SCT010 FEW030CB 15/12 Q0995 NOSIG",
+    "metar_raw": "METAR (EFHK): EFHK 071220Z 26009KT 9999 -SHRA SCT015 FEW030CB 15/12 Q0995 NOSIG",
     "spread": 1.4,
     "models": [
       {
@@ -165,13 +165,13 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 81,
+      "humidity": 80,
       "condition": "Overcast",
-      "local_time": "15:16"
+      "local_time": "15:32"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
-    "updated_at": "15:16:33"
+    "updated_at": "15:32:02"
   },
   "Moscow": {
     "city": "Moscow",
@@ -193,19 +193,19 @@
       }
     ],
     "weather": {
-      "clouds": 99,
-      "humidity": 71,
+      "clouds": 100,
+      "humidity": 72,
       "condition": "Rain",
-      "local_time": "15:16"
+      "local_time": "15:32"
     },
     "cutoff": "17:30",
     "region": "EUROPE",
-    "updated_at": "15:16:34"
+    "updated_at": "15:32:03"
   },
   "Rome": {
     "city": "Rome",
     "metar_temp": 30,
-    "metar_raw": "METAR (LIRF): LIRF 071150Z 23012KT CAVOK 30/20 Q1017 NOSIG",
+    "metar_raw": "METAR (LIRF): LIRF 071220Z 23012KT CAVOK 30/20 Q1017 NOSIG",
     "spread": 1.7,
     "models": [
       {
@@ -222,19 +222,19 @@
       }
     ],
     "weather": {
-      "clouds": 7,
+      "clouds": 10,
       "humidity": 63,
       "condition": "Clear",
-      "local_time": "14:16"
+      "local_time": "14:32"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
-    "updated_at": "15:16:35"
+    "updated_at": "15:32:04"
   },
   "Berlin": {
     "city": "Berlin",
-    "metar_temp": 22,
-    "metar_raw": "METAR (EDDB): EDDB 071150Z AUTO 25016KT CAVOK 22/14 Q1008 TEMPO 27015G25KT",
+    "metar_temp": 24,
+    "metar_raw": "METAR (EDDB): EDDB 071220Z AUTO 26018KT CAVOK 24/14 Q1007 TEMPO 27015G25KT",
     "spread": 1.7,
     "models": [
       {
@@ -251,19 +251,19 @@
       }
     ],
     "weather": {
-      "clouds": 93,
-      "humidity": 58,
+      "clouds": 96,
+      "humidity": 56,
       "condition": "Overcast",
-      "local_time": "14:16"
+      "local_time": "14:32"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
-    "updated_at": "15:16:36"
+    "updated_at": "15:32:05"
   },
   "Munich": {
     "city": "Munich",
-    "metar_temp": 28,
-    "metar_raw": "METAR (EDDM): EDDM 071150Z AUTO 25018KT CAVOK 28/11 Q1016 NOSIG",
+    "metar_temp": 30,
+    "metar_raw": "METAR (EDDM): EDDM 071220Z AUTO 26018G31KT 230V290 CAVOK 30/12 Q1016 NOSIG",
     "spread": 3.1,
     "models": [
       {
@@ -281,18 +281,18 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 30,
+      "humidity": 29,
       "condition": "Overcast",
-      "local_time": "14:16"
+      "local_time": "14:32"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
-    "updated_at": "15:16:38"
+    "updated_at": "15:32:07"
   },
   "Amsterdam": {
     "city": "Amsterdam",
     "metar_temp": 22,
-    "metar_raw": "METAR (EHAM): EHAM 071155Z 29020KT 260V320 9999 FEW032 22/14 Q1013 NOSIG",
+    "metar_raw": "METAR (EHAM): EHAM 071225Z 29019KT 9999 FEW028 22/13 Q1014 NOSIG",
     "spread": 1.6,
     "models": [
       {
@@ -309,19 +309,19 @@
       }
     ],
     "weather": {
-      "clouds": 93,
+      "clouds": 85,
       "humidity": 50,
       "condition": "Overcast",
-      "local_time": "14:16"
+      "local_time": "14:32"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
-    "updated_at": "15:16:39"
+    "updated_at": "15:32:08"
   },
   "Vienna": {
     "city": "Vienna",
     "metar_temp": 30,
-    "metar_raw": "METAR (LOWW): LOWW 071150Z 27020G34KT 240V300 CAVOK 30/09 Q1013 NOSIG",
+    "metar_raw": "METAR (LOWW): LOWW 071220Z 28020G34KT CAVOK 30/09 Q1013 NOSIG",
     "spread": 2.9,
     "models": [
       {
@@ -338,19 +338,19 @@
       }
     ],
     "weather": {
-      "clouds": 58,
-      "humidity": 27,
+      "clouds": 72,
+      "humidity": 28,
       "condition": "Overcast",
-      "local_time": "14:16"
+      "local_time": "14:32"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
-    "updated_at": "15:16:40"
+    "updated_at": "15:32:09"
   },
   "Prague": {
     "city": "Prague",
     "metar_temp": 25,
-    "metar_raw": "METAR (LKPR): LKPR 071200Z 27018KT CAVOK 25/10 Q1012 NOSIG",
+    "metar_raw": "METAR (LKPR): LKPR 071230Z 27015G25KT CAVOK 25/10 Q1012 NOS",
     "spread": 1.5,
     "models": [
       {
@@ -367,19 +367,19 @@
       }
     ],
     "weather": {
-      "clouds": 100,
-      "humidity": 38,
+      "clouds": 99,
+      "humidity": 37,
       "condition": "Overcast",
-      "local_time": "14:16"
+      "local_time": "14:32"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
-    "updated_at": "15:16:41"
+    "updated_at": "15:32:11"
   },
   "Warsaw": {
     "city": "Warsaw",
     "metar_temp": 18,
-    "metar_raw": "METAR (EPWA): EPWA 071200Z 23011KT 9999 -SHRA FEW015 BKN040CB 18/16 Q1006 NOSIG",
+    "metar_raw": "METAR (EPWA): EPWA 071230Z 22009KT 9999 FEW036CB BKN044 18/16 Q1006 NOSIG",
     "spread": 0.4,
     "models": [
       {
@@ -397,18 +397,18 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 88,
+      "humidity": 90,
       "condition": "Cloudy",
-      "local_time": "14:16"
+      "local_time": "14:32"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
-    "updated_at": "15:16:43"
+    "updated_at": "15:32:12"
   },
   "Stockholm": {
     "city": "Stockholm",
-    "metar_temp": 16,
-    "metar_raw": "METAR (ESSA): ESSA 071150Z 19005KT 150V230 CAVOK 16/04 Q0995 NOSIG",
+    "metar_temp": 17,
+    "metar_raw": "METAR (ESSA): ESSA 071220Z 17004KT 130V230 CAVOK 17/03 Q0995 NOSIG",
     "spread": 0.5,
     "models": [
       {
@@ -425,19 +425,19 @@
       }
     ],
     "weather": {
-      "clouds": 70,
-      "humidity": 30,
+      "clouds": 59,
+      "humidity": 29,
       "condition": "Partly Cloudy",
-      "local_time": "14:16"
+      "local_time": "14:32"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
-    "updated_at": "15:16:44"
+    "updated_at": "15:32:13"
   },
   "Oslo": {
     "city": "Oslo",
-    "metar_temp": 12,
-    "metar_raw": "METAR (ENGM): ENGM 071150Z 36014KT 9999 VCSH BKN024 12/05 Q0997 TEMPO 35015G25KT",
+    "metar_temp": 11,
+    "metar_raw": "METAR (ENGM): ENGM 071220Z 03018G29KT 9999 VCSH SCT023 BKN049 11/06 Q0998 NOSIG",
     "spread": 0.9,
     "models": [
       {
@@ -454,19 +454,19 @@
       }
     ],
     "weather": {
-      "clouds": 95,
-      "humidity": 67,
+      "clouds": 93,
+      "humidity": 66,
       "condition": "Overcast",
-      "local_time": "14:16"
+      "local_time": "14:32"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
-    "updated_at": "15:16:45"
+    "updated_at": "15:32:15"
   },
   "Athens": {
     "city": "Athens",
     "metar_temp": 32,
-    "metar_raw": "METAR (LGAV): LGAV 071150Z 05014KT 9999 SCT025 32/11 Q1015 NOSIG",
+    "metar_raw": "METAR (LGAV): LGAV 071220Z 06013KT 030V090 9999 SCT025 32/11 Q1015 NOSIG",
     "spread": 2.5,
     "models": [
       {
@@ -483,14 +483,14 @@
       }
     ],
     "weather": {
-      "clouds": 25,
-      "humidity": 35,
+      "clouds": 23,
+      "humidity": 34,
       "condition": "Clear",
-      "local_time": "15:16"
+      "local_time": "15:32"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
-    "updated_at": "15:16:46"
+    "updated_at": "15:32:16"
   },
   "Lisbon": {
     "city": "Lisbon",
@@ -512,14 +512,14 @@
       }
     ],
     "weather": {
-      "clouds": 3,
-      "humidity": 46,
+      "clouds": 2,
+      "humidity": 45,
       "condition": "Clear",
-      "local_time": "13:16"
+      "local_time": "13:32"
     },
     "cutoff": "22:00",
     "region": "EUROPE",
-    "updated_at": "15:16:48"
+    "updated_at": "15:32:17"
   },
   "Dublin": {
     "city": "Dublin",
@@ -541,13 +541,13 @@
       }
     ],
     "weather": {
-      "clouds": 88,
-      "humidity": 58,
-      "condition": "Overcast",
-      "local_time": "13:16"
+      "clouds": 59,
+      "humidity": 57,
+      "condition": "Partly Cloudy",
+      "local_time": "13:32"
     },
     "cutoff": "22:00",
     "region": "EUROPE",
-    "updated_at": "15:16:49"
+    "updated_at": "15:32:18"
   }
 }
