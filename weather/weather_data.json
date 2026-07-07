@@ -1,144 +1,422 @@
 {
-  "Guangzhou": {
-    "city": "Guangzhou",
+  "Гуанчжоу": {
+    "city": "Гуанчжоу",
     "metar_temp": 29,
-    "metar_raw": "2026/07/07 05:30\nZGGG 070530Z 12006MPS 9999 -SHRA SCT016 OVC040 29/25 Q1007 NOSIG",
-    "spread": 0,
-    "models": [],
-    "updated_at": "09:00:10"
-  },
-  "Chengdu": {
-    "city": "Chengdu",
-    "metar_temp": 35,
-    "metar_raw": "2026/07/07 05:00\nZUUU 070500Z VRB01MPS 8000 FEW050 35/23 Q1001 NOSIG",
-    "spread": 0,
-    "models": [],
-    "updated_at": "09:00:11"
-  },
-  "Hong Kong": {
-    "city": "Hong Kong",
-    "metar_temp": 29,
-    "metar_raw": "2026/07/07 05:30\nVHHH 070530Z 08010KT 9999 FEW010 FEW015CB SCT025 29/26 Q1007 TEMPO 19015G25KT 2000 TSRA SHRA FEW008CB SCT020",
-    "spread": 0.7,
+    "metar_raw": "2026/07/07 06:00\nZGGG 070600Z 12007MPS 9999 -SHRA SCT016 OVC040 29/25 Q1007 NOSIG",
+    "spread": 2.1,
     "models": [
       {
         "name": "GFS",
-        "temp": 27.0
+        "temp": 25.9
       },
       {
         "name": "ICON",
-        "temp": 26.9
+        "temp": 27.8
       },
       {
         "name": "GEM",
-        "temp": 27.6
+        "temp": 28.0
       }
     ],
-    "updated_at": "09:00:13"
+    "updated_at": "09:06:12"
   },
-  "London": {
-    "city": "London",
-    "metar_temp": 19,
-    "metar_raw": "2026/07/07 05:50\nEGLL 070550Z AUTO 27009KT 9999 NCD 19/10 Q1016",
+  "Чэнду": {
+    "city": "Чэнду",
+    "metar_temp": 36,
+    "metar_raw": "2026/07/07 06:00\nZUUU 070600Z 15003MPS 050V190 9999 FEW023 36/22 Q1001 NOSIG",
+    "spread": 3.0,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 29.0
+      },
+      {
+        "name": "ICON",
+        "temp": 30.7
+      },
+      {
+        "name": "GEM",
+        "temp": 32.0
+      }
+    ],
+    "updated_at": "09:06:13"
+  },
+  "Гонконг": {
+    "city": "Гонконг",
+    "metar_temp": 29,
+    "metar_raw": "2026/07/07 06:00\nVHHH 070600Z 09009KT 060V120 9999 3100E SHRA FEW010 SCT025 29/26 Q1006 TEMPO 19015G25KT 2000 TSRA SHRA FEW008CB SCT020",
+    "spread": 2.4,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 26.5
+      },
+      {
+        "name": "ICON",
+        "temp": 27.4
+      },
+      {
+        "name": "GEM",
+        "temp": 28.9
+      }
+    ],
+    "updated_at": "09:06:14"
+  },
+  "Шэньчжэнь": {
+    "city": "Шэньчжэнь",
+    "metar_temp": 26,
+    "metar_raw": "2026/07/07 06:00\nZGSZ 070600Z 05003MPS 030V100 7000 TSRA FEW009 FEW020CB BKN043 26/25 Q1007 BECMG AT0640 -SHRA",
+    "spread": 3.2,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 25.8
+      },
+      {
+        "name": "ICON",
+        "temp": 27.8
+      },
+      {
+        "name": "GEM",
+        "temp": 29.0
+      }
+    ],
+    "updated_at": "09:06:15"
+  },
+  "Пекин": {
+    "city": "Пекин",
+    "metar_temp": 30,
+    "metar_raw": "2026/07/07 06:00\nZBAA 070600Z 12007G12MPS 080V150 9999 FEW050CB 30/23 Q0997 NOSIG",
     "spread": 1.3,
     "models": [
       {
         "name": "GFS",
-        "temp": 23.5
+        "temp": 29.7
       },
       {
         "name": "ICON",
-        "temp": 24.8
+        "temp": 28.4
+      },
+      {
+        "name": "GEM",
+        "temp": 28.5
+      }
+    ],
+    "updated_at": "09:06:16"
+  },
+  "Чунцин": {
+    "city": "Чунцин",
+    "metar_temp": 37,
+    "metar_raw": "2026/07/07 06:00\nZUCK 070600Z 08004MPS 030V130 CAVOK 37/23 Q1000 NOSIG",
+    "spread": 1.2,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 31.7
+      },
+      {
+        "name": "ICON",
+        "temp": 30.5
+      },
+      {
+        "name": "GEM",
+        "temp": 31.3
+      }
+    ],
+    "updated_at": "09:06:17"
+  },
+  "Тайбэй": {
+    "city": "Тайбэй",
+    "metar_temp": 34,
+    "metar_raw": "2026/07/07 05:30\nRCTP 070530Z 29014KT 9999 FEW020 34/25 Q1008 NOSIG RMK A2979",
+    "spread": 1.6,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 31.3
+      },
+      {
+        "name": "ICON",
+        "temp": 30.2
+      },
+      {
+        "name": "GEM",
+        "temp": 29.7
+      }
+    ],
+    "updated_at": "09:06:18"
+  },
+  "Куала-Лумпур": {
+    "city": "Куала-Лумпур",
+    "metar_temp": 32,
+    "metar_raw": "2026/07/07 05:30\nWMKK 070530Z VRB03KT 9000 VCSH FEW017CB SCT018 32/26 Q1010 NOSIG",
+    "spread": 2.1,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 27.3
+      },
+      {
+        "name": "ICON",
+        "temp": 27.9
+      },
+      {
+        "name": "GEM",
+        "temp": 25.8
+      }
+    ],
+    "updated_at": "09:06:19"
+  },
+  "Лакнау": {
+    "city": "Лакнау",
+    "metar_temp": 34,
+    "metar_raw": "2026/07/07 06:00\nVILK 070600Z 08008G18KT 5000 HZ SCT020 BKN100 34/25 Q0998 NOSIG",
+    "spread": 1.2,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 32.7
+      },
+      {
+        "name": "ICON",
+        "temp": 32.3
+      },
+      {
+        "name": "GEM",
+        "temp": 31.5
+      }
+    ],
+    "updated_at": "09:06:20"
+  },
+  "Пусан": {
+    "city": "Пусан",
+    "metar_temp": 29,
+    "metar_raw": "2026/07/07 06:00\nRKPK 070600Z 19011KT 9999 FEW005 SCT020 BKN030 29/26 Q1008",
+    "spread": 3.3,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 27.6
+      },
+      {
+        "name": "ICON",
+        "temp": 24.3
+      },
+      {
+        "name": "GEM",
+        "temp": 27.1
+      }
+    ],
+    "updated_at": "09:06:21"
+  },
+  "Лондон": {
+    "city": "Лондон",
+    "metar_temp": 19,
+    "metar_raw": "2026/07/07 05:50\nEGLL 070550Z AUTO 27009KT 9999 NCD 19/10 Q1016",
+    "spread": 2.6,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 23.7
+      },
+      {
+        "name": "ICON",
+        "temp": 21.1
+      },
+      {
+        "name": "GEM",
+        "temp": 23.0
+      }
+    ],
+    "updated_at": "09:06:22"
+  },
+  "Париж": {
+    "city": "Париж",
+    "metar_temp": 24,
+    "metar_raw": "2026/07/07 06:00\nLFPG 070600Z 24004KT CAVOK 24/10 Q1018 NOSIG",
+    "spread": 3.1,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 25.6
+      },
+      {
+        "name": "ICON",
+        "temp": 25.0
+      },
+      {
+        "name": "GEM",
+        "temp": 22.5
+      }
+    ],
+    "updated_at": "09:06:23"
+  },
+  "Мадрид": {
+    "city": "Мадрид",
+    "metar_temp": 23,
+    "metar_raw": "2026/07/07 06:00\nLEMD 070600Z 34002KT CAVOK 23/08 Q1021 NOSIG",
+    "spread": 5.0,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 28.5
+      },
+      {
+        "name": "ICON",
+        "temp": 26.6
       },
       {
         "name": "GEM",
         "temp": 23.5
       }
     ],
-    "updated_at": "09:00:14"
+    "updated_at": "09:06:24"
   },
-  "NYC": {
-    "city": "NYC",
-    "metar_temp": 18,
-    "metar_raw": "2026/07/07 05:51\nKJFK 070551Z 03011KT 3SM OVC005 18/18 A3003 RMK SLP170 60000T01830178 10194 20183 55008 $",
+  "Мюнхен": {
+    "city": "Мюнхен",
+    "metar_temp": 21,
+    "metar_raw": "2026/07/07 05:50\nEDDM 070550Z AUTO 26010KT CAVOK 21/13 Q1018 NOSIG",
+    "spread": 1.2,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 21.4
+      },
+      {
+        "name": "ICON",
+        "temp": 22.6
+      },
+      {
+        "name": "GEM",
+        "temp": 22.2
+      }
+    ],
+    "updated_at": "09:06:25"
+  },
+  "Хельсинки": {
+    "city": "Хельсинки",
+    "metar_temp": 11,
+    "metar_raw": "2026/07/07 05:50\nEFHK 070550Z 22008KT 4000 -DZ BKN005 11/11 Q0992 BECMG 8000",
     "spread": 1.4,
     "models": [
       {
         "name": "GFS",
-        "temp": 18.4
+        "temp": 11.1
       },
       {
         "name": "ICON",
-        "temp": 19.8
+        "temp": 12.1
       },
       {
         "name": "GEM",
-        "temp": 19.5
+        "temp": 12.5
       }
     ],
-    "updated_at": "09:00:16"
+    "updated_at": "09:06:26"
   },
-  "Madrid": {
-    "city": "Madrid",
-    "metar_temp": 22,
-    "metar_raw": "2026/07/07 05:30\nLEMD 070530Z 33003KT 290V360 CAVOK 22/08 Q1020 NOSIG",
-    "spread": 6.2,
+  "Москва": {
+    "city": "Москва",
+    "metar_temp": 16,
+    "metar_raw": "2026/07/07 06:00\nUUEE 070600Z 21005MPS 9999 FEW011 16/13 Q1004 R24L/220157 R24C/220157 NOSIG",
+    "spread": 1.1,
     "models": [
       {
         "name": "GFS",
-        "temp": 32.8
+        "temp": 17.6
       },
       {
         "name": "ICON",
-        "temp": 31.3
+        "temp": 16.5
       },
       {
         "name": "GEM",
-        "temp": 26.6
+        "temp": 16.5
       }
     ],
-    "updated_at": "09:00:17"
+    "updated_at": "09:06:27"
   },
-  "Moscow": {
-    "city": "Moscow",
-    "metar_temp": 15,
-    "metar_raw": "2026/07/07 05:30\nUUEE 070530Z 22005MPS 200V260 9999 SCT009 15/13 Q1004 R24L/209145 R24C/290145 NOSIG",
-    "spread": 0.8,
+  "Нью-Йорк": {
+    "city": "Нью-Йорк",
+    "metar_temp": 18,
+    "metar_raw": "2026/07/07 05:51\nKJFK 070551Z 03011KT 3SM OVC005 18/18 A3003 RMK SLP170 60000T01830178 10194 20183 55008 $",
+    "spread": 1.6,
     "models": [
       {
         "name": "GFS",
+        "temp": 18.3
+      },
+      {
+        "name": "ICON",
+        "temp": 19.9
+      },
+      {
+        "name": "GEM",
+        "temp": 19.9
+      }
+    ],
+    "updated_at": "09:06:28"
+  },
+  "Мехико": {
+    "city": "Мехико",
+    "metar_temp": 16,
+    "metar_raw": "2026/07/07 05:53\nMMMX 070553Z 30005KT 10SM FEW100 BKN250 16/12 A3037 NOSIG RMK SLP123 52015 904 8/038 HZY",
+    "spread": 1.8,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 16.4
+      },
+      {
+        "name": "ICON",
+        "temp": 17.1
+      },
+      {
+        "name": "GEM",
+        "temp": 15.3
+      }
+    ],
+    "updated_at": "09:06:29"
+  },
+  "Сан-Франциско": {
+    "city": "Сан-Франциско",
+    "metar_temp": 14,
+    "metar_raw": "2026/07/07 05:56\nKSFO 070556Z 27012KT 10SM FEW004 BKN007 OVC011 14/12 A3002 RMK AO2 SLP165 T01390117 10178 20133 52009 $",
+    "spread": 1.0,
+    "models": [
+      {
+        "name": "GFS",
+        "temp": 14.4
+      },
+      {
+        "name": "ICON",
+        "temp": 13.7
+      },
+      {
+        "name": "GEM",
         "temp": 14.7
-      },
-      {
-        "name": "ICON",
-        "temp": 15.5
-      },
-      {
-        "name": "GEM",
-        "temp": 15.4
       }
     ],
-    "updated_at": "09:00:18"
+    "updated_at": "09:06:30"
   },
-  "Paris": {
-    "city": "Paris",
-    "metar_temp": 21,
-    "metar_raw": "2026/07/07 05:30\nLFPG 070530Z 25003KT CAVOK 21/10 Q1018 NOSIG",
-    "spread": 5.2,
+  "Панама": {
+    "city": "Панама",
+    "metar_temp": 26,
+    "metar_raw": "2026/07/07 06:00\nMPTO 070600Z 29003KT 240V310 9999 FEW018 26/24 Q1009 NOSIG",
+    "spread": 1.3,
     "models": [
       {
         "name": "GFS",
-        "temp": 26.4
+        "temp": 28.9
       },
       {
         "name": "ICON",
-        "temp": 28.5
+        "temp": 30.0
       },
       {
         "name": "GEM",
-        "temp": 23.3
+        "temp": 30.2
       }
     ],
-    "updated_at": "09:00:19"
+    "updated_at": "09:06:31"
   }
 }
