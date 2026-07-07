@@ -1,8 +1,8 @@
 {
   "Taipei": {
     "city": "Taipei",
-    "metar_temp": 34,
-    "metar_raw": "METAR (RCTP): RCTP 070900Z 26010KT 9999 FEW020 34/23 Q1008 NOSIG RMK A2977",
+    "metar_temp": 32,
+    "metar_raw": "METAR (RCTP): RCTP 070930Z 25010KT 9999 FEW020 32/23 Q1007 NOSIG RMK A2976",
     "spread": 1.4,
     "models": [
       {
@@ -11,7 +11,7 @@
       },
       {
         "name": "ICON",
-        "temp": 30.5
+        "temp": 30.9
       },
       {
         "name": "GEM",
@@ -19,20 +19,20 @@
       }
     ],
     "weather": {
-      "clouds": 17,
+      "clouds": 16,
       "humidity": 63,
       "condition": "Clear",
-      "local_time": "17:21"
+      "local_time": "17:37"
     },
     "cutoff": "11:30",
     "region": "ASIA",
-    "updated_at": "12:21:59"
+    "updated_at": "12:37:58"
   },
   "Hong Kong": {
     "city": "Hong Kong",
     "metar_temp": 28,
     "metar_raw": "HKO STATION (TST)",
-    "spread": 1.8,
+    "spread": 1.9,
     "models": [
       {
         "name": "GFS",
@@ -40,7 +40,7 @@
       },
       {
         "name": "ICON",
-        "temp": 28.3
+        "temp": 28.2
       },
       {
         "name": "GEM",
@@ -48,20 +48,20 @@
       }
     ],
     "weather": {
-      "clouds": 96,
+      "clouds": 93,
       "humidity": 87,
       "condition": "Thunderstorm",
-      "local_time": "17:21"
+      "local_time": "17:37"
     },
     "cutoff": "11:30",
     "region": "ASIA",
-    "updated_at": "12:22:02"
+    "updated_at": "12:38:00"
   },
   "Shenzhen": {
     "city": "Shenzhen",
     "metar_temp": 26,
     "metar_raw": "METAR (ZGSZ): ZGSZ 070900Z 22004G11MPS 170V280 5000 +TSRA SCT015 SCT020CB BKN026 26/25 Q1005 BECMG AT1040 -SHRA",
-    "spread": 1.9,
+    "spread": 2.0,
     "models": [
       {
         "name": "GFS",
@@ -69,7 +69,7 @@
       },
       {
         "name": "ICON",
-        "temp": 28.6
+        "temp": 28.5
       },
       {
         "name": "GEM",
@@ -80,17 +80,17 @@
       "clouds": 98,
       "humidity": 86,
       "condition": "Cloudy",
-      "local_time": "17:22"
+      "local_time": "17:38"
     },
     "cutoff": "11:30",
     "region": "ASIA",
-    "updated_at": "12:22:03"
+    "updated_at": "12:38:02"
   },
   "Shanghai": {
     "city": "Shanghai",
     "metar_temp": 35,
-    "metar_raw": "METAR (ZSSS): ZSSS 070900Z 19006MPS CAVOK 35/26 Q1000 NOSIG",
-    "spread": 2.1,
+    "metar_raw": "METAR (ZSSS): ZSSS 070930Z 19006MPS CAVOK 35/25 Q1000 NOSIG",
+    "spread": 1.4,
     "models": [
       {
         "name": "GFS",
@@ -98,7 +98,7 @@
       },
       {
         "name": "ICON",
-        "temp": 36.7
+        "temp": 36.0
       },
       {
         "name": "GEM",
@@ -106,20 +106,20 @@
       }
     ],
     "weather": {
-      "clouds": 33,
-      "humidity": 74,
+      "clouds": 27,
+      "humidity": 76,
       "condition": "Clear",
-      "local_time": "17:22"
+      "local_time": "17:38"
     },
     "cutoff": "12:30",
     "region": "ASIA",
-    "updated_at": "12:22:05"
+    "updated_at": "12:38:03"
   },
   "Guangzhou": {
     "city": "Guangzhou",
     "metar_temp": 29,
-    "metar_raw": "METAR (ZGGG): ZGGG 070900Z 13004MPS 100V160 9999 -SHRA SCT020 BKN040 29/25 Q1005 NOSIG",
-    "spread": 2.5,
+    "metar_raw": "METAR (ZGGG): ZGGG 070930Z 13005MPS 9999 -SHRA SCT020 29/25 Q1005 NOSIG",
+    "spread": 1.7,
     "models": [
       {
         "name": "GFS",
@@ -127,7 +127,7 @@
       },
       {
         "name": "ICON",
-        "temp": 28.6
+        "temp": 27.7
       },
       {
         "name": "GEM",
@@ -136,18 +136,18 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 92,
+      "humidity": 93,
       "condition": "Cloudy",
-      "local_time": "17:22"
+      "local_time": "17:38"
     },
     "cutoff": "15:30",
     "region": "ASIA",
-    "updated_at": "12:22:06"
+    "updated_at": "12:38:04"
   },
   "Beijing": {
     "city": "Beijing",
-    "metar_temp": 26,
-    "metar_raw": "METAR (ZBAA): ZBAA 070900Z 06005MPS 020V090 9999 -TSRA SCT033CB 26/20 Q1000 BECMG AT1040 NSW",
+    "metar_temp": 23,
+    "metar_raw": "METAR (ZBAA): ZBAA 070930Z 13004MPS 080V160 9999 -TSRA BKN033CB 23/21 Q0999 NOSIG",
     "spread": 6.4,
     "models": [
       {
@@ -156,7 +156,7 @@
       },
       {
         "name": "ICON",
-        "temp": 30.7
+        "temp": 28.8
       },
       {
         "name": "GEM",
@@ -164,14 +164,14 @@
       }
     ],
     "weather": {
-      "clouds": 82,
-      "humidity": 78,
+      "clouds": 83,
+      "humidity": 79,
       "condition": "Cloudy",
-      "local_time": "17:22"
+      "local_time": "17:38"
     },
     "cutoff": "14:30",
     "region": "ASIA",
-    "updated_at": "12:22:07"
+    "updated_at": "12:38:05"
   },
   "Chengdu": {
     "city": "Chengdu",
@@ -185,7 +185,7 @@
       },
       {
         "name": "ICON",
-        "temp": 36.0
+        "temp": 35.8
       },
       {
         "name": "GEM",
@@ -193,14 +193,14 @@
       }
     ],
     "weather": {
-      "clouds": 43,
-      "humidity": 62,
+      "clouds": 48,
+      "humidity": 61,
       "condition": "Clear",
-      "local_time": "17:22"
+      "local_time": "17:38"
     },
     "cutoff": "15:30",
     "region": "ASIA",
-    "updated_at": "12:22:08"
+    "updated_at": "12:38:07"
   },
   "Chongqing": {
     "city": "Chongqing",
@@ -214,7 +214,7 @@
       },
       {
         "name": "ICON",
-        "temp": 37.2
+        "temp": 37.3
       },
       {
         "name": "GEM",
@@ -222,20 +222,20 @@
       }
     ],
     "weather": {
-      "clouds": 83,
-      "humidity": 48,
-      "condition": "Overcast",
-      "local_time": "17:22"
+      "clouds": 58,
+      "humidity": 50,
+      "condition": "Partly Cloudy",
+      "local_time": "17:38"
     },
     "cutoff": "22:00",
     "region": "ASIA",
-    "updated_at": "12:22:09"
+    "updated_at": "12:38:08"
   },
   "Tokyo": {
     "city": "Tokyo",
     "metar_temp": 24,
-    "metar_raw": "METAR (RJTT): RJTT 070900Z 08007KT 9999 FEW025 BKN045 24/19 Q1013 NOSIG",
-    "spread": 2.3,
+    "metar_raw": "METAR (RJTT): RJTT 070930Z 08007KT 9999 FEW025 BKN045 24/20 Q1013 NOSIG",
+    "spread": 2.1,
     "models": [
       {
         "name": "GFS",
@@ -243,7 +243,7 @@
       },
       {
         "name": "ICON",
-        "temp": 23.8
+        "temp": 24.0
       },
       {
         "name": "GEM",
@@ -251,20 +251,20 @@
       }
     ],
     "weather": {
-      "clouds": 60,
+      "clouds": 58,
       "humidity": 68,
       "condition": "Partly Cloudy",
-      "local_time": "18:22"
+      "local_time": "18:38"
     },
     "cutoff": "09:30",
     "region": "ASIA",
-    "updated_at": "12:22:11"
+    "updated_at": "12:38:09"
   },
   "Seoul": {
     "city": "Seoul",
-    "metar_temp": 28,
-    "metar_raw": "METAR (RKSI): RKSI 070900Z 29006KT 260V330 9999 SCT030 SCT070 BKN200 28/24 Q1004 NOSIG",
-    "spread": 1.5,
+    "metar_temp": 27,
+    "metar_raw": "METAR (RKSI): RKSI 070930Z 34004KT CAVOK 27/25 Q1004 NOSIG",
+    "spread": 3.5,
     "models": [
       {
         "name": "GFS",
@@ -272,7 +272,7 @@
       },
       {
         "name": "ICON",
-        "temp": 28.3
+        "temp": 30.5
       },
       {
         "name": "GEM",
@@ -280,20 +280,20 @@
       }
     ],
     "weather": {
-      "clouds": 50,
-      "humidity": 80,
+      "clouds": 62,
+      "humidity": 81,
       "condition": "Partly Cloudy",
-      "local_time": "18:22"
+      "local_time": "18:38"
     },
     "cutoff": "11:30",
     "region": "ASIA",
-    "updated_at": "12:22:12"
+    "updated_at": "12:38:10"
   },
   "Singapore": {
     "city": "Singapore",
     "metar_temp": 31,
-    "metar_raw": "METAR (WSSS): WSSS 070900Z 13011KT 9999 FEW018 FEW020TCU BKN300 31/24 Q1009 NOSIG",
-    "spread": 0.9,
+    "metar_raw": "METAR (WSSS): WSSS 070930Z 13010KT 090V150 9999 FEW018 FEW020TCU BKN300 31/24 Q1009 NOSIG",
+    "spread": 1.1,
     "models": [
       {
         "name": "GFS",
@@ -301,7 +301,7 @@
       },
       {
         "name": "ICON",
-        "temp": 29.9
+        "temp": 29.6
       },
       {
         "name": "GEM",
@@ -309,20 +309,20 @@
       }
     ],
     "weather": {
-      "clouds": 45,
+      "clouds": 43,
       "humidity": 65,
       "condition": "Clear",
-      "local_time": "17:22"
+      "local_time": "17:38"
     },
     "cutoff": "14:30",
     "region": "ASIA",
-    "updated_at": "12:22:13"
+    "updated_at": "12:38:12"
   },
   "Kuala Lumpur": {
     "city": "Kuala Lumpur",
     "metar_temp": 31,
     "metar_raw": "METAR (WMKK): WMKK 070900Z VRB04KT 9000 FEW017CB 31/26 Q1008 NOSIG",
-    "spread": 2.3,
+    "spread": 2.6,
     "models": [
       {
         "name": "GFS",
@@ -330,7 +330,7 @@
       },
       {
         "name": "ICON",
-        "temp": 31.7
+        "temp": 32.0
       },
       {
         "name": "GEM",
@@ -338,20 +338,20 @@
       }
     ],
     "weather": {
-      "clouds": 97,
-      "humidity": 79,
+      "clouds": 95,
+      "humidity": 81,
       "condition": "Cloudy",
-      "local_time": "17:22"
+      "local_time": "17:38"
     },
     "cutoff": "13:30",
     "region": "ASIA",
-    "updated_at": "12:22:14"
+    "updated_at": "12:38:13"
   },
   "Bangkok": {
     "city": "Bangkok",
     "metar_temp": 31,
-    "metar_raw": "METAR (VTBS): VTBS 070900Z 19010KT 9999 FEW020 31/25 Q1006 NOSIG",
-    "spread": 1.2,
+    "metar_raw": "METAR (VTBS): VTBS 070930Z 19010KT 9999 FEW020 31/25 Q1006 NOSIG",
+    "spread": 0.6,
     "models": [
       {
         "name": "GFS",
@@ -359,7 +359,7 @@
       },
       {
         "name": "ICON",
-        "temp": 32.3
+        "temp": 31.7
       },
       {
         "name": "GEM",
@@ -368,19 +368,19 @@
     ],
     "weather": {
       "clouds": 99,
-      "humidity": 81,
+      "humidity": 82,
       "condition": "Thunderstorm",
-      "local_time": "16:22"
+      "local_time": "16:38"
     },
     "cutoff": "15:30",
     "region": "ASIA",
-    "updated_at": "12:22:15"
+    "updated_at": "12:38:15"
   },
   "Manila": {
     "city": "Manila",
     "metar_temp": 31,
     "metar_raw": "METAR (RPLL): RPLL 070900Z 26013KT 9000 FEW023CB SCT025 31/26 Q1006 NOSIG RMK A2971 CB NE",
-    "spread": 3.0,
+    "spread": 2.2,
     "models": [
       {
         "name": "GFS",
@@ -388,7 +388,7 @@
       },
       {
         "name": "ICON",
-        "temp": 33.1
+        "temp": 32.3
       },
       {
         "name": "GEM",
@@ -396,78 +396,78 @@
       }
     ],
     "weather": {
-      "clouds": 21,
+      "clouds": 20,
       "humidity": 64,
       "condition": "Clear",
-      "local_time": "17:22"
+      "local_time": "17:38"
     },
     "cutoff": "14:30",
     "region": "ASIA",
-    "updated_at": "12:22:17"
+    "updated_at": "12:38:16"
   },
   "Lucknow": {
     "city": "Lucknow",
-    "metar_temp": 33,
-    "metar_raw": "METAR (VILK): VILK 070900Z 09008G18KT 5000 HZ SCT020 FEW030CB OVC090 33/25 Q0995 NOSIG",
+    "metar_temp": 34,
+    "metar_raw": "METAR (VILK): VILK 070930Z 08010G20KT 5000 HZ SCT020 FEW030CB BKN090 34/25 Q0995 NOSIG",
     "spread": 6.8,
     "models": [
       {
         "name": "GFS",
-        "temp": 36.9
+        "temp": 35.7
       },
       {
         "name": "ICON",
-        "temp": 30.2
+        "temp": 32.3
       },
       {
         "name": "GEM",
-        "temp": 30.1
+        "temp": 28.9
       }
     ],
     "weather": {
-      "clouds": 87,
-      "humidity": 74,
+      "clouds": 90,
+      "humidity": 77,
       "condition": "Cloudy",
-      "local_time": "14:52"
+      "local_time": "15:08"
     },
     "cutoff": "16:00",
     "region": "ASIA",
-    "updated_at": "12:22:18"
+    "updated_at": "12:38:17"
   },
   "Delhi": {
     "city": "Delhi",
-    "metar_temp": 28,
-    "metar_raw": "METAR (VIDP): VIDP 070900Z 31011G21KT 3500 -TSRA FEW008 SCT030 FEW035CB BKN090 28/24 Q1001 TEMPO 04020G30KT 1500 TSRA",
-    "spread": 4.4,
+    "metar_temp": 26,
+    "metar_raw": "METAR (VIDP): VIDP 070930Z 05008KT 2500 TSRA SCT008 BKN030 FEW035CB OVC080 26/25 Q1000 TEMPO 34015G25KT 1500 TSRA",
+    "spread": 8.2,
     "models": [
       {
         "name": "GFS",
-        "temp": 40.4
+        "temp": 39.6
       },
       {
         "name": "ICON",
-        "temp": 36.0
+        "temp": 35.6
       },
       {
         "name": "GEM",
-        "temp": 36.0
+        "temp": 31.4
       }
     ],
     "weather": {
-      "clouds": 81,
-      "humidity": 69,
-      "condition": "Overcast",
-      "local_time": "14:52"
+      "clouds": 77,
+      "humidity": 66,
+      "condition": "Partly Cloudy",
+      "local_time": "15:08"
     },
     "cutoff": "16:00",
     "region": "ASIA",
-    "updated_at": "12:22:19"
+    "updated_at": "12:38:19"
   },
   "Busan": {
     "city": "Busan",
     "metar_temp": 26,
     "metar_raw": "METAR (RKPK): RKPK 070903Z 19008KT 4800 BR SCT002 BKN003 BKN030 26/25 Q1007 RMK CIG003 VIS SW 1",
-    "spread": 1.3,
+    "spread": 1.6,
     "models": [
       {
         "name": "GFS",
@@ -475,7 +475,7 @@
       },
       {
         "name": "ICON",
-        "temp": 25.9
+        "temp": 25.6
       },
       {
         "name": "GEM",
@@ -483,19 +483,19 @@
       }
     ],
     "weather": {
-      "clouds": 92,
-      "humidity": 95,
+      "clouds": 83,
+      "humidity": 96,
       "condition": "Overcast",
-      "local_time": "18:22"
+      "local_time": "18:38"
     },
     "cutoff": "11:30",
     "region": "ASIA",
-    "updated_at": "12:22:21"
+    "updated_at": "12:38:20"
   },
   "Ankara": {
     "city": "Ankara",
     "metar_temp": 25,
-    "metar_raw": "METAR (LTAC): LTAC 070850Z 05008KT 9999 SCT040 25/10 Q1016 NOSIG",
+    "metar_raw": "METAR (LTAC): LTAC 070920Z 11006KT 060V180 9999 SCT040 25/10 Q1016 NOSIG",
     "spread": 1.0,
     "models": [
       {
@@ -512,20 +512,20 @@
       }
     ],
     "weather": {
-      "clouds": 48,
-      "humidity": 41,
+      "clouds": 43,
+      "humidity": 40,
       "condition": "Clear",
-      "local_time": "12:22"
+      "local_time": "12:38"
     },
     "cutoff": "18:00",
     "region": "ASIA",
-    "updated_at": "12:22:22"
+    "updated_at": "12:38:21"
   },
   "Dubai": {
     "city": "Dubai",
     "metar_temp": 39,
-    "metar_raw": "METAR (OMDB): OMDB 070900Z 28011KT CAVOK 39/23 Q0997 NOSIG",
-    "spread": 3.7,
+    "metar_raw": "METAR (OMDB): OMDB 070930Z 28010KT CAVOK 39/24 Q0996 NOSIG",
+    "spread": 3.8,
     "models": [
       {
         "name": "GFS",
@@ -533,7 +533,7 @@
       },
       {
         "name": "ICON",
-        "temp": 40.1
+        "temp": 40.2
       },
       {
         "name": "GEM",
@@ -542,18 +542,18 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 41,
+      "humidity": 42,
       "condition": "Clear",
-      "local_time": "13:22"
+      "local_time": "13:38"
     },
     "cutoff": "16:00",
     "region": "ASIA",
-    "updated_at": "12:22:23"
+    "updated_at": "12:38:22"
   },
   "Moscow": {
     "city": "Moscow",
     "metar_temp": 19,
-    "metar_raw": "METAR (UUEE): UUEE 070913Z 24008MPS 9999 SCT032 19/12 Q1005 R24L/220157 R24C/220157 NOSIG",
+    "metar_raw": "METAR (UUEE): UUEE 070930Z 23008MPS CAVOK 19/12 Q1005 R24L/220157 R24C/220157 NOSIG",
     "spread": 0.8,
     "models": [
       {
@@ -573,11 +573,11 @@
       "clouds": 100,
       "humidity": 65,
       "condition": "Overcast",
-      "local_time": "12:22"
+      "local_time": "12:38"
     },
     "cutoff": "17:30",
     "region": "EUROPE",
-    "updated_at": "12:22:24"
+    "updated_at": "12:38:23"
   },
   "Helsinki": {
     "city": "Helsinki",
@@ -602,16 +602,16 @@
       "clouds": 100,
       "humidity": 90,
       "condition": "Cloudy",
-      "local_time": "12:22"
+      "local_time": "12:38"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
-    "updated_at": "12:22:26"
+    "updated_at": "12:38:25"
   },
   "Berlin": {
     "city": "Berlin",
-    "metar_temp": 19,
-    "metar_raw": "METAR (EDDB): EDDB 070850Z AUTO 26010KT 9999 -SHRA FEW///TCU 19/15 Q1009 RESHRA TEMPO 27020G30KT",
+    "metar_temp": 20,
+    "metar_raw": "METAR (EDDB): EDDB 070920Z AUTO 26013KT 9999 -SHRA FEW///TCU 20/15 Q1009 TEMPO 27015G25KT",
     "spread": 2.4,
     "models": [
       {
@@ -629,18 +629,18 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 73,
+      "humidity": 74,
       "condition": "Rain",
-      "local_time": "11:22"
+      "local_time": "11:38"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
-    "updated_at": "12:22:27"
+    "updated_at": "12:38:26"
   },
   "Munich": {
     "city": "Munich",
     "metar_temp": 28,
-    "metar_raw": "METAR (EDDM): EDDM 070850Z AUTO 26017KT CAVOK 28/11 Q1018 BECMG 26015G25KT",
+    "metar_raw": "METAR (EDDM): EDDM 070920Z AUTO 27013KT 240V310 CAVOK 28/11 Q1018 BECMG 26015G25KT",
     "spread": 1.7,
     "models": [
       {
@@ -657,19 +657,19 @@
       }
     ],
     "weather": {
-      "clouds": 69,
-      "humidity": 36,
+      "clouds": 73,
+      "humidity": 35,
       "condition": "Partly Cloudy",
-      "local_time": "11:22"
+      "local_time": "11:38"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
-    "updated_at": "12:22:28"
+    "updated_at": "12:38:27"
   },
   "Paris": {
     "city": "Paris",
-    "metar_temp": 29,
-    "metar_raw": "METAR (LFPG): LFPG 070900Z 29008KT CAVOK 29/09 Q1018 NOSIG",
+    "metar_temp": 30,
+    "metar_raw": "METAR (LFPG): LFPG 070930Z 29008KT 240V340 CAVOK 30/11 Q1018 NOSIG",
     "spread": 1.7,
     "models": [
       {
@@ -689,16 +689,16 @@
       "clouds": 100,
       "humidity": 32,
       "condition": "Overcast",
-      "local_time": "11:22"
+      "local_time": "11:38"
     },
     "cutoff": "21:00",
     "region": "EUROPE",
-    "updated_at": "12:22:29"
+    "updated_at": "12:38:28"
   },
   "Madrid": {
     "city": "Madrid",
-    "metar_temp": 31,
-    "metar_raw": "METAR (LEMD): LEMD 070900Z 18003KT 110V280 CAVOK 31/08 Q1021 NOSIG",
+    "metar_temp": 32,
+    "metar_raw": "METAR (LEMD): LEMD 070930Z 21002KT CAVOK 32/08 Q1021 NOSIG",
     "spread": 0.6,
     "models": [
       {
@@ -715,19 +715,19 @@
       }
     ],
     "weather": {
-      "clouds": 38,
+      "clouds": 30,
       "humidity": 24,
       "condition": "Clear",
-      "local_time": "11:22"
+      "local_time": "11:38"
     },
     "cutoff": "21:00",
     "region": "EUROPE",
-    "updated_at": "12:22:31"
+    "updated_at": "12:38:30"
   },
   "London": {
     "city": "London",
     "metar_temp": 25,
-    "metar_raw": "METAR (EGLC): EGLC 070850Z AUTO 27010KT 240V310 9999 NCD 25/12 Q1016",
+    "metar_raw": "METAR (EGLC): EGLC 070920Z AUTO 27012KT 9999 NCD 25/12 Q1016",
     "spread": 3.4,
     "models": [
       {
@@ -744,19 +744,19 @@
       }
     ],
     "weather": {
-      "clouds": 21,
-      "humidity": 53,
+      "clouds": 13,
+      "humidity": 52,
       "condition": "Clear",
-      "local_time": "10:22"
+      "local_time": "10:38"
     },
     "cutoff": "22:00",
     "region": "EUROPE",
-    "updated_at": "12:22:32"
+    "updated_at": "12:38:31"
   },
   "Amsterdam": {
     "city": "Amsterdam",
     "metar_temp": 23,
-    "metar_raw": "METAR (EHAM): EHAM 070855Z 28016KT 240V300 CAVOK 23/15 Q1012 NOSIG",
+    "metar_raw": "METAR (EHAM): EHAM 070925Z 28016KT 250V310 CAVOK 23/15 Q1013 NOSIG",
     "spread": 1.2,
     "models": [
       {
@@ -773,19 +773,19 @@
       }
     ],
     "weather": {
-      "clouds": 99,
+      "clouds": 100,
       "humidity": 51,
       "condition": "Overcast",
-      "local_time": "11:22"
+      "local_time": "11:38"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
-    "updated_at": "12:22:33"
+    "updated_at": "12:38:32"
   },
   "Rome": {
     "city": "Rome",
     "metar_temp": 30,
-    "metar_raw": "METAR (LIRF): LIRF 070850Z VRB04KT CAVOK 30/20 Q1018 NOSIG",
+    "metar_raw": "METAR (LIRF): LIRF 070920Z 24008KT 200V270 CAVOK 30/21 Q1017 NOSIG",
     "spread": 2.6,
     "models": [
       {
@@ -802,19 +802,19 @@
       }
     ],
     "weather": {
-      "clouds": 14,
-      "humidity": 50,
+      "clouds": 19,
+      "humidity": 51,
       "condition": "Clear",
-      "local_time": "11:22"
+      "local_time": "11:38"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
-    "updated_at": "12:22:34"
+    "updated_at": "12:38:33"
   },
   "Istanbul": {
     "city": "Istanbul",
-    "metar_temp": 28,
-    "metar_raw": "METAR (LTBA): LTBA 070850Z 10010KT 070V150 CAVOK 28/14 Q1016",
+    "metar_temp": 26,
+    "metar_raw": "METAR (LTBA): LTBA 070920Z 12008KT 090V160 CAVOK 26/17 Q1016",
     "spread": 1.7,
     "models": [
       {
@@ -832,13 +832,13 @@
     ],
     "weather": {
       "clouds": 27,
-      "humidity": 49,
+      "humidity": 48,
       "condition": "Clear",
-      "local_time": "12:22"
+      "local_time": "12:38"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
-    "updated_at": "12:22:35"
+    "updated_at": "12:38:35"
   },
   "Toronto": {
     "city": "Toronto",
@@ -852,7 +852,7 @@
       },
       {
         "name": "ICON",
-        "temp": 20.7
+        "temp": 20.4
       },
       {
         "name": "GEM",
@@ -860,14 +860,14 @@
       }
     ],
     "weather": {
-      "clouds": 32,
+      "clouds": 22,
       "humidity": 91,
       "condition": "Clear",
-      "local_time": "05:22"
+      "local_time": "05:38"
     },
     "cutoff": "23:00",
     "region": "AMERICAS",
-    "updated_at": "12:22:37"
+    "updated_at": "12:38:36"
   },
   "NYC": {
     "city": "NYC",
@@ -881,7 +881,7 @@
       },
       {
         "name": "ICON",
-        "temp": 19.4
+        "temp": 19.2
       },
       {
         "name": "GEM",
@@ -892,11 +892,11 @@
       "clouds": 100,
       "humidity": 96,
       "condition": "Overcast",
-      "local_time": "05:22"
+      "local_time": "05:38"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
-    "updated_at": "12:22:38"
+    "updated_at": "12:38:37"
   },
   "Chicago": {
     "city": "Chicago",
@@ -910,7 +910,7 @@
       },
       {
         "name": "ICON",
-        "temp": 19.7
+        "temp": 19.5
       },
       {
         "name": "GEM",
@@ -918,14 +918,14 @@
       }
     ],
     "weather": {
-      "clouds": 0,
+      "clouds": 1,
       "humidity": 88,
       "condition": "Clear",
-      "local_time": "04:22"
+      "local_time": "04:38"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
-    "updated_at": "12:22:39"
+    "updated_at": "12:38:38"
   },
   "Atlanta": {
     "city": "Atlanta",
@@ -939,7 +939,7 @@
       },
       {
         "name": "ICON",
-        "temp": 23.4
+        "temp": 23.1
       },
       {
         "name": "GEM",
@@ -950,11 +950,11 @@
       "clouds": 0,
       "humidity": 84,
       "condition": "Clear",
-      "local_time": "05:22"
+      "local_time": "05:38"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
-    "updated_at": "12:22:40"
+    "updated_at": "12:38:40"
   },
   "Dallas": {
     "city": "Dallas",
@@ -968,7 +968,7 @@
       },
       {
         "name": "ICON",
-        "temp": 26.8
+        "temp": 26.6
       },
       {
         "name": "GEM",
@@ -977,19 +977,19 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 67,
+      "humidity": 69,
       "condition": "Clear",
-      "local_time": "04:22"
+      "local_time": "04:38"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
-    "updated_at": "12:22:41"
+    "updated_at": "12:38:41"
   },
   "Miami": {
     "city": "Miami",
     "metar_temp": 27,
     "metar_raw": "METAR (KMIA): KMIA 070853Z VRB03KT 10SM FEW025 27/25 A3005 RMK AO2 SLP175 T02720250 55006 $",
-    "spread": 1.6,
+    "spread": 1.5,
     "models": [
       {
         "name": "GFS",
@@ -997,7 +997,7 @@
       },
       {
         "name": "ICON",
-        "temp": 27.5
+        "temp": 27.4
       },
       {
         "name": "GEM",
@@ -1005,20 +1005,20 @@
       }
     ],
     "weather": {
-      "clouds": 1,
+      "clouds": 2,
       "humidity": 76,
       "condition": "Clear",
-      "local_time": "05:22"
+      "local_time": "05:38"
     },
     "cutoff": "22:00",
     "region": "AMERICAS",
-    "updated_at": "12:22:43"
+    "updated_at": "12:38:42"
   },
   "Seattle": {
     "city": "Seattle",
     "metar_temp": 15,
     "metar_raw": "METAR (KSEA): KSEA 070853Z 22003KT 10SM CLR 15/12 A2999 RMK AO2 SLP160 T01500117 51011 $",
-    "spread": 2.3,
+    "spread": 2.2,
     "models": [
       {
         "name": "GFS",
@@ -1026,7 +1026,7 @@
       },
       {
         "name": "ICON",
-        "temp": 14.9
+        "temp": 15.0
       },
       {
         "name": "GEM",
@@ -1035,19 +1035,19 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 72,
+      "humidity": 71,
       "condition": "Clear",
-      "local_time": "02:22"
+      "local_time": "02:38"
     },
     "cutoff": "01:00",
     "region": "AMERICAS",
-    "updated_at": "12:22:44"
+    "updated_at": "12:38:43"
   },
   "San Francisco": {
     "city": "San Francisco",
     "metar_temp": 13,
     "metar_raw": "METAR (KSFO): KSFO 070856Z 27011KT 10SM FEW004 OVC007 13/12 A3001 RMK AO2 SLP160 T01330117 58005 $",
-    "spread": 0.4,
+    "spread": 0.5,
     "models": [
       {
         "name": "GFS",
@@ -1055,7 +1055,7 @@
       },
       {
         "name": "ICON",
-        "temp": 12.5
+        "temp": 12.4
       },
       {
         "name": "GEM",
@@ -1064,19 +1064,19 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 94,
+      "humidity": 96,
       "condition": "Overcast",
-      "local_time": "02:22"
+      "local_time": "02:38"
     },
     "cutoff": "01:30",
     "region": "AMERICAS",
-    "updated_at": "12:22:45"
+    "updated_at": "12:38:45"
   },
   "Mexico City": {
     "city": "Mexico City",
     "metar_temp": 15,
     "metar_raw": "METAR (MMMX): MMMX 070844Z 10005KT 8SM SCT100 BKN250 15/11 A3034 NOSIG RMK SLP106 57007 900 8/038 SC HZY",
-    "spread": 3.9,
+    "spread": 3.7,
     "models": [
       {
         "name": "GFS",
@@ -1084,7 +1084,7 @@
       },
       {
         "name": "ICON",
-        "temp": 16.1
+        "temp": 15.9
       },
       {
         "name": "GEM",
@@ -1093,13 +1093,13 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 90,
+      "humidity": 91,
       "condition": "Overcast",
-      "local_time": "03:22"
+      "local_time": "03:38"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
-    "updated_at": "12:22:46"
+    "updated_at": "12:38:46"
   },
   "Panama": {
     "city": "Panama",
@@ -1113,7 +1113,7 @@
       },
       {
         "name": "ICON",
-        "temp": 26.8
+        "temp": 26.9
       },
       {
         "name": "GEM",
@@ -1124,11 +1124,11 @@
       "clouds": 20,
       "humidity": 89,
       "condition": "Clear",
-      "local_time": "04:22"
+      "local_time": "04:38"
     },
     "cutoff": "23:00",
     "region": "AMERICAS",
-    "updated_at": "12:22:47"
+    "updated_at": "12:38:47"
   },
   "Sao Paulo": {
     "city": "Sao Paulo",
@@ -1142,7 +1142,7 @@
       },
       {
         "name": "ICON",
-        "temp": 12.6
+        "temp": 12.8
       },
       {
         "name": "GEM",
@@ -1150,14 +1150,14 @@
       }
     ],
     "weather": {
-      "clouds": 41,
-      "humidity": 86,
-      "condition": "Clear",
-      "local_time": "06:22"
+      "clouds": 53,
+      "humidity": 85,
+      "condition": "Partly Cloudy",
+      "local_time": "06:38"
     },
     "cutoff": "22:00",
     "region": "AMERICAS",
-    "updated_at": "12:22:49"
+    "updated_at": "12:38:48"
   },
   "Buenos Aires": {
     "city": "Buenos Aires",
@@ -1171,7 +1171,7 @@
       },
       {
         "name": "ICON",
-        "temp": 1.7
+        "temp": 1.5
       },
       {
         "name": "GEM",
@@ -1179,20 +1179,20 @@
       }
     ],
     "weather": {
-      "clouds": 1,
+      "clouds": 0,
       "humidity": 77,
       "condition": "Clear",
-      "local_time": "06:22"
+      "local_time": "06:38"
     },
     "cutoff": "22:00",
     "region": "AMERICAS",
-    "updated_at": "12:22:50"
+    "updated_at": "12:38:49"
   },
   "Sydney": {
     "city": "Sydney",
     "metar_temp": 15,
-    "metar_raw": "METAR (YSSY): YSSY 070900Z AUTO 21015KT 9999 // OVC059 15/12 Q1033",
-    "spread": 2.6,
+    "metar_raw": "METAR (YSSY): YSSY 070930Z AUTO 21015KT 9999 // FEW031 OVC059 15/12 Q1033",
+    "spread": 2.9,
     "models": [
       {
         "name": "GFS",
@@ -1200,7 +1200,7 @@
       },
       {
         "name": "ICON",
-        "temp": 13.5
+        "temp": 13.2
       },
       {
         "name": "GEM",
@@ -1208,19 +1208,19 @@
       }
     ],
     "weather": {
-      "clouds": 40,
+      "clouds": 51,
       "humidity": 81,
-      "condition": "Clear",
-      "local_time": "19:22"
+      "condition": "Partly Cloudy",
+      "local_time": "19:38"
     },
     "cutoff": "08:00",
     "region": "ASIA",
-    "updated_at": "12:22:51"
+    "updated_at": "12:38:51"
   },
   "Wellington": {
     "city": "Wellington",
     "metar_temp": 12,
-    "metar_raw": "METAR (NZWN): NZWN 070900Z AUTO 15021KT 8000 -DZ SCT015/// BKN023/// 12/11 Q1005",
+    "metar_raw": "METAR (NZWN): NZWN 070930Z AUTO 15022G32KT 8000 -RA SCT016/// BKN024/// 12/11 Q1005",
     "spread": 1.0,
     "models": [
       {
@@ -1237,13 +1237,13 @@
       }
     ],
     "weather": {
-      "clouds": 94,
-      "humidity": 86,
+      "clouds": 88,
+      "humidity": 85,
       "condition": "Overcast",
-      "local_time": "21:22"
+      "local_time": "21:38"
     },
     "cutoff": "07:00",
     "region": "ASIA",
-    "updated_at": "12:22:52"
+    "updated_at": "12:38:52"
   }
 }
