@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +20,10 @@
                 <h1 class="text-4xl font-black tracking-tighter text-white">
                     🌀 WEATHER <span class="text-gradient">SNIPER</span> <span class="text-[10px] bg-blue-600 text-white px-2 py-0.5 rounded align-middle uppercase tracking-widest font-bold">Pro</span>
                 </h1>
-                <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest font-bold">Real-time METAR & Multi-Model Ensemble</p>
+                <p class="text-slate-500 text-xs mt-2 uppercase tracking-widest font-bold">Анализ METAR и Ансамблей Моделей в Реальном Времени</p>
             </div>
             <div id="lastUpdate" class="text-[10px] font-mono text-slate-500 bg-slate-900 px-4 py-2 rounded-full border border-slate-800">
-                SYNCING DATA...
+                СИНХРОНИЗАЦИЯ...
             </div>
         </header>
 
@@ -33,13 +33,27 @@
     </div>
 
     <script>
+        const TRANSLATIONS = {
+            'Clear': 'Ясно',
+            'Mainly Clear': 'Преимущественно ясно',
+            'Partly Cloudy': 'Облачно',
+            'Overcast': 'Пасмурно',
+            'Fog': 'Туман',
+            'Drizzle': 'Морось',
+            'Rain': 'Дождь',
+            'Showers': 'Ливень',
+            'Thunderstorm': 'Гроза',
+            'Unknown': 'Неизвестно',
+            'Cloudy': 'Облачно'
+        };
+
         async function loadData() {
             try {
                 const response = await fetch('weather_data.json?t=' + Date.now());
                 const data = await response.json();
                 renderCards(data);
                 const first = Object.values(data)[0];
-                document.getElementById('lastUpdate').innerText = 'LAST SYNC: ' + first.updated_at + ' (LOCAL)';
+                document.getElementById('lastUpdate').innerText = 'ОБНОВЛЕНО: ' + first.updated_at + ' (LOCAL)';
             } catch (e) { console.error(e); }
         }
 
@@ -50,9 +64,10 @@
 
             sorted.forEach(([name, info]) => {
                 const spread = info.spread;
-                const status = spread < 1.0 ? 'STABLE' : (spread < 2.0 ? 'UNSTABLE' : 'CHAOS');
+                const status = spread < 1.0 ? 'СТАБИЛЬНО' : (spread < 2.0 ? 'НЕСТАБИЛЬНО' : 'ХАОС');
                 const color = spread < 1.0 ? 'emerald' : (spread < 2.0 ? 'amber' : 'rose');
                 const w = info.weather;
+                const ruCondition = TRANSLATIONS[w.condition] || w.condition;
 
                 const card = document.createElement('div');
                 card.className = `glass rounded-3xl p-5 transition-all duration-300 hover:border-slate-500 group`;
@@ -65,14 +80,14 @@
 
                     <div class="grid grid-cols-2 gap-3 mb-6">
                         <div class="bg-slate-900/40 rounded-2xl p-3">
-                            <p class="text-[8px] text-slate-500 uppercase font-black mb-1">FACT (METAR)</p>
+                            <p class="text-[8px] text-slate-500 uppercase font-black mb-1">ФАКТ (METAR)</p>
                             <div class="flex items-baseline gap-1">
                                 <span class="text-3xl font-black text-white">${info.metar_temp !== null ? info.metar_temp : '--'}</span>
                                 <span class="text-xs text-slate-500 font-bold">°C</span>
                             </div>
                         </div>
                         <div class="bg-slate-900/40 rounded-2xl p-3 text-right">
-                            <p class="text-[8px] text-slate-500 uppercase font-black mb-1">SPREAD</p>
+                            <p class="text-[8px] text-slate-500 uppercase font-black mb-1">РАЗБРОС</p>
                             <div class="flex items-baseline justify-end gap-1">
                                 <span class="text-3xl font-black text-${color}-400">${spread.toFixed(1)}</span>
                                 <span class="text-xs text-slate-500 font-bold">°C</span>
@@ -82,18 +97,18 @@
 
                     <div class="flex justify-between items-center mb-6 px-1">
                         <div class="text-center">
-                            <p class="text-[7px] text-slate-500 uppercase font-bold">Clouds</p>
+                            <p class="text-[7px] text-slate-500 uppercase font-bold">Облака</p>
                             <p class="text-xs font-bold text-slate-200">${w.clouds}%</p>
                         </div>
                         <div class="h-6 w-px bg-slate-800"></div>
                         <div class="text-center">
-                            <p class="text-[7px] text-slate-500 uppercase font-bold">Humidity</p>
+                            <p class="text-[7px] text-slate-500 uppercase font-bold">Влажность</p>
                             <p class="text-xs font-bold text-slate-200">${w.humidity}%</p>
                         </div>
                         <div class="h-6 w-px bg-slate-800"></div>
                         <div class="text-center">
-                            <p class="text-[7px] text-slate-500 uppercase font-bold">Status</p>
-                            <p class="text-[10px] font-bold text-blue-400 leading-tight">${w.condition}</p>
+                            <p class="text-[7px] text-slate-500 uppercase font-bold">Статус</p>
+                            <p class="text-[9px] font-bold text-blue-400 leading-tight">${ruCondition}</p>
                         </div>
                     </div>
 
@@ -107,7 +122,7 @@
                     </div>
 
                     <div class="text-[7px] font-mono text-slate-700 break-all opacity-30 group-hover:opacity-100 transition-opacity">
-                        ${info.metar_raw || 'NO METAR DATA'}
+                        ${info.metar_raw || 'НЕТ ДАННЫХ METAR'}
                     </div>
                 `;
                 grid.appendChild(card);
