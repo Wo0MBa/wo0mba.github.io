@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Sniper Pro Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        body { background: #020617; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; }
+        .card-active { border-color: #3b82f6; box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+                <h1 class="text-4xl font-black tracking-tighter text-white flex items-center gap-3">
+                    <span class="text-blue-500">🌀</span> WEATHER SNIPER <span class="text-xs bg-blue-600 px-2 py-0.5 rounded uppercase tracking-widest">Pro</span>
+                </h1>
+                <p class="text-slate-500 text-sm mt-1 uppercase tracking-widest font-bold">Real-time METAR & Ensemble Analysis</p>
+            </div>
+            <div id="lastUpdate" class="text-xs font-mono text-slate-500 bg-slate-900 px-3 py-2 rounded-lg border border-slate-800">
+                LOADING DATA...
+            </div>
+        </header>
+
+        <div id="grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Cards will be injected here -->
+        </div>
+        
+        <footer class="mt-12 pt-8 border-t border-slate-900 text-center text-slate-600 text-xs uppercase tracking-widest">
+            Data updated via wo0mba-marketing automation • 2026
+        </footer>
+    </div>
+
+    <script>
+        async function loadData() {
+            try {
+                // We add a timestamp to bypass cache
+                const response = await fetch('weather_data.json?t=' + Date.now());
+                const data = await response.json();
+                renderCards(data);
+                
+                // Get one of the update times for the header
+                const firstCity = Object.values(data)[0];
+                document.getElementById('lastUpdate').innerText = 'LAST SYNC: ' + firstCity.updated_at + ' MSK';
+            } catch (e) {
+                console.error('Data load failed', e);
+            }
+        }
+
+        function renderCards(data) {
+            const grid = document.getElementById('grid');
+            grid.innerHTML = '';
+
+            Object.entries(data).forEach(([name, info]) => {
+                const spread = info.spread;
+                const status = spread < 1.0 ? 'STABLE' : (spread < 2.0 ? 'UNSTABLE' : 'CHAOS');
+                const color = spread < 1.0 ? 'emerald' : (spread < 2.0 ? 'amber' : 'rose');
+                
+                const card = document.createElement('div');
+                card.className = `glass border border-slate-800 rounded-2xl p-6 transition-all duration-300 hover:border-slate-700`;
+                
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-6">
+                        <h2 class="text-xl font-bold text-white">${name}</h2>
+                        <span class="text-[10px] font-black px-2 py-1 rounded bg-${color}-500/10 text-${color}-400 border border-${color}-500/20">${status}</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="flex-1">
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Current Fact</p>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-black text-white">${info.metar_temp ?? '--'}</span>
+                                <span class="text-lg text-slate-500 font-bold">°C</span>
+                            </div>
+                        </div>
+                        <div class="w-px h-10 bg-slate-800"></div>
+                        <div class="flex-1 text-right">
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-1">Spread</p>
+                            <div class="flex items-baseline justify-end gap-1">
+                                <span class="text-4xl font-black text-${color}-400">${spread}</span>
+                                <span class="text-lg text-slate-500 font-bold">°C</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 mb-6">
+                        ${info.models.map(m => `
+                            <div class="flex justify-between text-[11px] font-medium uppercase tracking-wider">
+                                <span class="text-slate-500">${m.name}</span>
+                                <span class="text-slate-300">${m.temp}°C</span>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="text-[9px] font-mono text-slate-600 truncate opacity-50">
+                        RAW: ${info.metar_raw || 'NO DATA'}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        loadData();
+        // Refresh every minute
+        setInterval(loadData, 60000);
+    </script>
+</body>
+</html>
