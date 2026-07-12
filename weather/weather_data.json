@@ -11,7 +11,7 @@
       },
       {
         "name": "ICON",
-        "temp": 9.6
+        "temp": 9.8
       },
       {
         "name": "GEM",
@@ -19,10 +19,10 @@
       }
     ],
     "weather": {
-      "clouds": 38,
+      "clouds": 39,
       "humidity": 76,
       "condition": "Clear",
-      "local_time": "09:33"
+      "local_time": "09:50"
     },
     "cutoff": "07:00",
     "region": "ASIA",
@@ -43,14 +43,14 @@
         "temp": 22
       }
     },
-    "updated_at": "00:33:59",
-    "updated_at_full": "2026-07-13T09:33:58.041388+00:00"
+    "updated_at": "00:50:33",
+    "updated_at_full": "2026-07-13T09:50:31.677124+00:00"
   },
   "Busan": {
     "city": "Busan",
     "metar_temp": 27,
     "max_today": 28,
-    "spread": 1.2,
+    "spread": 1.3,
     "models": [
       {
         "name": "GFS",
@@ -58,7 +58,7 @@
       },
       {
         "name": "ICON",
-        "temp": 26.9
+        "temp": 27.0
       },
       {
         "name": "GEM",
@@ -66,22 +66,22 @@
       }
     ],
     "weather": {
-      "clouds": 53,
+      "clouds": 42,
       "humidity": 99,
-      "condition": "Partly Cloudy",
-      "local_time": "06:33"
+      "condition": "Clear",
+      "local_time": "06:50"
     },
     "cutoff": "11:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:01",
-    "updated_at_full": "2026-07-13T06:33:59.750843+00:00"
+    "updated_at": "00:50:35",
+    "updated_at_full": "2026-07-13T06:50:33.535249+00:00"
   },
   "Seoul": {
     "city": "Seoul",
-    "metar_temp": 27,
+    "metar_temp": 28,
     "max_today": 29,
-    "spread": 2.2,
+    "spread": 2.3,
     "models": [
       {
         "name": "GFS",
@@ -89,7 +89,7 @@
       },
       {
         "name": "ICON",
-        "temp": 26.2
+        "temp": 26.3
       },
       {
         "name": "GEM",
@@ -97,10 +97,10 @@
       }
     ],
     "weather": {
-      "clouds": 9,
+      "clouds": 12,
       "humidity": 92,
       "condition": "Clear",
-      "local_time": "06:34"
+      "local_time": "06:50"
     },
     "cutoff": "11:30",
     "region": "ASIA",
@@ -117,14 +117,14 @@
         "temp": 2
       }
     },
-    "updated_at": "00:34:02",
-    "updated_at_full": "2026-07-13T06:34:01.080140+00:00"
+    "updated_at": "00:50:36",
+    "updated_at_full": "2026-07-13T06:50:35.062875+00:00"
   },
   "Tokyo": {
     "city": "Tokyo",
     "metar_temp": 26,
     "max_today": 26,
-    "spread": 1.2,
+    "spread": 0.8,
     "models": [
       {
         "name": "GFS",
@@ -132,7 +132,7 @@
       },
       {
         "name": "ICON",
-        "temp": 24.9
+        "temp": 25.4
       },
       {
         "name": "GEM",
@@ -141,21 +141,21 @@
     ],
     "weather": {
       "clouds": 96,
-      "humidity": 91,
+      "humidity": 90,
       "condition": "Overcast",
-      "local_time": "06:34"
+      "local_time": "06:50"
     },
     "cutoff": "09:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:03",
-    "updated_at_full": "2026-07-13T06:34:02.356398+00:00"
+    "updated_at": "00:50:37",
+    "updated_at_full": "2026-07-13T06:50:36.320890+00:00"
   },
   "Chengdu": {
     "city": "Chengdu",
     "metar_temp": 25,
     "max_today": 28,
-    "spread": 3.6,
+    "spread": 3.7,
     "models": [
       {
         "name": "GFS",
@@ -163,7 +163,7 @@
       },
       {
         "name": "ICON",
-        "temp": 26.8
+        "temp": 26.9
       },
       {
         "name": "GEM",
@@ -171,16 +171,16 @@
       }
     ],
     "weather": {
-      "clouds": 13,
+      "clouds": 15,
       "humidity": 90,
       "condition": "Clear",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "15:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:04",
-    "updated_at_full": "2026-07-13T05:34:03.750857+00:00"
+    "updated_at": "00:50:38",
+    "updated_at_full": "2026-07-13T05:50:37.417745+00:00"
   },
   "Shenzhen": {
     "city": "Shenzhen",
@@ -194,7 +194,7 @@
       },
       {
         "name": "ICON",
-        "temp": 28.4
+        "temp": 28.3
       },
       {
         "name": "GEM",
@@ -202,22 +202,22 @@
       }
     ],
     "weather": {
-      "clouds": 98,
+      "clouds": 99,
       "humidity": 95,
       "condition": "Overcast",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "11:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:06",
-    "updated_at_full": "2026-07-13T05:34:04.965997+00:00"
+    "updated_at": "00:50:40",
+    "updated_at_full": "2026-07-13T05:50:38.954207+00:00"
   },
   "Beijing": {
     "city": "Beijing",
     "metar_temp": 25,
     "max_today": 26,
-    "spread": 0.9,
+    "spread": 1.1,
     "models": [
       {
         "name": "GFS",
@@ -225,7 +225,7 @@
       },
       {
         "name": "ICON",
-        "temp": 25.2
+        "temp": 25.4
       },
       {
         "name": "GEM",
@@ -233,16 +233,16 @@
       }
     ],
     "weather": {
-      "clouds": 68,
-      "humidity": 93,
+      "clouds": 70,
+      "humidity": 92,
       "condition": "Partly Cloudy",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "14:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:07",
-    "updated_at_full": "2026-07-13T05:34:06.325346+00:00"
+    "updated_at": "00:50:42",
+    "updated_at_full": "2026-07-13T05:50:40.498379+00:00"
   },
   "Wuhan": {
     "city": "Wuhan",
@@ -265,21 +265,21 @@
     ],
     "weather": {
       "clouds": 99,
-      "humidity": 82,
+      "humidity": 81,
       "condition": "Overcast",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "15:00",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:09",
-    "updated_at_full": "2026-07-13T05:34:07.739577+00:00"
+    "updated_at": "00:50:43",
+    "updated_at_full": "2026-07-13T05:50:42.033998+00:00"
   },
   "Chongqing": {
     "city": "Chongqing",
     "metar_temp": 26,
     "max_today": 27,
-    "spread": 1.0,
+    "spread": 1.7,
     "models": [
       {
         "name": "GFS",
@@ -287,7 +287,7 @@
       },
       {
         "name": "ICON",
-        "temp": 25.9
+        "temp": 27.1
       },
       {
         "name": "GEM",
@@ -296,15 +296,15 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 96,
+      "humidity": 97,
       "condition": "Thunderstorm",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "22:00",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:10",
-    "updated_at_full": "2026-07-13T05:34:09.072823+00:00"
+    "updated_at": "00:50:45",
+    "updated_at_full": "2026-07-13T05:50:43.620412+00:00"
   },
   "Taipei": {
     "city": "Taipei",
@@ -326,22 +326,22 @@
       }
     ],
     "weather": {
-      "clouds": "--",
-      "humidity": "--",
-      "condition": "Unknown",
-      "local_time": "--"
+      "clouds": 97,
+      "humidity": 96,
+      "condition": "Overcast",
+      "local_time": "05:50"
     },
     "cutoff": "11:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:21",
-    "updated_at_full": "2026-07-13T05:34:10.415624+00:00"
+    "updated_at": "00:50:46",
+    "updated_at_full": "2026-07-13T05:50:45.134562+00:00"
   },
   "Singapore": {
     "city": "Singapore",
     "metar_temp": 28,
     "max_today": 28,
-    "spread": 1.0,
+    "spread": 0.9,
     "models": [
       {
         "name": "GFS",
@@ -349,7 +349,7 @@
       },
       {
         "name": "ICON",
-        "temp": 27.2
+        "temp": 27.3
       },
       {
         "name": "GEM",
@@ -360,19 +360,19 @@
       "clouds": 100,
       "humidity": 78,
       "condition": "Overcast",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "14:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:23",
-    "updated_at_full": "2026-07-13T05:34:21.448355+00:00"
+    "updated_at": "00:50:48",
+    "updated_at_full": "2026-07-13T05:50:46.455967+00:00"
   },
   "Hong Kong": {
     "city": "Hong Kong",
     "metar_temp": 29,
     "max_today": 30,
-    "spread": 0.3,
+    "spread": 0.2,
     "models": [
       {
         "name": "GFS",
@@ -380,7 +380,7 @@
       },
       {
         "name": "ICON",
-        "temp": 28.6
+        "temp": 28.5
       },
       {
         "name": "GEM",
@@ -391,13 +391,13 @@
       "clouds": 100,
       "humidity": 92,
       "condition": "Overcast",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "11:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:24",
-    "updated_at_full": "2026-07-13T05:34:23.007499+00:00"
+    "updated_at": "00:50:51",
+    "updated_at_full": "2026-07-13T05:50:48.014965+00:00"
   },
   "Kuala Lumpur": {
     "city": "Kuala Lumpur",
@@ -411,7 +411,7 @@
       },
       {
         "name": "ICON",
-        "temp": 25.9
+        "temp": 26.0
       },
       {
         "name": "GEM",
@@ -419,16 +419,16 @@
       }
     ],
     "weather": {
-      "clouds": 99,
-      "humidity": 89,
+      "clouds": 100,
+      "humidity": 92,
       "condition": "Cloudy",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "13:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:25",
-    "updated_at_full": "2026-07-13T05:34:24.743651+00:00"
+    "updated_at": "00:50:52",
+    "updated_at_full": "2026-07-13T05:50:51.505498+00:00"
   },
   "Shanghai": {
     "city": "Shanghai",
@@ -450,16 +450,16 @@
       }
     ],
     "weather": {
-      "clouds": 100,
+      "clouds": 99,
       "humidity": 87,
       "condition": "Overcast",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "12:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:27",
-    "updated_at_full": "2026-07-13T05:34:25.921551+00:00"
+    "updated_at": "00:50:54",
+    "updated_at_full": "2026-07-13T05:50:52.815706+00:00"
   },
   "Guangzhou": {
     "city": "Guangzhou",
@@ -481,22 +481,22 @@
       }
     ],
     "weather": {
-      "clouds": 97,
+      "clouds": 96,
       "humidity": 95,
       "condition": "Overcast",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "15:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:28",
-    "updated_at_full": "2026-07-13T05:34:27.501829+00:00"
+    "updated_at": "00:50:55",
+    "updated_at_full": "2026-07-13T05:50:54.094041+00:00"
   },
   "Qingdao": {
     "city": "Qingdao",
     "metar_temp": 26,
     "max_today": 26,
-    "spread": 0.6,
+    "spread": 0.7,
     "models": [
       {
         "name": "GFS",
@@ -504,7 +504,7 @@
       },
       {
         "name": "ICON",
-        "temp": 25.9
+        "temp": 26.0
       },
       {
         "name": "GEM",
@@ -515,19 +515,19 @@
       "clouds": 100,
       "humidity": 95,
       "condition": "Cloudy",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "14:00",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:31",
-    "updated_at_full": "2026-07-13T05:34:28.823800+00:00"
+    "updated_at": "00:50:56",
+    "updated_at_full": "2026-07-13T05:50:55.252270+00:00"
   },
   "Manila": {
     "city": "Manila",
     "metar_temp": 25,
     "max_today": 25,
-    "spread": 0.5,
+    "spread": 0.3,
     "models": [
       {
         "name": "GFS",
@@ -535,7 +535,7 @@
       },
       {
         "name": "ICON",
-        "temp": 26.3
+        "temp": 26.1
       },
       {
         "name": "GEM",
@@ -546,13 +546,13 @@
       "clouds": 100,
       "humidity": 94,
       "condition": "Overcast",
-      "local_time": "05:34"
+      "local_time": "05:50"
     },
     "cutoff": "14:30",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:33",
-    "updated_at_full": "2026-07-13T05:34:31.898289+00:00"
+    "updated_at": "00:50:57",
+    "updated_at_full": "2026-07-13T05:50:56.585163+00:00"
   },
   "Lucknow": {
     "city": "Lucknow",
@@ -574,16 +574,16 @@
       }
     ],
     "weather": {
-      "clouds": 100,
-      "humidity": 70,
+      "clouds": 99,
+      "humidity": 71,
       "condition": "Overcast",
-      "local_time": "03:04"
+      "local_time": "03:20"
     },
     "cutoff": "16:00",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:34",
-    "updated_at_full": "2026-07-13T03:04:33.336542+00:00"
+    "updated_at": "00:50:59",
+    "updated_at_full": "2026-07-13T03:20:57.860554+00:00"
   },
   "Karachi": {
     "city": "Karachi",
@@ -597,7 +597,7 @@
       },
       {
         "name": "ICON",
-        "temp": 28.5
+        "temp": 28.7
       },
       {
         "name": "GEM",
@@ -605,22 +605,22 @@
       }
     ],
     "weather": {
-      "clouds": 33,
+      "clouds": 50,
       "humidity": 79,
-      "condition": "Clear",
-      "local_time": "02:34"
+      "condition": "Partly Cloudy",
+      "local_time": "02:50"
     },
     "cutoff": "17:00",
     "region": "ASIA",
     "poly": null,
-    "updated_at": "00:34:36",
-    "updated_at_full": "2026-07-13T02:34:34.893756+00:00"
+    "updated_at": "00:51:00",
+    "updated_at_full": "2026-07-13T02:50:59.102995+00:00"
   },
   "Moscow": {
     "city": "Moscow",
     "metar_temp": 17,
     "max_today": 17,
-    "spread": 0.9,
+    "spread": 0.8,
     "models": [
       {
         "name": "GFS",
@@ -628,7 +628,7 @@
       },
       {
         "name": "ICON",
-        "temp": 16.9
+        "temp": 16.7
       },
       {
         "name": "GEM",
@@ -636,16 +636,16 @@
       }
     ],
     "weather": {
-      "clouds": 89,
-      "humidity": 96,
+      "clouds": 88,
+      "humidity": 94,
       "condition": "Overcast",
-      "local_time": "00:34"
+      "local_time": "00:51"
     },
     "cutoff": "17:30",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:34:37",
-    "updated_at_full": "2026-07-13T00:34:36.329724+00:00"
+    "updated_at": "00:51:01",
+    "updated_at_full": "2026-07-13T00:51:00.507603+00:00"
   },
   "Helsinki": {
     "city": "Helsinki",
@@ -659,7 +659,7 @@
       },
       {
         "name": "ICON",
-        "temp": 21.0
+        "temp": 20.8
       },
       {
         "name": "GEM",
@@ -667,22 +667,22 @@
       }
     ],
     "weather": {
-      "clouds": 99,
-      "humidity": 84,
+      "clouds": 96,
+      "humidity": 79,
       "condition": "Overcast",
-      "local_time": "00:34"
+      "local_time": "00:51"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:34:39",
-    "updated_at_full": "2026-07-13T00:34:37.527825+00:00"
+    "updated_at": "00:51:02",
+    "updated_at_full": "2026-07-13T00:51:01.669668+00:00"
   },
   "Ankara": {
     "city": "Ankara",
     "metar_temp": 21,
     "max_today": 22,
-    "spread": 3.3,
+    "spread": 3.2,
     "models": [
       {
         "name": "GFS",
@@ -690,7 +690,7 @@
       },
       {
         "name": "ICON",
-        "temp": 20.7
+        "temp": 20.6
       },
       {
         "name": "GEM",
@@ -698,10 +698,10 @@
       }
     ],
     "weather": {
-      "clouds": 0,
-      "humidity": 58,
+      "clouds": 3,
+      "humidity": 57,
       "condition": "Clear",
-      "local_time": "00:34"
+      "local_time": "00:51"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
@@ -722,8 +722,8 @@
         "temp": 10
       }
     },
-    "updated_at": "00:34:40",
-    "updated_at_full": "2026-07-13T00:34:39.112263+00:00"
+    "updated_at": "00:51:04",
+    "updated_at_full": "2026-07-13T00:51:02.898834+00:00"
   },
   "Tel Aviv": {
     "city": "Tel Aviv",
@@ -737,7 +737,7 @@
       },
       {
         "name": "ICON",
-        "temp": 24.8
+        "temp": 24.7
       },
       {
         "name": "GEM",
@@ -745,16 +745,16 @@
       }
     ],
     "weather": {
-      "clouds": 63,
-      "humidity": 88,
+      "clouds": 59,
+      "humidity": 87,
       "condition": "Partly Cloudy",
-      "local_time": "00:34"
+      "local_time": "00:51"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:34:41",
-    "updated_at_full": "2026-07-13T00:34:40.676961+00:00"
+    "updated_at": "00:51:05",
+    "updated_at_full": "2026-07-13T00:51:04.095399+00:00"
   },
   "Jeddah": {
     "city": "Jeddah",
@@ -776,16 +776,16 @@
       }
     ],
     "weather": {
-      "clouds": 45,
-      "humidity": 62,
+      "clouds": 40,
+      "humidity": 63,
       "condition": "Clear",
-      "local_time": "00:34"
+      "local_time": "00:51"
     },
     "cutoff": "16:00",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:34:43",
-    "updated_at_full": "2026-07-13T00:34:41.947700+00:00"
+    "updated_at": "00:51:06",
+    "updated_at_full": "2026-07-13T00:51:05.468956+00:00"
   },
   "Istanbul": {
     "city": "Istanbul",
@@ -807,16 +807,16 @@
       }
     ],
     "weather": {
-      "clouds": 1,
-      "humidity": 89,
+      "clouds": 0,
+      "humidity": 87,
       "condition": "Clear",
-      "local_time": "00:34"
+      "local_time": "00:51"
     },
     "cutoff": "18:00",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:34:44",
-    "updated_at_full": "2026-07-13T00:34:43.259026+00:00"
+    "updated_at": "00:51:07",
+    "updated_at_full": "2026-07-13T00:51:06.580937+00:00"
   },
   "Madrid": {
     "city": "Madrid",
@@ -830,7 +830,7 @@
       },
       {
         "name": "ICON",
-        "temp": 26.9
+        "temp": 27.0
       },
       {
         "name": "GEM",
@@ -841,13 +841,13 @@
       "clouds": 100,
       "humidity": 35,
       "condition": "Overcast",
-      "local_time": "23:34"
+      "local_time": "23:51"
     },
     "cutoff": "21:00",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:34:46",
-    "updated_at_full": "2026-07-12T23:34:44.816444+00:00"
+    "updated_at": "00:51:09",
+    "updated_at_full": "2026-07-12T23:51:07.857913+00:00"
   },
   "Milan": {
     "city": "Milan",
@@ -870,21 +870,21 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 63,
+      "humidity": 64,
       "condition": "Clear",
-      "local_time": "23:34"
+      "local_time": "23:51"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:34:47",
-    "updated_at_full": "2026-07-12T23:34:46.375247+00:00"
+    "updated_at": "00:51:10",
+    "updated_at_full": "2026-07-12T23:51:09.048124+00:00"
   },
   "Warsaw": {
     "city": "Warsaw",
     "metar_temp": 15,
     "max_today": 19,
-    "spread": 1.6,
+    "spread": 1.7,
     "models": [
       {
         "name": "GFS",
@@ -892,7 +892,7 @@
       },
       {
         "name": "ICON",
-        "temp": 16.0
+        "temp": 16.2
       },
       {
         "name": "GEM",
@@ -903,13 +903,13 @@
       "clouds": 100,
       "humidity": 87,
       "condition": "Overcast",
-      "local_time": "23:34"
+      "local_time": "23:51"
     },
     "cutoff": "19:00",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:34:49",
-    "updated_at_full": "2026-07-12T23:34:47.873912+00:00"
+    "updated_at": "00:51:11",
+    "updated_at_full": "2026-07-12T23:51:10.305132+00:00"
   },
   "Paris": {
     "city": "Paris",
@@ -931,10 +931,10 @@
       }
     ],
     "weather": {
-      "clouds": 9,
-      "humidity": 44,
+      "clouds": 8,
+      "humidity": 45,
       "condition": "Clear",
-      "local_time": "23:34"
+      "local_time": "23:51"
     },
     "cutoff": "21:00",
     "region": "EUROPE",
@@ -951,8 +951,8 @@
       },
       "plus1": null
     },
-    "updated_at": "00:34:51",
-    "updated_at_full": "2026-07-12T23:34:49.452698+00:00"
+    "updated_at": "00:51:12",
+    "updated_at_full": "2026-07-12T23:51:11.479173+00:00"
   },
   "Amsterdam": {
     "city": "Amsterdam",
@@ -974,16 +974,16 @@
       }
     ],
     "weather": {
-      "clouds": 29,
-      "humidity": 75,
+      "clouds": 0,
+      "humidity": 78,
       "condition": "Clear",
-      "local_time": "23:34"
+      "local_time": "23:51"
     },
     "cutoff": "20:00",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:34:52",
-    "updated_at_full": "2026-07-12T23:34:51.018578+00:00"
+    "updated_at": "00:51:13",
+    "updated_at_full": "2026-07-12T23:51:12.720819+00:00"
   },
   "Munich": {
     "city": "Munich",
@@ -1005,16 +1005,16 @@
       }
     ],
     "weather": {
-      "clouds": "--",
-      "humidity": "--",
-      "condition": "Unknown",
-      "local_time": "--"
+      "clouds": 0,
+      "humidity": 64,
+      "condition": "Clear",
+      "local_time": "23:51"
     },
     "cutoff": "19:30",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:35:03",
-    "updated_at_full": "2026-07-12T23:34:52.179275+00:00"
+    "updated_at": "00:51:15",
+    "updated_at_full": "2026-07-12T23:51:13.934355+00:00"
   },
   "London": {
     "city": "London",
@@ -1037,9 +1037,9 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 48,
+      "humidity": 50,
       "condition": "Clear",
-      "local_time": "22:35"
+      "local_time": "22:51"
     },
     "cutoff": "22:00",
     "region": "EUROPE",
@@ -1060,8 +1060,8 @@
         "temp": 6
       }
     },
-    "updated_at": "00:35:04",
-    "updated_at_full": "2026-07-12T22:35:03.492627+00:00"
+    "updated_at": "00:51:16",
+    "updated_at_full": "2026-07-12T22:51:15.236756+00:00"
   },
   "Cape Town": {
     "city": "Cape Town",
@@ -1075,7 +1075,7 @@
       },
       {
         "name": "ICON",
-        "temp": 10.6
+        "temp": 10.2
       },
       {
         "name": "GEM",
@@ -1083,16 +1083,16 @@
       }
     ],
     "weather": {
-      "clouds": 1,
+      "clouds": 0,
       "humidity": 94,
       "condition": "Clear",
-      "local_time": "23:35"
+      "local_time": "23:51"
     },
     "cutoff": "18:30",
     "region": "EUROPE",
     "poly": null,
-    "updated_at": "00:35:06",
-    "updated_at_full": "2026-07-12T23:35:04.788041+00:00"
+    "updated_at": "00:51:17",
+    "updated_at_full": "2026-07-12T23:51:16.361483+00:00"
   },
   "Buenos Aires": {
     "city": "Buenos Aires",
@@ -1106,7 +1106,7 @@
       },
       {
         "name": "ICON",
-        "temp": 10.0
+        "temp": 10.1
       },
       {
         "name": "GEM",
@@ -1115,9 +1115,9 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 72,
+      "humidity": 73,
       "condition": "Clear",
-      "local_time": "18:35"
+      "local_time": "18:51"
     },
     "cutoff": "22:00",
     "region": "AMERICAS",
@@ -1134,14 +1134,14 @@
         "temp": 41
       }
     },
-    "updated_at": "00:35:07",
-    "updated_at_full": "2026-07-12T18:35:06.081349+00:00"
+    "updated_at": "00:51:18",
+    "updated_at_full": "2026-07-12T18:51:17.537332+00:00"
   },
   "Sao Paulo": {
     "city": "Sao Paulo",
     "metar_temp": 15,
     "max_today": 23,
-    "spread": 3.1,
+    "spread": 3.2,
     "models": [
       {
         "name": "GFS",
@@ -1149,7 +1149,7 @@
       },
       {
         "name": "ICON",
-        "temp": 18.4
+        "temp": 18.5
       },
       {
         "name": "GEM",
@@ -1158,9 +1158,9 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 86,
+      "humidity": 84,
       "condition": "Overcast",
-      "local_time": "18:35"
+      "local_time": "18:51"
     },
     "cutoff": "22:00",
     "region": "AMERICAS",
@@ -1181,22 +1181,22 @@
         "temp": 32
       }
     },
-    "updated_at": "00:35:08",
-    "updated_at_full": "2026-07-12T18:35:07.348716+00:00"
+    "updated_at": "00:51:20",
+    "updated_at_full": "2026-07-12T18:51:18.803023+00:00"
   },
   "NYC": {
     "city": "NYC",
     "metar_temp": 28,
     "max_today": 29,
-    "spread": 2.7,
+    "spread": 1.8,
     "models": [
       {
         "name": "GFS",
-        "temp": 25.5
+        "temp": 26.3
       },
       {
         "name": "ICON",
-        "temp": 28.2
+        "temp": 28.1
       },
       {
         "name": "GEM",
@@ -1204,10 +1204,10 @@
       }
     ],
     "weather": {
-      "clouds": 16,
-      "humidity": 56,
+      "clouds": 0,
+      "humidity": 44,
       "condition": "Clear",
-      "local_time": "17:35"
+      "local_time": "17:51"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
@@ -1228,22 +1228,22 @@
         "temp": 34
       }
     },
-    "updated_at": "00:35:09",
-    "updated_at_full": "2026-07-12T17:35:08.564609+00:00"
+    "updated_at": "00:51:21",
+    "updated_at_full": "2026-07-12T17:51:20.070128+00:00"
   },
   "Miami": {
     "city": "Miami",
     "metar_temp": 34,
     "max_today": 34,
-    "spread": 0.8,
+    "spread": 1.0,
     "models": [
       {
         "name": "GFS",
-        "temp": 32.1
+        "temp": 32.3
       },
       {
         "name": "ICON",
-        "temp": 31.8
+        "temp": 31.6
       },
       {
         "name": "GEM",
@@ -1254,7 +1254,7 @@
       "clouds": 2,
       "humidity": 65,
       "condition": "Clear",
-      "local_time": "17:35"
+      "local_time": "17:51"
     },
     "cutoff": "22:00",
     "region": "AMERICAS",
@@ -1275,22 +1275,22 @@
         "temp": 80
       }
     },
-    "updated_at": "00:35:11",
-    "updated_at_full": "2026-07-12T17:35:09.813007+00:00"
+    "updated_at": "00:51:22",
+    "updated_at_full": "2026-07-12T17:51:21.367949+00:00"
   },
   "Atlanta": {
     "city": "Atlanta",
     "metar_temp": 31,
     "max_today": 33,
-    "spread": 2.2,
+    "spread": 3.4,
     "models": [
       {
         "name": "GFS",
-        "temp": 29.4
+        "temp": 30.6
       },
       {
         "name": "ICON",
-        "temp": 27.3
+        "temp": 29.5
       },
       {
         "name": "GEM",
@@ -1298,10 +1298,10 @@
       }
     ],
     "weather": {
-      "clouds": 100,
-      "humidity": 61,
-      "condition": "Overcast",
-      "local_time": "17:35"
+      "clouds": 76,
+      "humidity": 50,
+      "condition": "Partly Cloudy",
+      "local_time": "17:51"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
@@ -1322,22 +1322,22 @@
         "temp": 44
       }
     },
-    "updated_at": "00:35:12",
-    "updated_at_full": "2026-07-12T17:35:11.207916+00:00"
+    "updated_at": "00:51:23",
+    "updated_at_full": "2026-07-12T17:51:22.513023+00:00"
   },
   "Toronto": {
     "city": "Toronto",
     "metar_temp": 26,
     "max_today": 27,
-    "spread": 3.4,
+    "spread": 3.0,
     "models": [
       {
         "name": "GFS",
-        "temp": 25.1
+        "temp": 25.6
       },
       {
         "name": "ICON",
-        "temp": 28.5
+        "temp": 28.6
       },
       {
         "name": "GEM",
@@ -1346,9 +1346,9 @@
     ],
     "weather": {
       "clouds": 0,
-      "humidity": 49,
+      "humidity": 42,
       "condition": "Clear",
-      "local_time": "17:35"
+      "local_time": "17:51"
     },
     "cutoff": "23:00",
     "region": "AMERICAS",
@@ -1365,22 +1365,22 @@
       },
       "plus1": null
     },
-    "updated_at": "00:35:13",
-    "updated_at_full": "2026-07-12T17:35:12.472515+00:00"
+    "updated_at": "00:51:25",
+    "updated_at_full": "2026-07-12T17:51:23.776455+00:00"
   },
   "Chicago": {
     "city": "Chicago",
     "metar_temp": 29,
     "max_today": 30,
-    "spread": 4.7,
+    "spread": 5.1,
     "models": [
       {
         "name": "GFS",
-        "temp": 26.6
+        "temp": 27.1
       },
       {
         "name": "ICON",
-        "temp": 28.8
+        "temp": 29.2
       },
       {
         "name": "GEM",
@@ -1388,10 +1388,10 @@
       }
     ],
     "weather": {
-      "clouds": 0,
-      "humidity": 66,
+      "clouds": 1,
+      "humidity": 57,
       "condition": "Clear",
-      "local_time": "16:35"
+      "local_time": "16:51"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
@@ -1412,22 +1412,22 @@
         "temp": 64
       }
     },
-    "updated_at": "00:35:15",
-    "updated_at_full": "2026-07-12T16:35:13.727264+00:00"
+    "updated_at": "00:51:26",
+    "updated_at_full": "2026-07-12T16:51:25.063262+00:00"
   },
   "Austin": {
     "city": "Austin",
     "metar_temp": 35,
     "max_today": 35,
-    "spread": 4.4,
+    "spread": 4.1,
     "models": [
       {
         "name": "GFS",
-        "temp": 35.4
+        "temp": 35.1
       },
       {
         "name": "ICON",
-        "temp": 32.2
+        "temp": 33.4
       },
       {
         "name": "GEM",
@@ -1435,16 +1435,16 @@
       }
     ],
     "weather": {
-      "clouds": 4,
-      "humidity": 35,
+      "clouds": 15,
+      "humidity": 44,
       "condition": "Clear",
-      "local_time": "16:35"
+      "local_time": "16:51"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "00:35:16",
-    "updated_at_full": "2026-07-12T16:35:15.054484+00:00"
+    "updated_at": "00:51:27",
+    "updated_at_full": "2026-07-12T16:51:26.342102+00:00"
   },
   "Houston": {
     "city": "Houston",
@@ -1458,7 +1458,7 @@
       },
       {
         "name": "ICON",
-        "temp": 30.1
+        "temp": 29.3
       },
       {
         "name": "GEM",
@@ -1466,26 +1466,26 @@
       }
     ],
     "weather": {
-      "clouds": 94,
-      "humidity": 83,
-      "condition": "Cloudy",
-      "local_time": "16:35"
+      "clouds": 99,
+      "humidity": 89,
+      "condition": "Rain",
+      "local_time": "16:51"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "00:35:17",
-    "updated_at_full": "2026-07-12T16:35:16.338741+00:00"
+    "updated_at": "00:51:28",
+    "updated_at_full": "2026-07-12T16:51:27.540091+00:00"
   },
   "Dallas": {
     "city": "Dallas",
     "metar_temp": 36,
     "max_today": 36,
-    "spread": 6.5,
+    "spread": 3.9,
     "models": [
       {
         "name": "GFS",
-        "temp": 29.1
+        "temp": 31.7
       },
       {
         "name": "ICON",
@@ -1497,10 +1497,10 @@
       }
     ],
     "weather": {
-      "clouds": 68,
-      "humidity": 72,
-      "condition": "Partly Cloudy",
-      "local_time": "16:35"
+      "clouds": 39,
+      "humidity": 68,
+      "condition": "Clear",
+      "local_time": "16:51"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
@@ -1517,8 +1517,8 @@
         "temp": 54
       }
     },
-    "updated_at": "00:35:18",
-    "updated_at_full": "2026-07-12T16:35:17.621358+00:00"
+    "updated_at": "00:51:30",
+    "updated_at_full": "2026-07-12T16:51:28.880174+00:00"
   },
   "Panama City": {
     "city": "Panama City",
@@ -1541,29 +1541,29 @@
     ],
     "weather": {
       "clouds": 95,
-      "humidity": 95,
+      "humidity": 94,
       "condition": "Cloudy",
-      "local_time": "16:35"
+      "local_time": "16:51"
     },
     "cutoff": "23:00",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "00:35:19",
-    "updated_at_full": "2026-07-12T16:35:18.751358+00:00"
+    "updated_at": "00:51:31",
+    "updated_at_full": "2026-07-12T16:51:30.126024+00:00"
   },
   "Denver": {
     "city": "Denver",
     "metar_temp": 34,
     "max_today": 34,
-    "spread": 2.5,
+    "spread": 2.4,
     "models": [
       {
         "name": "GFS",
-        "temp": 36.6
+        "temp": 36.4
       },
       {
         "name": "ICON",
-        "temp": 35.8
+        "temp": 36.5
       },
       {
         "name": "GEM",
@@ -1571,22 +1571,22 @@
       }
     ],
     "weather": {
-      "clouds": 9,
+      "clouds": 0,
       "humidity": 10,
       "condition": "Clear",
-      "local_time": "15:35"
+      "local_time": "15:51"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "00:35:21",
-    "updated_at_full": "2026-07-12T15:35:19.959969+00:00"
+    "updated_at": "00:51:32",
+    "updated_at_full": "2026-07-12T15:51:31.406315+00:00"
   },
   "Mexico City": {
     "city": "Mexico City",
-    "metar_temp": 23,
+    "metar_temp": 21,
     "max_today": 24,
-    "spread": 5.7,
+    "spread": 6.3,
     "models": [
       {
         "name": "GFS",
@@ -1594,7 +1594,7 @@
       },
       {
         "name": "ICON",
-        "temp": 24.7
+        "temp": 25.3
       },
       {
         "name": "GEM",
@@ -1602,30 +1602,30 @@
       }
     ],
     "weather": {
-      "clouds": 97,
+      "clouds": 96,
       "humidity": 66,
       "condition": "Cloudy",
-      "local_time": "15:35"
+      "local_time": "15:51"
     },
     "cutoff": "23:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "00:35:22",
-    "updated_at_full": "2026-07-12T15:35:21.165121+00:00"
+    "updated_at": "00:51:33",
+    "updated_at_full": "2026-07-12T15:51:32.579331+00:00"
   },
   "Los Angeles": {
     "city": "Los Angeles",
     "metar_temp": 21,
     "max_today": 23,
-    "spread": 4.5,
+    "spread": 4.4,
     "models": [
       {
         "name": "GFS",
-        "temp": 24.2
+        "temp": 24.3
       },
       {
         "name": "ICON",
-        "temp": 26.5
+        "temp": 25.9
       },
       {
         "name": "GEM",
@@ -1634,21 +1634,21 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 68,
+      "humidity": 76,
       "condition": "Overcast",
-      "local_time": "14:35"
+      "local_time": "14:51"
     },
     "cutoff": "01:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "00:35:23",
-    "updated_at_full": "2026-07-12T14:35:22.392231+00:00"
+    "updated_at": "00:51:35",
+    "updated_at_full": "2026-07-12T14:51:33.785783+00:00"
   },
   "San Francisco": {
     "city": "San Francisco",
     "metar_temp": 22,
     "max_today": 22,
-    "spread": 5.6,
+    "spread": 7.4,
     "models": [
       {
         "name": "GFS",
@@ -1656,7 +1656,7 @@
       },
       {
         "name": "ICON",
-        "temp": 19.1
+        "temp": 17.3
       },
       {
         "name": "GEM",
@@ -1665,29 +1665,29 @@
     ],
     "weather": {
       "clouds": 100,
-      "humidity": 46,
+      "humidity": 53,
       "condition": "Overcast",
-      "local_time": "14:35"
+      "local_time": "14:51"
     },
     "cutoff": "01:30",
     "region": "AMERICAS",
     "poly": null,
-    "updated_at": "00:35:24",
-    "updated_at_full": "2026-07-12T14:35:23.660798+00:00"
+    "updated_at": "00:51:36",
+    "updated_at_full": "2026-07-12T14:51:35.070484+00:00"
   },
   "Seattle": {
     "city": "Seattle",
     "metar_temp": 20,
     "max_today": 20,
-    "spread": 1.9,
+    "spread": 2.1,
     "models": [
       {
         "name": "GFS",
-        "temp": 19.6
+        "temp": 19.7
       },
       {
         "name": "ICON",
-        "temp": 19.7
+        "temp": 19.4
       },
       {
         "name": "GEM",
@@ -1695,10 +1695,10 @@
       }
     ],
     "weather": {
-      "clouds": 1,
-      "humidity": 51,
+      "clouds": 2,
+      "humidity": 48,
       "condition": "Clear",
-      "local_time": "14:35"
+      "local_time": "14:51"
     },
     "cutoff": "01:00",
     "region": "AMERICAS",
@@ -1711,7 +1711,7 @@
       "minus1": null,
       "plus1": null
     },
-    "updated_at": "00:35:26",
-    "updated_at_full": "2026-07-12T14:35:24.888752+00:00"
+    "updated_at": "00:51:37",
+    "updated_at_full": "2026-07-12T14:51:36.356886+00:00"
   }
 }
