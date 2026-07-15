@@ -9,7 +9,7 @@
     "poly_fav": "20°C",
     "poly_price": 0.355,
     "edge": "UNDER (Dew Point Wall)",
-    "updated_at": "00:04"
+    "updated_at": "00:19"
   },
   "London": {
     "city": "London",
@@ -21,7 +21,7 @@
     "poly_fav": "28°C",
     "poly_price": 0.535,
     "edge": "UNDER (Cooling Breeze)",
-    "updated_at": "00:04"
+    "updated_at": "00:19"
   },
   "Amsterdam": {
     "city": "Amsterdam",
@@ -31,9 +31,9 @@
     "dew_gap": 7.0,
     "wind": "50°/13kt",
     "poly_fav": "25°C",
-    "poly_price": 0.425,
+    "poly_price": 0.435,
     "edge": "NEUTRAL",
-    "updated_at": "00:04"
+    "updated_at": "00:19"
   },
   "Helsinki": {
     "city": "Helsinki",
@@ -45,7 +45,7 @@
     "poly_fav": "23°C",
     "poly_price": 0.425,
     "edge": "NEUTRAL",
-    "updated_at": "00:04"
+    "updated_at": "00:19"
   },
   "Madrid": {
     "city": "Madrid",
@@ -57,7 +57,7 @@
     "poly_fav": "35°C",
     "poly_price": 0.565,
     "edge": "NEUTRAL",
-    "updated_at": "00:04"
+    "updated_at": "00:19"
   },
   "Istanbul": {
     "city": "Istanbul",
@@ -67,21 +67,21 @@
     "dew_gap": 7.0,
     "wind": "110°/4kt",
     "poly_fav": "28°C",
-    "poly_price": 0.465,
+    "poly_price": 0.49,
     "edge": "NEUTRAL",
-    "updated_at": "00:04"
+    "updated_at": "00:19"
   },
   "NYC": {
     "city": "NYC",
     "icao": "KLGA",
-    "temp": 31.1,
+    "temp": 29.4,
     "sky": "OVERCAST",
-    "dew_gap": 10.0,
+    "dew_gap": 7.0,
     "wind": "0°/0kt",
     "poly_fav": "92-93°F",
     "poly_price": 0.29,
     "edge": "NEUTRAL",
-    "updated_at": "00:04"
+    "updated_at": "00:19"
   },
   "Tokyo": {
     "city": "Tokyo",
@@ -89,11 +89,11 @@
     "temp": 28.0,
     "sky": "OVERCAST",
     "dew_gap": 3.0,
-    "wind": "200°/6kt",
+    "wind": "200°/5kt",
     "poly_fav": "33°C",
     "poly_price": 0.395,
     "edge": "NEUTRAL",
-    "updated_at": "00:04"
+    "updated_at": "00:19"
   },
   "Hong Kong": {
     "city": "Hong Kong",
@@ -105,6 +105,6 @@
     "poly_fav": "29°C",
     "poly_price": 0.375,
     "edge": "NEUTRAL",
-    "updated_at": "00:04"
+    "updated_at": "00:19"
   }
 }
