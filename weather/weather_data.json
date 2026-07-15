@@ -9,7 +9,7 @@
     "poly_fav": "23°C",
     "poly_price": 0.9995,
     "edge": "UNDER (Dew Point Wall)",
-    "updated_at": "23:03"
+    "updated_at": "23:18"
   },
   "London": {
     "city": "London",
@@ -19,9 +19,9 @@
     "dew_gap": 11.0,
     "wind": "80°/13kt",
     "poly_fav": "28°C",
-    "poly_price": 0.999,
+    "poly_price": 0.9995,
     "edge": "UNDER (Cooling Breeze)",
-    "updated_at": "23:03"
+    "updated_at": "23:18"
   },
   "Amsterdam": {
     "city": "Amsterdam",
@@ -31,9 +31,9 @@
     "dew_gap": 9.0,
     "wind": "40°/12kt",
     "poly_fav": "27°C",
-    "poly_price": 0.9985,
+    "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:03"
+    "updated_at": "23:18"
   },
   "Helsinki": {
     "city": "Helsinki",
@@ -45,19 +45,19 @@
     "poly_fav": "26°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:03"
+    "updated_at": "23:18"
   },
   "Madrid": {
     "city": "Madrid",
     "icao": "LEMD",
     "temp": 33.0,
     "sky": "CLOUDY",
-    "dew_gap": 26.0,
-    "wind": "290°/6kt",
+    "dew_gap": 25.0,
+    "wind": "280°/6kt",
     "poly_fav": "36°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:03"
+    "updated_at": "23:18"
   },
   "Istanbul": {
     "city": "Istanbul",
@@ -69,7 +69,7 @@
     "poly_fav": "27°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:03"
+    "updated_at": "23:18"
   },
   "NYC": {
     "city": "NYC",
@@ -79,9 +79,9 @@
     "dew_gap": 14.0,
     "wind": "0°/0kt",
     "poly_fav": "98-99°F",
-    "poly_price": 0.9805,
+    "poly_price": 0.981,
     "edge": "NEUTRAL",
-    "updated_at": "23:03"
+    "updated_at": "23:18"
   },
   "Tokyo": {
     "city": "Tokyo",
@@ -93,7 +93,7 @@
     "poly_fav": "33°C",
     "poly_price": 1.0,
     "edge": "UNDER (Cooling Breeze)",
-    "updated_at": "23:03"
+    "updated_at": "23:18"
   },
   "Hong Kong": {
     "city": "Hong Kong",
@@ -105,6 +105,6 @@
     "poly_fav": "28°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:03"
+    "updated_at": "23:18"
   }
 }
