@@ -37,29 +37,38 @@
     <script>
         async function loadData() {
             try {
-                const response = await fetch('weather_data.json?t=' + Date.now());
+                // Принудительно очищаем кеш через таймстамп
+                const response = await fetch('weather_data.json?nocache=' + new Date().getTime());
                 const data = await response.json();
+                console.log("Data loaded:", data);
                 renderCards(data);
                 const first = Object.values(data)[0];
                 document.getElementById('lastUpdate').innerText = 'ОБНОВЛЕНО: ' + first.updated_at + ' (MSK)';
-            } catch (e) { console.error(e); }
+            } catch (e) { 
+                console.error("Load error:", e);
+                document.getElementById('lastUpdate').innerText = 'ОШИБКА ЗАГРУЗКИ';
+            }
         }
 
         function renderCards(data) {
             const container = document.getElementById('city-container');
-            container.innerHTML = Object.entries(data).map(([name, info]) => {
-                const edgeColor = info.edge === 'NEUTRAL' ? 'slate' : 'rose';
+            if (!container) return;
+            
+            const html = Object.entries(data).map(([name, info]) => {
+                const isNeutral = !info.edge || info.edge === 'NEUTRAL';
+                const edgeColor = isNeutral ? 'slate' : 'rose';
                 const skyEmoji = info.sky === 'CLEAR' ? '☀️' : (info.sky === 'OVERCAST' ? '☁️' : '⛅');
+                const tempVal = info.temp !== null ? info.temp : '--';
                 
                 return `
                     <div class="glass rounded-3xl p-6 transition-all duration-300 hover:border-slate-500 group relative">
                         <div class="flex justify-between items-start mb-4">
                             <div>
                                 <h2 class="text-2xl font-black text-white tracking-tight">${name}</h2>
-                                <p class="text-[10px] font-mono text-slate-500 uppercase">${info.icao}</p>
+                                <p class="text-[10px] font-mono text-slate-500 uppercase">${info.icao || ''}</p>
                             </div>
                             <div class="status-badge bg-${edgeColor}-500/10 text-${edgeColor}-400 border border-${edgeColor}-500/20">
-                                ${info.edge}
+                                ${info.edge || 'NEUTRAL'}
                             </div>
                         </div>
 
@@ -68,13 +77,13 @@
                                 <div>
                                     <p class="text-[10px] text-slate-500 uppercase font-black mb-1">Факт</p>
                                     <div class="flex items-baseline gap-1">
-                                        <span class="text-5xl font-black text-white leading-none">${info.temp !== null ? info.temp : '--'}</span>
+                                        <span class="text-5xl font-black text-white leading-none">${tempVal}</span>
                                         <span class="text-base text-slate-500 font-black">°C</span>
                                     </div>
                                 </div>
                                 <div class="text-right">
                                     <p class="text-2xl">${skyEmoji}</p>
-                                    <p class="text-[10px] font-bold text-slate-400 uppercase">${info.sky}</p>
+                                    <p class="text-[10px] font-bold text-slate-400 uppercase">${info.sky || ''}</p>
                                 </div>
                             </div>
                         </div>
@@ -82,17 +91,17 @@
                         <div class="grid grid-cols-2 gap-2 mb-6">
                             <div class="bucket-cell rounded-xl p-3">
                                 <p class="text-[8px] text-slate-500 font-bold uppercase mb-1">Polymarket Fav</p>
-                                <p class="text-sm font-black text-white leading-none">${info.poly_fav}</p>
-                                <p class="text-xs font-bold text-blue-500 mt-1">${(info.poly_price * 100).toFixed(1)}c</p>
+                                <p class="text-sm font-black text-white leading-none">${info.poly_fav || 'N/A'}</p>
+                                <p class="text-xs font-bold text-blue-500 mt-1">${info.poly_price ? (info.poly_price * 100).toFixed(1) + 'c' : '--'}</p>
                             </div>
                             <div class="bucket-cell rounded-xl p-3">
                                 <p class="text-[8px] text-slate-500 font-bold uppercase mb-1">Dew Point Gap</p>
-                                <p class="text-sm font-black text-white leading-none">${info.dew_gap}°C</p>
-                                <p class="text-[10px] text-slate-400 mt-1">Wind: ${info.wind}</p>
+                                <p class="text-sm font-black text-white leading-none">${info.dew_gap || 0}°C</p>
+                                <p class="text-[10px] text-slate-400 mt-1">Wind: ${info.wind || '--'}</p>
                             </div>
                         </div>
 
-                        ${info.edge !== 'NEUTRAL' ? `
+                        ${!isNeutral ? `
                             <div class="bg-rose-500/10 border border-rose-500/20 rounded-xl p-3">
                                 <p class="text-[10px] font-black text-rose-400 uppercase tracking-widest mb-1">🎯 TRADE SIGNAL</p>
                                 <p class="text-[11px] font-bold text-slate-200 leading-tight">Физика подтверждает ${info.edge}. Рынок может ошибаться.</p>
@@ -101,10 +110,12 @@
                     </div>
                 `;
             }).join('');
+            
+            container.innerHTML = html;
         }
 
         loadData();
-        setInterval(loadData, 60000);
+        setInterval(loadData, 30000);
     </script>
 </body>
 </html>
