@@ -7,9 +7,9 @@
     "dew_gap": 1.0,
     "wind": "0°/0kt",
     "poly_fav": "20°C",
-    "poly_price": 0.365,
+    "poly_price": 0.355,
     "edge": "UNDER (Dew Point Wall)",
-    "updated_at": "01:35"
+    "updated_at": "01:51"
   },
   "London": {
     "city": "London",
@@ -21,7 +21,7 @@
     "poly_fav": "28°C",
     "poly_price": 0.545,
     "edge": "NEUTRAL",
-    "updated_at": "01:35"
+    "updated_at": "01:51"
   },
   "Amsterdam": {
     "city": "Amsterdam",
@@ -33,7 +33,7 @@
     "poly_fav": "25°C",
     "poly_price": 0.525,
     "edge": "NEUTRAL",
-    "updated_at": "01:35"
+    "updated_at": "01:51"
   },
   "Helsinki": {
     "city": "Helsinki",
@@ -45,7 +45,7 @@
     "poly_fav": "22°C",
     "poly_price": 0.425,
     "edge": "NEUTRAL",
-    "updated_at": "01:35"
+    "updated_at": "01:51"
   },
   "Madrid": {
     "city": "Madrid",
@@ -55,9 +55,9 @@
     "dew_gap": 20.0,
     "wind": "0°/0kt",
     "poly_fav": "35°C",
-    "poly_price": 0.505,
+    "poly_price": 0.495,
     "edge": "NEUTRAL",
-    "updated_at": "01:35"
+    "updated_at": "01:51"
   },
   "Istanbul": {
     "city": "Istanbul",
@@ -69,7 +69,7 @@
     "poly_fav": "28°C",
     "poly_price": 0.5,
     "edge": "NEUTRAL",
-    "updated_at": "01:35"
+    "updated_at": "01:51"
   },
   "NYC": {
     "city": "NYC",
@@ -79,21 +79,21 @@
     "dew_gap": 9.0,
     "wind": "0°/0kt",
     "poly_fav": "92-93°F",
-    "poly_price": 0.28,
+    "poly_price": 0.305,
     "edge": "NEUTRAL",
-    "updated_at": "01:35"
+    "updated_at": "01:51"
   },
   "Tokyo": {
     "city": "Tokyo",
     "icao": "RJTT",
-    "temp": 29.0,
+    "temp": 28.0,
     "sky": "OVERCAST",
-    "dew_gap": 4.0,
-    "wind": "170°/4kt",
+    "dew_gap": 2.0,
+    "wind": "160°/6kt",
     "poly_fav": "33°C",
     "poly_price": 0.395,
     "edge": "NEUTRAL",
-    "updated_at": "01:35"
+    "updated_at": "01:51"
   },
   "Hong Kong": {
     "city": "Hong Kong",
@@ -103,8 +103,8 @@
     "dew_gap": 0,
     "wind": "0°/0kt",
     "poly_fav": "29°C",
-    "poly_price": 0.335,
+    "poly_price": 0.29,
     "edge": "NEUTRAL",
-    "updated_at": "01:35"
+    "updated_at": "01:51"
   }
 }
