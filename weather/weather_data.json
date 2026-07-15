@@ -9,7 +9,7 @@
     "poly_fav": "23°C",
     "poly_price": 0.9995,
     "edge": "UNDER (Dew Point Wall)",
-    "updated_at": "23:18"
+    "updated_at": "23:33"
   },
   "London": {
     "city": "London",
@@ -17,35 +17,35 @@
     "temp": 24.0,
     "sky": "CLEAR",
     "dew_gap": 11.0,
-    "wind": "80°/13kt",
+    "wind": "70°/12kt",
     "poly_fav": "28°C",
     "poly_price": 0.9995,
     "edge": "UNDER (Cooling Breeze)",
-    "updated_at": "23:18"
+    "updated_at": "23:33"
   },
   "Amsterdam": {
     "city": "Amsterdam",
     "icao": "EHAM",
-    "temp": 23.0,
+    "temp": 22.0,
     "sky": "CLEAR",
-    "dew_gap": 9.0,
-    "wind": "40°/12kt",
+    "dew_gap": 8.0,
+    "wind": "50°/15kt",
     "poly_fav": "27°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:18"
+    "updated_at": "23:33"
   },
   "Helsinki": {
     "city": "Helsinki",
     "icao": "EFHK",
-    "temp": 21.0,
+    "temp": 20.0,
     "sky": "CLEAR",
     "dew_gap": 7.0,
     "wind": "300°/8kt",
     "poly_fav": "26°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:18"
+    "updated_at": "23:33"
   },
   "Madrid": {
     "city": "Madrid",
@@ -57,19 +57,19 @@
     "poly_fav": "36°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:18"
+    "updated_at": "23:33"
   },
   "Istanbul": {
     "city": "Istanbul",
     "icao": "LTFM",
     "temp": 24.0,
-    "sky": "CLEAR",
+    "sky": "CLOUDY",
     "dew_gap": 7.0,
-    "wind": "80°/7kt",
+    "wind": "80°/6kt",
     "poly_fav": "27°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:18"
+    "updated_at": "23:33"
   },
   "NYC": {
     "city": "NYC",
@@ -79,9 +79,9 @@
     "dew_gap": 14.0,
     "wind": "0°/0kt",
     "poly_fav": "98-99°F",
-    "poly_price": 0.981,
+    "poly_price": 0.982,
     "edge": "NEUTRAL",
-    "updated_at": "23:18"
+    "updated_at": "23:34"
   },
   "Tokyo": {
     "city": "Tokyo",
@@ -93,7 +93,7 @@
     "poly_fav": "33°C",
     "poly_price": 1.0,
     "edge": "UNDER (Cooling Breeze)",
-    "updated_at": "23:18"
+    "updated_at": "23:34"
   },
   "Hong Kong": {
     "city": "Hong Kong",
@@ -105,6 +105,6 @@
     "poly_fav": "28°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:18"
+    "updated_at": "23:34"
   }
 }
