@@ -9,7 +9,7 @@
     "poly_fav": "23°C",
     "poly_price": 0.9995,
     "edge": "UNDER (Dew Point Wall)",
-    "updated_at": "23:33"
+    "updated_at": "23:49"
   },
   "London": {
     "city": "London",
@@ -21,7 +21,7 @@
     "poly_fav": "28°C",
     "poly_price": 0.9995,
     "edge": "UNDER (Cooling Breeze)",
-    "updated_at": "23:33"
+    "updated_at": "23:49"
   },
   "Amsterdam": {
     "city": "Amsterdam",
@@ -33,7 +33,7 @@
     "poly_fav": "27°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:33"
+    "updated_at": "23:49"
   },
   "Helsinki": {
     "city": "Helsinki",
@@ -45,19 +45,19 @@
     "poly_fav": "26°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:33"
+    "updated_at": "23:49"
   },
   "Madrid": {
     "city": "Madrid",
     "icao": "LEMD",
     "temp": 33.0,
-    "sky": "CLOUDY",
-    "dew_gap": 25.0,
+    "sky": "CLEAR",
+    "dew_gap": 26.0,
     "wind": "280°/6kt",
     "poly_fav": "36°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:33"
+    "updated_at": "23:49"
   },
   "Istanbul": {
     "city": "Istanbul",
@@ -69,7 +69,7 @@
     "poly_fav": "27°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:33"
+    "updated_at": "23:49"
   },
   "NYC": {
     "city": "NYC",
@@ -79,21 +79,21 @@
     "dew_gap": 14.0,
     "wind": "0°/0kt",
     "poly_fav": "98-99°F",
-    "poly_price": 0.982,
+    "poly_price": 0.984,
     "edge": "NEUTRAL",
-    "updated_at": "23:34"
+    "updated_at": "23:49"
   },
   "Tokyo": {
     "city": "Tokyo",
     "icao": "RJTT",
-    "temp": 27.0,
+    "temp": 28.0,
     "sky": "OVERCAST",
-    "dew_gap": 2.0,
-    "wind": "200°/10kt",
+    "dew_gap": 3.0,
+    "wind": "200°/6kt",
     "poly_fav": "33°C",
     "poly_price": 1.0,
-    "edge": "UNDER (Cooling Breeze)",
-    "updated_at": "23:34"
+    "edge": "NEUTRAL",
+    "updated_at": "23:49"
   },
   "Hong Kong": {
     "city": "Hong Kong",
@@ -105,6 +105,6 @@
     "poly_fav": "28°C",
     "poly_price": 0.9995,
     "edge": "NEUTRAL",
-    "updated_at": "23:34"
+    "updated_at": "23:49"
   }
 }
