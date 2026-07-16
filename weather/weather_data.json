@@ -9,7 +9,7 @@
     "poly_fav": "20°C",
     "poly_price": 0.36,
     "edge": "UNDER (Dew Point Wall)",
-    "updated_at": "04:53"
+    "updated_at": "05:08"
   },
   "London": {
     "city": "London",
@@ -17,11 +17,11 @@
     "temp": 17.0,
     "sky": "CLEAR",
     "dew_gap": 3.0,
-    "wind": "30°/7kt",
+    "wind": "30°/6kt",
     "poly_fav": "28°C",
-    "poly_price": 0.465,
+    "poly_price": 0.455,
     "edge": "NEUTRAL",
-    "updated_at": "04:53"
+    "updated_at": "05:08"
   },
   "Amsterdam": {
     "city": "Amsterdam",
@@ -29,11 +29,11 @@
     "temp": 20.0,
     "sky": "CLEAR",
     "dew_gap": 4.0,
-    "wind": "40°/9kt",
+    "wind": "30°/6kt",
     "poly_fav": "25°C",
-    "poly_price": 0.505,
+    "poly_price": 0.51,
     "edge": "NEUTRAL",
-    "updated_at": "04:53"
+    "updated_at": "05:08"
   },
   "Helsinki": {
     "city": "Helsinki",
@@ -45,19 +45,19 @@
     "poly_fav": "22°C",
     "poly_price": 0.475,
     "edge": "NEUTRAL",
-    "updated_at": "04:53"
+    "updated_at": "05:08"
   },
   "Madrid": {
     "city": "Madrid",
     "icao": "LEMD",
-    "temp": 23.0,
+    "temp": 24.0,
     "sky": "CLEAR",
-    "dew_gap": 15.0,
-    "wind": "350°/3kt",
+    "dew_gap": 17.0,
+    "wind": "330°/6kt",
     "poly_fav": "35°C",
-    "poly_price": 0.565,
+    "poly_price": 0.67,
     "edge": "NEUTRAL",
-    "updated_at": "04:53"
+    "updated_at": "05:08"
   },
   "Istanbul": {
     "city": "Istanbul",
@@ -65,23 +65,23 @@
     "temp": 21.0,
     "sky": "CLOUDY",
     "dew_gap": 4.0,
-    "wind": "230°/3kt",
+    "wind": "0°/0kt",
     "poly_fav": "28°C",
     "poly_price": 0.58,
     "edge": "NEUTRAL",
-    "updated_at": "04:53"
+    "updated_at": "05:09"
   },
   "NYC": {
     "city": "NYC",
     "icao": "KLGA",
     "temp": 27.8,
     "sky": "OVERCAST",
-    "dew_gap": 12.0,
-    "wind": "350°/7kt",
+    "dew_gap": 14.0,
+    "wind": "330°/6kt",
     "poly_fav": "92-93°F",
     "poly_price": 0.395,
     "edge": "NEUTRAL",
-    "updated_at": "04:53"
+    "updated_at": "05:09"
   },
   "Tokyo": {
     "city": "Tokyo",
@@ -89,11 +89,11 @@
     "temp": 29.0,
     "sky": "OVERCAST",
     "dew_gap": 3.0,
-    "wind": "120°/5kt",
+    "wind": "120°/4kt",
     "poly_fav": "32°C",
-    "poly_price": 0.395,
+    "poly_price": 0.41,
     "edge": "NEUTRAL",
-    "updated_at": "04:53"
+    "updated_at": "05:09"
   },
   "Hong Kong": {
     "city": "Hong Kong",
@@ -103,8 +103,8 @@
     "dew_gap": 0,
     "wind": "0°/0kt",
     "poly_fav": "28°C",
-    "poly_price": 0.358,
+    "poly_price": 0.3765,
     "edge": "NEUTRAL",
-    "updated_at": "04:53"
+    "updated_at": "05:09"
   }
 }
