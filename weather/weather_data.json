@@ -9,7 +9,7 @@
     "poly_fav": "20°C",
     "poly_price": 0.41,
     "edge": "UNDER (Dew Point Wall)",
-    "updated_at": "07:41"
+    "updated_at": "07:57"
   },
   "London": {
     "city": "London",
@@ -17,11 +17,11 @@
     "temp": 16.0,
     "sky": "OVERCAST",
     "dew_gap": 2.0,
-    "wind": "30°/5kt",
+    "wind": "40°/5kt",
     "poly_fav": "28°C",
-    "poly_price": 0.58,
+    "poly_price": 0.575,
     "edge": "NEUTRAL",
-    "updated_at": "07:41"
+    "updated_at": "07:57"
   },
   "Amsterdam": {
     "city": "Amsterdam",
@@ -33,19 +33,19 @@
     "poly_fav": "25°C",
     "poly_price": 0.545,
     "edge": "NEUTRAL",
-    "updated_at": "07:41"
+    "updated_at": "07:57"
   },
   "Helsinki": {
     "city": "Helsinki",
     "icao": "EFHK",
-    "temp": 18.0,
+    "temp": 19.0,
     "sky": "CLOUDY",
-    "dew_gap": 5.0,
-    "wind": "30°/4kt",
+    "dew_gap": 6.0,
+    "wind": "40°/5kt",
     "poly_fav": "22°C",
     "poly_price": 0.49,
     "edge": "NEUTRAL",
-    "updated_at": "07:41"
+    "updated_at": "07:57"
   },
   "Madrid": {
     "city": "Madrid",
@@ -55,21 +55,21 @@
     "dew_gap": 14.0,
     "wind": "360°/3kt",
     "poly_fav": "35°C",
-    "poly_price": 0.62,
+    "poly_price": 0.64,
     "edge": "NEUTRAL",
-    "updated_at": "07:41"
+    "updated_at": "07:57"
   },
   "Istanbul": {
     "city": "Istanbul",
     "icao": "LTFM",
-    "temp": 23.0,
+    "temp": 24.0,
     "sky": "CLOUDY",
-    "dew_gap": 2.0,
-    "wind": "270°/4kt",
+    "dew_gap": 3.0,
+    "wind": "360°/5kt",
     "poly_fav": "28°C",
     "poly_price": 0.625,
     "edge": "NEUTRAL",
-    "updated_at": "07:41"
+    "updated_at": "07:57"
   },
   "NYC": {
     "city": "NYC",
@@ -79,9 +79,9 @@
     "dew_gap": 11.0,
     "wind": "330°/4kt",
     "poly_fav": "92-93°F",
-    "poly_price": 0.36,
+    "poly_price": 0.345,
     "edge": "NEUTRAL",
-    "updated_at": "07:41"
+    "updated_at": "07:57"
   },
   "Tokyo": {
     "city": "Tokyo",
@@ -91,9 +91,9 @@
     "dew_gap": 5.0,
     "wind": "120°/4kt",
     "poly_fav": "32°C",
-    "poly_price": 0.49,
+    "poly_price": 0.69,
     "edge": "NEUTRAL",
-    "updated_at": "07:41"
+    "updated_at": "07:57"
   },
   "Hong Kong": {
     "city": "Hong Kong",
@@ -103,8 +103,8 @@
     "dew_gap": 0,
     "wind": "0°/0kt",
     "poly_fav": "27°C",
-    "poly_price": 0.5955,
+    "poly_price": 0.5295,
     "edge": "NEUTRAL",
-    "updated_at": "07:41"
+    "updated_at": "07:57"
   }
 }
